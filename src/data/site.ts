@@ -1,6 +1,6 @@
 export const site = {
-  name: "crimux",
-  title: "The Criminologist's Guide to User Experience",
+  name: "CrimUX",
+  title: "The Criminologist's Guide to User Experience (UX)",
   shortTitle: "The Criminologist's Guide to UX",
   subtitle: "Making Criminal Justice Apps Work Better for the People Who Use Them",
   tagline:
@@ -44,5 +44,5 @@ export const nav = [
   { href: "/bibliography", label: "Bibliography" },
   { href: "/quiz", label: "Quiz" },
   { href: "/translator", label: "Translator" },
-  { href: "/cite", label: "Cite" },
+  { href: "/about", label: "About" },
 ];

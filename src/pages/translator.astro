@@ -2,11 +2,11 @@
 import Base from "@layouts/Base.astro";
 import translator from "@data/translator.json";
 ---
-<Base title="Skills Translator" description="Type a criminology research skill or experience; get back a UX-research translation and a sharable result card.">
+<Base title="Skills Translator" description="Browse common translations from criminology research methods into UX research framing, or type your own to get a sharable card.">
   <header class="container hero">
     <p class="eyebrow">Skills translator</p>
     <h1>From criminology to user-experience framing</h1>
-    <p class="lead">Type a method, skill, or experience from your CV. You'll get a UX research translation, a one-line frame for a resume, and a sharable card.</p>
+    <p class="lead">Browse the {translator.mappings.length} common translations below, or type your own method, skill, or experience to get a custom translation and a sharable card.</p>
   </header>
 
   <section class="container">
@@ -31,6 +31,33 @@ import translator from "@data/translator.json";
         <div id="t-card" class="share-card"></div>
       </details>
     </section>
+  </section>
+
+  <section class="container catalog-section">
+    <h2>Common translations</h2>
+    <p>Each row maps a criminology research method or experience to its closest UX research analog, with a one-paragraph frame you can adapt for a resume, application, or interview answer.</p>
+    <ol class="catalog">
+      {translator.mappings.map((m: any, i: number) => {
+        const ACRONYMS = new Set(["irb", "spss"]);
+        const raw = (m.label || m.match[0]).trim();
+        const display = ACRONYMS.has(raw.toLowerCase())
+          ? raw.toUpperCase()
+          : raw.charAt(0).toUpperCase() + raw.slice(1);
+        return (
+        <li class="row" id={`m-${i + 1}`}>
+          <div class="row-head">
+            <p class="src">{display}</p>
+            <p class="arrow" aria-hidden="true">→</p>
+            <p class="dst">{m.uxr}</p>
+          </div>
+          <p class="frame">{m.frame}</p>
+          {m.match.length > 1 && (
+            <p class="aka muted small">Also matches: {m.match.slice(1).map((s: string) => s.trim()).join(", ")}</p>
+          )}
+        </li>
+        );
+      })}
+    </ol>
   </section>
 </Base>
 
@@ -85,6 +112,41 @@ import translator from "@data/translator.json";
 <style>
   .hero { padding-block: var(--s-8) var(--s-5); }
   .t-form { display: grid; gap: var(--s-3); max-width: 640px; margin-bottom: var(--s-6); }
+  .catalog-section { padding-top: var(--s-7); border-top: 1px solid var(--rule); margin-top: var(--s-6); }
+  .catalog { list-style: none; padding: 0; margin: var(--s-5) 0 0; display: grid; gap: var(--s-4); counter-reset: row; }
+  .row {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    padding: var(--s-5);
+  }
+  .row-head {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: baseline;
+    gap: var(--s-3);
+    margin: 0 0 var(--s-3);
+  }
+  .row .src, .row .dst {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--ink);
+  }
+  .row .dst { color: var(--brand); }
+  .row .arrow {
+    margin: 0;
+    color: var(--ink-3);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+  }
+  .row .frame { margin: 0; color: var(--ink-2); }
+  .row .aka { margin: var(--s-2) 0 0; }
+  @media (max-width: 640px) {
+    .row-head { grid-template-columns: 1fr; gap: 0.35rem; }
+    .row .arrow { display: none; }
+  }
   .t-form label { font-weight: 600; }
   textarea {
     font: inherit;

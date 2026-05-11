@@ -1,6 +1,44 @@
 ---
 import Base from "@layouts/Base.astro";
 import { site } from "@data/site";
+
+const authorListAPA = site.authors
+  .map((a, i) => {
+    const [first, ...rest] = a.name.split(" ");
+    const last = rest.join(" ");
+    const initials = first ? `${first[0]}.` : "";
+    return `${last}, ${initials}`;
+  })
+  .join(", & ");
+
+const authorListChicago = site.authors.map((a) => a.name).join(", and ");
+const authorListBib = site.authors.map((a) => a.name).join(" and ");
+
+const year = new Date(site.lastUpdated).getUTCFullYear();
+const titleFull = `${site.title}: ${site.subtitle}`;
+const doiMinted = !site.doi.toUpperCase().includes("PENDING");
+const urlOrDoi = doiMinted ? `https://doi.org/${site.doi}` : site.url;
+
+const apa = `${authorListAPA} (${year}). ${titleFull} (v${site.version}) [Open-access handbook]. ${site.consortium.name}. ${urlOrDoi}`;
+const chicago = `${authorListChicago}. ${year}. “${titleFull}.” Version ${site.version}. ${site.consortium.name}. ${urlOrDoi}.`;
+const bibtex = doiMinted
+  ? `@book{abrahamsjacques${year},
+  author    = {${authorListBib}},
+  title     = {${titleFull}},
+  version   = {${site.version}},
+  year      = {${year}},
+  publisher = {${site.consortium.name}},
+  doi       = {${site.doi}},
+  url       = {${site.url}}
+}`
+  : `@book{abrahamsjacques${year},
+  author    = {${authorListBib}},
+  title     = {${titleFull}},
+  version   = {${site.version}},
+  year      = {${year}},
+  publisher = {${site.consortium.name}},
+  url       = {${site.url}}
+}`;
 ---
 <Base title="About" description="About the authors and the handbook.">
   <header class="container hero">
@@ -38,6 +76,30 @@ import { site } from "@data/site";
       the easiest way to propose a new open problem or a bibliography entry.
     </p>
   </section>
+
+  <section class="container cite-section" id="cite">
+    <h2>Cite</h2>
+    <p class="prose">
+      Pick a style or copy the BibTeX block below.
+      Current version: <strong>v{site.version}</strong>{doiMinted && <> · DOI: <code>{site.doi}</code></>}.
+      {!doiMinted && <> A permanent DOI will be added for v1.0.</>}
+    </p>
+
+    <div class="cite-block">
+      <p class="cite-label">APA</p>
+      <p class="cite-text">{apa}</p>
+    </div>
+
+    <div class="cite-block">
+      <p class="cite-label">Chicago (author-date)</p>
+      <p class="cite-text">{chicago}</p>
+    </div>
+
+    <div class="cite-block">
+      <p class="cite-label">BibTeX</p>
+      <pre class="cite-text"><code>{bibtex}</code></pre>
+    </div>
+  </section>
 </Base>
 
 <style>
@@ -49,4 +111,27 @@ import { site } from "@data/site";
     padding: var(--s-5);
   }
   .role { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.78rem; color: var(--brand); font-weight: 600; margin: 0 0 var(--s-2); }
+  .cite-section { padding-top: var(--s-7); border-top: 1px solid var(--rule); margin-top: var(--s-6); }
+  .cite-block {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    padding: var(--s-4) var(--s-5);
+    margin-bottom: var(--s-3);
+  }
+  .cite-label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.78rem;
+    color: var(--brand);
+    font-weight: 600;
+    margin: 0 0 var(--s-2);
+  }
+  .cite-text { margin: 0; color: var(--ink-2); }
+  pre.cite-text {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+  }
 </style>

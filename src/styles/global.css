@@ -51,7 +51,13 @@ h3 { font-size: var(--step-2); margin-top: var(--s-6); }
 h4 { font-size: var(--step-1); font-family: var(--font-sans); font-weight: 600; }
 
 p, ul, ol, blockquote, table { margin: 0 0 var(--s-4); }
-p { max-width: var(--measure); }
+/* Default paragraphs fill the container; opt back in to a narrow reading measure
+   with .prose-narrow on a wrapper, which sets it on its descendant paragraphs. */
+p { max-width: none; }
+.prose-narrow p,
+.prose-narrow ul,
+.prose-narrow ol,
+.prose-narrow blockquote { max-width: var(--measure); }
 
 ul, ol { padding-left: 1.25rem; }
 li + li { margin-top: var(--s-2); }
@@ -111,7 +117,15 @@ th {
 @media (max-width: 720px) {
   .container { padding-inline: var(--s-3); }
 }
-.prose { max-width: var(--measure); }
+/* Prose sections inherit the container width so content reaches edge-to-edge.
+   The narrow reading measure (--measure) is only used inside .prose-narrow
+   if a page wants a column-style read. */
+.prose { max-width: none; }
+.prose-narrow { max-width: var(--measure); }
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote { max-width: none; }
 .stack > * + * { margin-top: var(--s-5); }
 .cluster { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; }
 .grid { display: grid; gap: var(--s-5); }
@@ -149,5 +163,5 @@ section + section { border-top: 1px solid var(--rule); }
 .lead {
   font-size: var(--step-1);
   color: var(--ink-2);
-  max-width: 56ch;
+  max-width: none;
 }

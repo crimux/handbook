@@ -10,7 +10,7 @@
 | Part 3 — Open problems | `src/pages/parts/3-open-problems.astro` |
 | Part 4 — UXR as a career | `src/pages/parts/4-careers.astro` |
 | About / authors | `src/pages/about.astro` |
-| Cite this | `src/pages/cite.astro` |
+| How to cite | `src/pages/about.astro` (`#cite` section) |
 
 Headings, callouts, pull-quotes, and the "Sources & Further Reading" box are all components — see `src/components/`.
 

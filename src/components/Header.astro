@@ -15,9 +15,8 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 </div>
 <header class="site-header">
   <div class="container row">
-    <a class="brand" href="/" aria-label={`${site.name} home`}>
-      <span class="brand-mark" aria-hidden="true">c</span>
-      <span class="brand-text">crimux</span>
+    <a class="brand" href="/" aria-label="CrimUX home">
+      <span class="brand-text">CrimUX</span>
     </a>
     <nav aria-label="Primary">
       <ul class="navlist">
@@ -89,23 +88,14 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
     color: var(--ink);
     font-weight: 700;
   }
-  .brand-mark {
-    width: 28px;
-    height: 28px;
-    display: inline-grid;
-    place-items: center;
-    background: var(--brand);
-    color: var(--ink);
-    font-family: var(--font-display);
-    font-weight: 700;
-    border-radius: 8px;
-    line-height: 1;
-  }
   .brand-text {
     font-family: var(--font-display);
-    font-size: 1.15rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     letter-spacing: -0.01em;
+    color: var(--ink);
   }
+  .brand:hover .brand-text { color: var(--brand); }
   .navlist {
     list-style: none;
     margin: 0;

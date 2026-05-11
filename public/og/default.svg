@@ -1,14 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2a2a72"/>
-      <stop offset="1" stop-color="#0d1024"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <text x="80" y="160" fill="#f5b700" font-family="Georgia, serif" font-size="28" font-weight="700" letter-spacing="6">CRIMUX · OPEN-ACCESS HANDBOOK</text>
+  <rect width="1200" height="630" fill="#000000"/>
+  <text x="80" y="160" fill="#f68212" font-family="Georgia, serif" font-size="28" font-weight="700" letter-spacing="6">CRIMUX · OPEN-ACCESS HANDBOOK</text>
   <text x="80" y="270" fill="#ffffff" font-family="Georgia, serif" font-size="72" font-weight="700">The Criminologist's Guide</text>
-  <text x="80" y="350" fill="#ffffff" font-family="Georgia, serif" font-size="72" font-weight="700">to User Research</text>
-  <text x="80" y="450" fill="#cfcfe4" font-family="Helvetica, Arial, sans-serif" font-size="30">Tara Abrahams · Scott Jacques</text>
-  <text x="80" y="560" fill="#cfcfe4" font-family="Helvetica, Arial, sans-serif" font-size="24">crimux.com</text>
+  <text x="80" y="350" fill="#ffffff" font-family="Georgia, serif" font-size="72" font-weight="700">to User Experience (UX)</text>
+  <text x="80" y="450" fill="#d6d4cc" font-family="Helvetica, Arial, sans-serif" font-size="30">Tara Abrahams · Scott Jacques</text>
+  <text x="80" y="560" fill="#d6d4cc" font-family="Helvetica, Arial, sans-serif" font-size="24">crimux.com</text>
 </svg>

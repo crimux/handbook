@@ -28,9 +28,10 @@
     { "id": "q18", "dim": "stakes",  "prompt": "I'm energized — not drained — by working with non-researchers every day." }
   ],
   "bands": [
-    { "min": 0,  "max": 39, "label": "Not yet", "blurb": "You have real research instincts, but the pace and politics of this work will frustrate you today. Use the next six months to ship one small applied study." },
-    { "min": 40, "max": 59, "label": "Curious", "blurb": "You'd survive a UX research role with deliberate practice. Focus on speed, product framing, and short summaries." },
-    { "min": 60, "max": 79, "label": "Strong fit", "blurb": "Your research craft transfers cleanly. Spend your effort on portfolio examples and stakeholder stories." },
-    { "min": 80, "max": 100, "label": "Ready to apply", "blurb": "On paper you're already a UX researcher. The remaining gap is positioning — your CV, work samples, and interview stories." }
+    { "min": 0,  "max": 39, "label": "F · Not for you", "blurb": "You have real research instincts, but the pace and politics of this work will frustrate you today. Use the next six months to ship one small applied study." },
+    { "min": 40, "max": 59, "label": "D · It's a stretch", "blurb": "You'd survive a UX research role with deliberate practice. Focus on speed, product framing, and short summaries." },
+    { "min": 60, "max": 69, "label": "C · Workable", "blurb": "Your research craft transfers, but you'll need deliberate practice on speed and product framing before applying. Read Part 4 and run two skills-translations." },
+    { "min": 70, "max": 79, "label": "B · Strong fit", "blurb": "Your research craft transfers cleanly. Spend your effort on portfolio examples and stakeholder stories." },
+    { "min": 80, "max": 100, "label": "A · Ready to apply", "blurb": "On paper you're already a UX researcher. The remaining gap is positioning — your CV, work samples, and interview stories." }
   ]
 }

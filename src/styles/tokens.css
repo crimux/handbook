@@ -19,11 +19,12 @@
   --indigo-2: var(--brand-2);
   --indigo-soft: var(--brand-soft);
 
-  --amber: #f5b700;
-  --amber-soft: #fff4cc;
-  --teal: #0e7c86;
-  --success: #1f7a4c;
-  --warn: #9a4a00;
+  /* Semantic accents collapse to brand orange (palette restricted to orange/black/white/gray) */
+  --amber: var(--brand);
+  --amber-soft: var(--brand-soft);
+  --teal: var(--brand);
+  --success: var(--brand);
+  --warn: var(--brand-2);
 
   /* Type — matches Faculty Explorer stack */
   --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
@@ -61,8 +62,8 @@
   --motion: 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
 
   /* Layout */
-  --measure: 68ch;
-  --container: 1180px;
+  --measure: 78ch;
+  --container: 1320px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,18 +76,20 @@
     --paper-3: #1f1f1c;
     --rule: #2d2d28;
 
-    --brand: #ff9a3c;
-    --brand-2: #ffb066;
+    /* Keep the brand exactly the Faculty-Explorer orange in dark mode too;
+       only the soft tint and the brand-2 shift for legibility on dark. */
+    --brand: #f68212;
+    --brand-2: #ffa040;
     --brand-soft: #3a2410;
     --indigo: var(--brand);
     --indigo-2: var(--brand-2);
     --indigo-soft: var(--brand-soft);
 
-    --amber: #ffd24a;
-    --amber-soft: #3d3210;
-    --teal: #4cc1cb;
-    --success: #5dd39e;
-    --warn: #ffb37a;
+    --amber: var(--brand);
+    --amber-soft: var(--brand-soft);
+    --teal: var(--brand);
+    --success: var(--brand);
+    --warn: var(--brand-2);
   }
 }
 

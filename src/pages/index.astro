@@ -7,29 +7,20 @@ import { site } from "@data/site";
 ---
 <Base title="Home" description={site.tagline}>
   <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">Open-access handbook · v{site.version}</p>
-        <h1>{site.title}</h1>
-        <p class="subtitle">{site.subtitle}</p>
-        <p class="mission">{site.missionLine}</p>
-        <div class="cluster" style="margin-top: var(--s-5);">
-          <Button href="/parts/1-what-is-ux" variant="primary" size="lg">Start reading</Button>
-          <Button href="/quiz" variant="ghost" size="lg">Take the quiz</Button>
-          <Button href="/translator" variant="link" size="lg">Skills translator →</Button>
-        </div>
+    <div class="container">
+      <p class="eyebrow">Open-access handbook · v{site.version}</p>
+      <h1>{site.title}</h1>
+      <p class="subtitle">{site.subtitle}</p>
+      <p class="mission">
+        A <a href={site.consortium.url} rel="noopener">{site.consortium.name}</a>
+        resource — making criminology useful. Find free, open-access criminology
+        research at <a href={site.consortium.parentUrl} rel="noopener">{site.consortium.parentName}</a>.
+      </p>
+      <div class="cluster" style="margin-top: var(--s-5);">
+        <Button href="/parts/1-what-is-ux" variant="primary" size="lg">Start reading</Button>
+        <Button href="/quiz" variant="ghost" size="lg">Take the quiz</Button>
+        <Button href="/translator" variant="link" size="lg">Skills translator →</Button>
       </div>
-      <aside class="meta-card">
-        <p class="label">At a glance</p>
-        <ul>
-          <li><strong>Authors:</strong> {site.authors[0].name} (first), {site.authors[1].name} (second)</li>
-          <li><strong>Published by:</strong> <a href={site.consortium.url}>{site.consortium.name}</a></li>
-          <li><strong>Length:</strong> ~6,000 words across four parts</li>
-          <li><strong>Bibliography:</strong> ~75 annotated entries</li>
-          <li><strong>License:</strong> <a href={site.licenseUrl}>{site.license}</a></li>
-          <li><strong>Cite:</strong> <a href="/cite">DOI / BibTeX / APA / Chicago</a></li>
-        </ul>
-      </aside>
     </div>
   </section>
 
@@ -74,12 +65,12 @@ import { site } from "@data/site";
     <h2>Free to read, fork, and remix</h2>
     <p class="prose">
       Everything on this site is licensed {site.license}. The source is on
-      <a href={site.repo}>GitHub</a>, each versioned release is archived on
-      Zenodo, and the citation page gives you the DOI plus BibTeX, APA, and Chicago entries.
+      <a href={site.repo}>GitHub</a>, each versioned release has a permanent DOI,
+      and the about page has BibTeX, APA, and Chicago entries.
       Published by the <a href={site.consortium.url}>{site.consortium.name}</a>.
     </p>
     <div class="cluster">
-      <Button href="/cite" variant="ghost">How to cite</Button>
+      <Button href="/about#cite" variant="ghost">Cite</Button>
       <Button href="/about" variant="link">About the authors →</Button>
     </div>
   </section>
@@ -91,13 +82,6 @@ import { site } from "@data/site";
     background: linear-gradient(180deg, var(--brand-soft), transparent 70%);
     border-bottom: 1px solid var(--rule);
   }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: var(--s-7);
-    align-items: start;
-  }
-  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
   .subtitle {
     font-family: var(--font-display);
     font-size: var(--step-2);
@@ -107,33 +91,11 @@ import { site } from "@data/site";
   }
   .mission {
     margin: var(--s-4) 0 0;
-    max-width: 56ch;
     color: var(--ink-2);
     font-size: var(--step-0);
     padding-left: var(--s-4);
     border-left: 3px solid var(--brand);
   }
-  .meta-card {
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    border-radius: var(--radius-lg);
-    padding: var(--s-5);
-    box-shadow: var(--shadow-1);
-  }
-  .meta-card .label {
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.75rem;
-    color: var(--brand);
-    font-weight: 600;
-    margin: 0 0 var(--s-3);
-  }
-  .meta-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--ink-2);
-  }
-  .meta-card li + li { margin-top: var(--s-2); }
+  .mission a { color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+  .mission a:hover { color: var(--brand-2); }
 </style>

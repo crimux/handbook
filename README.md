@@ -9,7 +9,7 @@ A ~6,000-word, four-part handbook that translates user experience (UX) research 
 - Four short, skimmable parts (~1,500 words each).
 - A curated ~75-entry annotated bibliography of user-experience studies in criminal justice technology.
 - Two interactive modules: a UX-fit quiz and a Skills Translator.
-- A "Cite this" page with DOI, BibTeX, APA, and Chicago entries.
+- A "How to cite" section on the About page with DOI, BibTeX, APA, and Chicago entries.
 
 It is a service of the [CrimRxiv Consortium](https://www.crimrxiv.com/consortium), part of our mission to make criminology useful. Free, open-access criminology research lives at [CrimRxiv](https://www.crimrxiv.com).
 
@@ -53,7 +53,7 @@ public/         static assets (favicon, OG images, robots, redirects)
 
 ## Editing content
 
-See `CONTENT.md` for where to edit each part of the handbook, how to add a bibliography entry, and how to publish a new version with a Zenodo DOI.
+See `CONTENT.md` for where to edit each part of the handbook, how to add a bibliography entry, and how to publish a new version with a DOI.
 
 ## License
 
@@ -62,6 +62,6 @@ See `CONTENT.md` for where to edit each part of the handbook, how to add a bibli
 
 ## Citation
 
-See [`/cite`](https://crimux.com/cite) on the live site or the `CITATION.cff` in this repo.
+See [`/about#cite`](https://crimux.com/about#cite) on the live site or the `CITATION.cff` in this repo.
 
 > Abrahams, T., & Jacques, S. (2026). The Criminologist's Guide to User Experience: Making Criminal Justice Apps Work Better for the People Who Use Them (v0.2.0) [Open-access handbook]. CrimRxiv Consortium. https://doi.org/10.5281/zenodo.PENDING

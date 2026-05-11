@@ -16,15 +16,16 @@ import quiz from "@data/quiz.json";
           <li class="q" data-dim={q.dim} data-id={q.id}>
             <p class="prompt"><strong>{i + 1}.</strong> {q.prompt}</p>
             <fieldset class="scale">
-              <legend class="visually-hidden">Rate from 1 (strongly disagree) to 5 (strongly agree)</legend>
+              <legend class="visually-hidden">Rate from strongly disagree to strongly agree</legend>
               {[1, 2, 3, 4, 5].map((v) => (
-                <label>
+                <label aria-label={`${v} of 5`}>
                   <input type="radio" name={q.id} value={v} required />
-                  <span>{v}</span>
+                  <span class="dot" aria-hidden="true"></span>
                 </label>
               ))}
+              <span class="scale-end scale-end-left" aria-hidden="true">Strongly disagree</span>
+              <span class="scale-end scale-end-right" aria-hidden="true">Strongly agree</span>
             </fieldset>
-            <p class="scale-labels muted"><span>Strongly disagree</span><span>Strongly agree</span></p>
           </li>
         ))}
       </ol>
@@ -89,14 +90,13 @@ import quiz from "@data/quiz.json";
     const composite = Math.round(dimScores.reduce((a, b) => a + b.pct, 0) / dimScores.length);
     const matchedBand = quiz.bands.find((b) => composite >= b.min && composite <= b.max);
 
-    band.textContent = `${matchedBand.label} · ${composite}/100`;
+    band.textContent = matchedBand.label;
     blurb.textContent = matchedBand.blurb;
 
     dimsEl.innerHTML = dimScores.map((d) => `
       <div class="dim">
         <p class="dim-label">${d.label}</p>
         <div class="bar"><span style="width:${d.pct}%"></span></div>
-        <p class="dim-pct">${d.pct}/100</p>
       </div>
     `).join("");
 
@@ -108,7 +108,7 @@ import quiz from "@data/quiz.json";
       `Run the <a href="/translator">Skills Translator</a> on two of your strongest experiences.`,
     ].map((s) => `<li>${s}</li>`).join("");
 
-    const text = `I scored ${composite}/100 on the Criminologist's UX-research fit quiz — band: ${matchedBand.label}. crimux.com/quiz`;
+    const text = `My result on the Criminologist's UX-research fit quiz: ${matchedBand.label}. crimux.com/quiz`;
     shareLi.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://crimux.com/quiz")}`;
     copyBtn.onclick = async () => {
       try { await navigator.clipboard.writeText(text); copyBtn.textContent = "Copied"; setTimeout(() => copyBtn.textContent = "Copy result text", 1500); } catch {}
@@ -117,7 +117,6 @@ import quiz from "@data/quiz.json";
     card.innerHTML = `
       <div class="sc-inner">
         <p class="sc-eyebrow">The Criminologist's Guide to UX</p>
-        <p class="sc-score">${composite}<span>/100</span></p>
         <p class="sc-band">${matchedBand.label}</p>
         <p class="sc-url">crimux.com/quiz</p>
       </div>
@@ -133,10 +132,41 @@ import quiz from "@data/quiz.json";
   .qlist { list-style: none; padding: 0; margin: 0 0 var(--s-6); display: grid; gap: var(--s-4); }
   .q { background: var(--paper); border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: var(--s-5); }
   .prompt { margin: 0 0 var(--s-3); }
-  .scale { border: 0; padding: 0; margin: 0; display: flex; gap: var(--s-3); }
-  .scale label { display: inline-flex; flex-direction: column; align-items: center; gap: 0.25rem; cursor: pointer; font-size: 0.9rem; color: var(--ink-2); }
-  .scale input { accent-color: var(--brand); transform: scale(1.2); }
-  .scale-labels { display: flex; justify-content: space-between; margin: var(--s-2) 0 0; font-size: 0.8rem; max-width: 320px; }
+  .scale {
+    border: 0; padding: 0; margin: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+    column-gap: var(--s-2);
+    row-gap: 0.35rem;
+  }
+  .scale label { display: inline-flex; justify-content: center; cursor: pointer; }
+  .scale input { position: absolute; opacity: 0; pointer-events: none; }
+  .scale .dot {
+    display: block;
+    width: 22px; height: 22px;
+    border-radius: 999px;
+    border: 2px solid var(--ink-3);
+    background: transparent;
+    transition: background var(--motion-fast), border-color var(--motion-fast), box-shadow var(--motion-fast);
+  }
+  .scale label:hover .dot { border-color: var(--brand); }
+  .scale input:checked + .dot {
+    background: var(--brand);
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 25%, transparent);
+  }
+  .scale input:focus-visible + .dot {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+  .scale-end {
+    font-size: 0.8rem;
+    color: var(--ink-3);
+    grid-row: 2;
+  }
+  .scale-end-left { grid-column: 1; text-align: center; }
+  .scale-end-right { grid-column: 5; text-align: center; }
   .visually-hidden { position: absolute !important; clip: rect(1px,1px,1px,1px); width: 1px; height: 1px; overflow: hidden; }
   .actions { display: flex; gap: var(--s-3); margin-bottom: var(--s-6); }
   .btn-primary, .btn-ghost { font: inherit; padding: 0.75rem 1.2rem; border-radius: var(--radius); border: 1px solid transparent; cursor: pointer; }
@@ -144,15 +174,60 @@ import quiz from "@data/quiz.json";
   .btn-primary:hover { background: var(--brand-2); color: #fff; }
   .btn-ghost { background: var(--paper); color: var(--ink); border-color: var(--rule); }
   #result { padding: var(--s-6) 0; border-top: 1px solid var(--rule); margin-top: var(--s-6); }
-  .dim { background: var(--paper-2); padding: var(--s-4); border-radius: var(--radius); }
-  .dim-label { margin: 0; font-weight: 600; }
-  .bar { background: var(--paper-3); height: 8px; border-radius: 999px; overflow: hidden; margin: 0.5rem 0; }
-  .bar span { display: block; height: 100%; background: var(--brand); }
-  .dim-pct { margin: 0; font-size: 0.85rem; color: var(--ink-3); }
-  .share-card { margin-top: var(--s-3); display: grid; place-items: center; aspect-ratio: 1200 / 630; background: linear-gradient(135deg, var(--brand) 0%, var(--ink) 100%); color: #fff; border-radius: var(--radius-lg); padding: var(--s-5); }
-  .sc-eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; opacity: 0.85; margin: 0; color: #fff; }
-  .sc-score { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem); margin: 0.5rem 0 0; line-height: 1; }
-  .sc-score span { font-size: 0.4em; opacity: 0.7; }
-  .sc-band { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); margin: 0.25rem 0 0; color: #fff; }
-  .sc-url { margin-top: 1rem; opacity: 0.8; font-size: 0.9rem; }
+</style>
+
+<style is:global>
+  /* These rules style markup that quiz.astro injects at runtime via innerHTML.
+     Injected nodes don't carry Astro's scoped-data attribute, so they must be
+     global to apply. */
+  #result .dim {
+    background: var(--paper-2);
+    padding: var(--s-4);
+    border-radius: var(--radius);
+    border: 1px solid var(--rule);
+  }
+  #result .dim-label { margin: 0; font-weight: 600; }
+  #result .bar {
+    background: color-mix(in oklab, var(--ink) 12%, transparent);
+    height: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 0.6rem 0 0;
+  }
+  #result .bar span {
+    display: block;
+    height: 100%;
+    background: var(--brand);
+    transition: width var(--motion-fast);
+  }
+  #result .share-card {
+    margin-top: var(--s-3);
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1200 / 630;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--ink) 100%);
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: var(--s-5);
+  }
+  #result .sc-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    opacity: 0.85;
+    margin: 0;
+    color: #fff;
+  }
+  #result .sc-band {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin: 0.25rem 0 0;
+    color: #fff;
+  }
+  #result .sc-url {
+    margin-top: 1rem;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    color: #fff;
+  }
 </style>

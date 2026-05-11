@@ -2,76 +2,91 @@
   "version": "0.2.0",
   "mappings": [
     {
+      "label": "Qualitative interview",
       "match": ["interview", "qualitative interview", "semi-structured interview"],
       "uxr": "Generative user interview",
       "frame": "Frame the interview around a product question — a moment of friction, a task someone is trying to complete, or a decision the team has to make. Tighten the guide to 5–7 questions, run 6–8 sessions in one week."
     },
     {
+      "label": "Ethnography",
       "match": ["ethnography", "fieldwork", "participant observation"],
       "uxr": "Contextual inquiry / field study",
       "frame": "Same observational craft — much shorter cycle. Two days in-field per site, three sites, and a one-page synthesis with photos and quotes within a week."
     },
     {
+      "label": "Focus group",
       "match": ["focus group"],
       "uxr": "Co-design or concept-testing workshop",
       "frame": "Replace opinion-polling with task-centered prompts. Bring stimuli (sketches, mocks) and have participants react, sort, and prioritize."
     },
     {
+      "label": "IRB / human-subjects review",
       "match": ["irb", "human subjects", "consent"],
       "uxr": "Research ethics + participant consent process",
       "frame": "Industry doesn't have IRBs but does have privacy and legal reviewers. Write a lightweight consent script and data-handling plan; bring it to legal."
     },
     {
+      "label": "Grounded theory / thematic analysis",
       "match": ["grounded theory", "thematic analysis", "coding"],
       "uxr": "Affinity diagramming / thematic synthesis",
       "frame": "Use the same coding discipline on a much faster cadence. Two analysts, one day, sticky notes (or Dovetail / Miro / Reduct)."
     },
     {
+      "label": "Program evaluation",
       "match": ["program evaluation", "outcome evaluation"],
       "uxr": "Impact measurement / product evaluation",
       "frame": "Pair qualitative signals with product metrics. Define a success metric before launch; instrument it; report the effect with confidence and caveats."
     },
     {
+      "label": "Survey research",
       "match": ["survey"],
       "uxr": "Quantitative UX research / large-N survey",
       "frame": "Write tighter items, drop double-barrels, and target a behavior or attitude tied to a feature. Use MaxDiff or Kano if prioritization is the question."
     },
     {
+      "label": "Systematic / literature review",
       "match": ["systematic review", "literature review", "meta-analysis"],
       "uxr": "Secondary research / desk research / lit review",
       "frame": "Same rigor, narrower scope. Build a one-pager that answers a product question with prior evidence — academic and industry — and notes what's missing."
     },
     {
+      "label": "Teaching / instruction",
       "match": ["teaching", "instructor", "pedagogy"],
       "uxr": "Stakeholder education / research democratization",
       "frame": "Teaching translates to research operations and stakeholder enablement: building self-serve templates, running clinics, and coaching product managers to ask better questions."
     },
     {
+      "label": "Grant / proposal writing",
       "match": ["grant", "rfp", "proposal"],
       "uxr": "Research plan / scoping doc",
       "frame": "A research plan is a 1–2 page mini-proposal: question, why now, method, participants, timeline, decisions it will inform, risks. Same muscle, smaller deliverable."
     },
     {
+      "label": "Peer / manuscript review",
       "match": ["peer review", "manuscript review"],
       "uxr": "Critique / research review",
       "frame": "Critiques in industry are real-time and verbal. Lead with the decision at stake, the strongest claim, and the weakest evidence. Skip the throat-clearing."
     },
     {
+      "label": "Mixed methods",
       "match": ["mixed methods"],
       "uxr": "Mixed-methods UX research",
       "frame": "Highly transferable. Industry rewards practitioners who can pair n=8 interviews with n=800 surveys or product logs and write the through-line."
     },
     {
+      "label": "Policy analysis",
       "match": ["policy", "policy analysis"],
       "uxr": "Strategic / foundational research",
       "frame": "Policy thinking maps to strategic UX research: framing the problem space, mapping stakeholders, and informing roadmap-level decisions rather than feature-level ones."
     },
     {
+      "label": "Ride-along / shadowing",
       "match": ["ride-along", "field observation", "shadowing"],
       "uxr": "Diary study / shadow-and-debrief",
       "frame": "Same craft. Shorter window (1–2 weeks), structured artifacts (photos, voice memos), and a debrief interview at the end."
     },
     {
+      "label": "Statistical analysis (regression, R, SPSS, Stata)",
       "match": ["statistical analysis", "regression", "spss", "r ", "stata"],
       "uxr": "Quantitative UX research / analytics partnership",
       "frame": "Lean into this. Many UX research teams are starved for someone who can read a regression and pair it with a qualitative finding without losing either."
