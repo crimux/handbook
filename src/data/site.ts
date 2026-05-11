@@ -24,13 +24,14 @@ export const site = {
   authors: [
     {
       name: "Tara Abrahams",
-      role: "First author",
-      bio: "User researcher writing the connective tissue between social science and product practice.",
+      role: "Forthcoming PhD · Georgia State University",
+      bio: "Finishing her PhD in criminology and criminal justice at Georgia State University and a U.S. Air Force veteran. A qualitative criminologist whose work focuses on offender decision-making, with a parallel craft in photojournalism that informs how she gathers, frames, and presents human evidence. She is committed to open-access scholarship and to research that earns its keep outside the academy.",
+      url: "https://taraabrahams.pubpub.org",
     },
     {
       name: "Scott Jacques",
-      role: "Second author",
-      bio: "Professor of criminology and criminal justice at Georgia State University; founder of CrimRxiv.",
+      role: "Professor · Georgia State University",
+      bio: "Professor of criminology and criminal justice at Georgia State University, executive director of the CrimRxiv Consortium, and founder of CrimRxiv. A utilitarian criminologist working to make open-access research generate real-world return on investment.",
       url: "https://scottjacques.pubpub.org",
     },
   ],
