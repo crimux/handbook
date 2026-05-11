@@ -21,3 +21,4 @@ yarn-error.log*
 
 # Cloudflare
 .wrangler/
+_research/*.png

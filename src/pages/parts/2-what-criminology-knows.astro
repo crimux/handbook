@@ -2,37 +2,202 @@
 import Base from "@layouts/Base.astro";
 import PartHero from "@components/PartHero.astro";
 import SourcesBox from "@components/SourcesBox.astro";
+import PullQuote from "@components/PullQuote.astro";
 import Callout from "@components/Callout.astro";
 import Button from "@components/Button.astro";
 ---
-<Base title="Part 2 — What criminology already knows" description="A curated bibliography of justice-tech UX studies, with annotations and tags.">
+<Base
+  title="Part 2 — What criminology already knows"
+  description="A curated, annotated bibliography of justice-tech UX studies — inmate tablets, parole apps, BWC, predictive tools, e-filing, victim notification, and more."
+>
   <PartHero
     number="2"
     title="What criminology already knows"
-    dek="A curated body of work on how people actually use justice-tech — inmate tablets, parole apps, BWC, predictive tools, e-filing, and more."
+    dek="A curated body of work on how people actually use justice-tech — inmate tablets, parole apps, body cameras, predictive tools, e-filing, victim notification, tip lines, digital evidence, and visitation."
     wordCount="1,500 + ~75 entries"
   />
 
   <article class="container prose">
-    <Callout type="note" title="Draft status">
-      The taxonomy and first 25 bibliography entries land in Step 3. After your review, I'll add the remaining 50.
-    </Callout>
 
-    <h2>How to read this part</h2>
-    <p class="muted">Placeholder — a short orientation to the taxonomy and filters.</p>
+    <h2>Why this part exists</h2>
+    <p>
+      Justice-tech is a research-rich field that has been almost invisible to mainstream
+      UXR. The studies are scattered across criminology journals, foundation reports, and
+      government evaluations, and they are rarely framed as user research even when that
+      is exactly what they are. The bibliography that follows tries to gather the most
+      decision-useful work in one place, annotated for someone who has to design, evaluate,
+      or fund a piece of justice-tech this quarter.
+    </p>
 
-    <h2>Taxonomy</h2>
+    <p>
+      The inclusion bar is strict. An entry has to say something specific about how a real
+      person actually uses, struggles with, or is affected by a piece of technology in the
+      justice system. Bias audits without human-factors content are out. Op-eds are out.
+      Press releases dressed up as studies are out. If we cannot write a non-obvious eighty-word
+      annotation, we cut the entry. The goal is signal density, not completeness.
+    </p>
+
+    <PullQuote attribution="The inclusion rule, in one line">
+      If we cannot write a non-obvious eighty-word annotation, we cut it.
+    </PullQuote>
+
+    <h2>How the bibliography is organized</h2>
+    <p>
+      Every entry is tagged on three axes so a reader can find what is useful in under a
+      minute. The <a href="/bibliography">bibliography page</a> lets you filter on each axis;
+      every entry carries an export block that copies a Zotero-friendly citation or a BibTeX
+      stanza to your clipboard.
+    </p>
+
+    <h3>By user type</h3>
+    <p>
+      Who is the study actually about? The labels are deliberately blunt, because the
+      design choices for an inmate using a tablet are not the design choices for an
+      analyst using a risk-assessment tool.
+    </p>
     <ul>
-      <li>By user type: incarcerated people, supervised people, officers, court staff, victims, attorneys, analysts.</li>
-      <li>By method: interviews, observation, surveys, log analysis, usability, mixed-methods.</li>
-      <li>By difficulty: foundational, advanced, niche.</li>
+      <li><strong>Incarcerated</strong> — people held in jails or prisons; the dominant
+        user type for in-cell tablet studies.</li>
+      <li><strong>Supervised</strong> — people on probation, parole, or pretrial release.</li>
+      <li><strong>Officers</strong> — patrol officers, corrections officers, parole and
+        probation officers; the user side of body-worn cameras and supervision apps.</li>
+      <li><strong>Court staff</strong> — clerks, judges, and self-help center staff; the
+        invisible users of e-filing and case-management software.</li>
+      <li><strong>Victims</strong> — survivors and their advocates; the audience for
+        notification systems and victim-services portals.</li>
+      <li><strong>Attorneys</strong> — prosecutors, public defenders, and their support
+        staff; the users of evidence-disclosure platforms.</li>
+      <li><strong>Analysts</strong> — crime analysts, intelligence officers, and
+        researchers; the operators of predictive and analytic tools.</li>
+      <li><strong>Families</strong> — the family members on the outside; the under-studied
+        co-users of inmate tablets and video-visitation platforms.</li>
+      <li><strong>General public</strong> — community members using tip lines, public
+        portals, and victim-services hotlines.</li>
     </ul>
 
-    <p>The full filterable, exportable list lives on the <a href="/bibliography">Bibliography page</a>.</p>
-    <Button href="/bibliography" variant="primary">Open the bibliography</Button>
+    <h3>By method</h3>
+    <p>
+      How was the evidence generated? Mixing methods is the rule rather than the exception,
+      but we tag by the dominant method to keep the filters useful.
+    </p>
+    <ul>
+      <li><strong>Interviews</strong> — semi-structured or in-depth interviews with users
+        or stakeholders.</li>
+      <li><strong>Observation</strong> — ride-alongs, field visits, ethnography.</li>
+      <li><strong>Survey</strong> — structured questionnaires, including practitioner
+        surveys.</li>
+      <li><strong>Usability</strong> — task-based testing of a specific system or
+        prototype.</li>
+      <li><strong>Log analysis</strong> — analysis of system logs, telemetry, or
+        administrative records.</li>
+      <li><strong>Mixed methods</strong> — explicit qual + quant pairings.</li>
+      <li><strong>Desk research</strong> — synthesis of secondary sources, policy
+        landscapes, or vendor reviews.</li>
+      <li><strong>Experiment</strong> — randomized or quasi-experimental designs that
+        manipulate a UX variable.</li>
+    </ul>
+
+    <h3>By difficulty</h3>
+    <p>
+      How approachable is the entry for someone new to the area? The three levels are a
+      reading map, not a quality judgment.
+    </p>
+    <ul>
+      <li><strong>Foundational</strong> — read this first; it sets up the problem space.</li>
+      <li><strong>Advanced</strong> — assumes you know the basics and adds a specific
+        finding, instrument, or critique.</li>
+      <li><strong>Niche</strong> — narrow but rewarding if the topic matches your project.</li>
+    </ul>
+
+    <h2>The nine subject areas</h2>
+    <p>
+      The bibliography is organized around nine clusters where justice-tech and UX
+      research already overlap. Each cluster has a short brief below; the entries
+      themselves live on the <a href="/bibliography">bibliography page</a>.
+    </p>
+
+    <h3>Inmate tablets and in-cell technology</h3>
+    <p>
+      Tablets, kiosks, and tablet-delivered education are now the default surface for
+      incarcerated users in most U.S. systems. The user experience question is what
+      happens when a captive market meets a high-friction payments model — and what
+      happens to the families on the outside who pay the bills.
+    </p>
+
+    <h3>Parole and probation check-in apps</h3>
+    <p>
+      Smartphone check-ins, GPS monitors, and automated reporting tools have replaced
+      a meaningful slice of in-person supervision. The UX questions are about burden,
+      accuracy, and the asymmetry of information between supervisor and supervisee.
+    </p>
+
+    <h3>Body-worn cameras: the officer side</h3>
+    <p>
+      Most of the BWC literature is about citizen-facing effects. A smaller, useful body
+      of work studies the officer experience: when cameras get activated, how footage
+      gets reviewed, and how the burden of evidence management lands inside a department.
+    </p>
+
+    <h3>Predictive policing and risk-assessment tool use</h3>
+    <p>
+      The bias debate is well-known. The user-research question is narrower and less
+      crowded: how do officers and analysts actually read these tools, what do they
+      ignore, and where does the human-in-the-loop break down?
+    </p>
+
+    <h3>Court e-filing and self-represented litigants</h3>
+    <p>
+      Federal CM/ECF and state e-filing portals are some of the highest-stakes, lowest-budget
+      user interfaces in the country. The research base on self-represented-litigant usability
+      is small, growing, and almost entirely underused by the courts that commission it.
+    </p>
+
+    <h3>Victim notification</h3>
+    <p>
+      Automated victim-notification systems (VINE and equivalents) have been in production
+      for thirty years. The UX questions are about whether notifications are timely,
+      intelligible, and trauma-informed — and what happens when they are not.
+    </p>
+
+    <h3>Tip lines and anonymous reporting</h3>
+    <p>
+      Crime Stoppers apps, school-safety reporting (Safe2Tell, SafeUT, P3 Tips), and
+      community-tip platforms are a quiet UX category. The research questions are about
+      trust, anonymity, false reports, and the operator side of the screen.
+    </p>
+
+    <h3>Digital-evidence tools</h3>
+    <p>
+      Evidence-management platforms, disclosure portals, and digital-forensics workflows
+      sit between police, prosecutors, defense, and labs. The UX failures are often
+      cross-organizational — chain-of-custody confusion, version drift, broken handoffs —
+      and the user research on them is thin.
+    </p>
+
+    <h3>Jail visitation platforms</h3>
+    <p>
+      Video visitation has replaced in-person visits in many jurisdictions. The research
+      is clearest on the structural effects (visit frequency, family contact) and thinner
+      on the moment-to-moment UX of the calls themselves.
+    </p>
+
+    <Callout type="tip" title="How to read this part">
+      Skim the cluster briefs above to find your area. Then jump to the
+      <a href="/bibliography">bibliography page</a>, filter by user type or method, and
+      use the export blocks to drop entries straight into Zotero or your reference
+      manager. The annotations are designed to let you decide whether to read the full
+      paper in under a minute.
+    </Callout>
+
+    <Button href="/bibliography" variant="primary">Open the bibliography →</Button>
 
     <SourcesBox items={[
-      { text: "Placeholder until Step 3" },
+      { text: "Prison Policy Initiative — research library on prison telecommunications", href: "https://www.prisonpolicy.org/phones/" },
+      { text: "National Institute of Justice — Body-Worn Camera research portfolio", href: "https://nij.ojp.gov/topics/articles/research-body-worn-cameras-and-law-enforcement" },
+      { text: "Urban Institute — Justice Policy Center", href: "https://www.urban.org/policy-centers/justice-policy-center" },
+      { text: "Center for Court Innovation (now Center for Justice Innovation) — research", href: "https://www.innovatingjustice.org/" },
+      { text: "Vera Institute of Justice — corrections technology research", href: "https://www.vera.org/" },
+      { text: "Bureau of Justice Statistics — technology and corrections statistics", href: "https://bjs.ojp.gov/" },
     ]} />
   </article>
 </Base>
