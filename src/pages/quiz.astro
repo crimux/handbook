@@ -90,7 +90,7 @@ import quiz from "@data/quiz.json";
     const composite = Math.round(dimScores.reduce((a, b) => a + b.pct, 0) / dimScores.length);
     const matchedBand = quiz.bands.find((b) => composite >= b.min && composite <= b.max);
 
-    band.textContent = matchedBand.label;
+    band.textContent = `Grade ${matchedBand.label}`;
     blurb.textContent = matchedBand.blurb;
 
     dimsEl.innerHTML = dimScores.map((d) => `
@@ -108,7 +108,7 @@ import quiz from "@data/quiz.json";
       `Run the <a href="/translator">Skills Translator</a> on two of your strongest experiences.`,
     ].map((s) => `<li>${s}</li>`).join("");
 
-    const text = `My result on the Criminologist's UX-research fit quiz: ${matchedBand.label}. crimux.com/quiz`;
+    const text = `My result on the Criminologist's UX-research fit quiz: Grade ${matchedBand.label}. crimux.com/quiz`;
     shareLi.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://crimux.com/quiz")}`;
     copyBtn.onclick = async () => {
       try { await navigator.clipboard.writeText(text); copyBtn.textContent = "Copied"; setTimeout(() => copyBtn.textContent = "Copy result text", 1500); } catch {}
@@ -117,7 +117,7 @@ import quiz from "@data/quiz.json";
     card.innerHTML = `
       <div class="sc-inner">
         <p class="sc-eyebrow">The Criminologist's Guide to UX</p>
-        <p class="sc-band">${matchedBand.label}</p>
+        <p class="sc-band">Grade ${matchedBand.label}</p>
         <p class="sc-url">crimux.com/quiz</p>
       </div>
     `;
