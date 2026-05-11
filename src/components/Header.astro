@@ -113,9 +113,18 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
     display: flex;
     flex-wrap: wrap;
     gap: var(--s-4);
-    align-items: center;
+    align-items: baseline;
   }
-  .navlist li { display: inline-flex; align-items: center; }
+  .navlist li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  /* Every nav link is rendered identically. The ONLY visual difference
+     between active and inactive is the underline color. Text color,
+     weight, size, line-height, and padding are locked so baselines and
+     letterforms match across all items, in light and dark mode, on any
+     page. */
   .navlist a {
     text-decoration: none;
     color: var(--ink-2);
@@ -123,14 +132,16 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
     font-weight: 500;
     line-height: 1.2;
     padding: 0.3rem 0.1rem;
-    /* Reserve space for the underline so active/inactive baselines match. */
     border-bottom: 2px solid transparent;
     display: inline-block;
     white-space: nowrap;
+    vertical-align: baseline;
   }
-  .navlist a:hover { color: var(--brand); }
+  .navlist a:hover { color: var(--brand); border-bottom-color: var(--brand-soft); }
   .navlist a[aria-current="page"] {
-    color: var(--ink);
+    /* Keep the same color and weight as inactive items so nothing shifts
+       or looks bolder; the orange underline is what marks the page. */
+    color: var(--ink-2);
     border-bottom-color: var(--brand);
   }
   @media (max-width: 720px) {
