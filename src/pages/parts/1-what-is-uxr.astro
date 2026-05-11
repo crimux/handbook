@@ -2,9 +2,13 @@
 import Base from "@layouts/Base.astro";
 import PartHero from "@components/PartHero.astro";
 import SourcesBox from "@components/SourcesBox.astro";
+import PullQuote from "@components/PullQuote.astro";
 import Callout from "@components/Callout.astro";
 ---
-<Base title="Part 1 — What is user research, actually?" description="A practitioner translation of UXR for criminologists who already know research.">
+<Base
+  title="Part 1 — What is user research, actually?"
+  description="A practitioner translation of UXR for criminologists who already know research. Same craft, different rhythm."
+>
   <PartHero
     number="1"
     title="What is user research, actually?"
@@ -13,48 +17,276 @@ import Callout from "@components/Callout.astro";
   />
 
   <article class="container prose">
-    <Callout type="note" title="Draft status">
-      This is the scaffolded outline for Part 1. Full prose lands in Step 2 of the build. Section headings, glossary, and the concept table are wired up; copy will be filled in.
-    </Callout>
 
     <h2>The job in one paragraph</h2>
-    <p>To come: a tight definition of UXR as the discipline of generating evidence that helps product teams choose what to build, how to build it, and how to know it worked.</p>
+    <p>
+      User research, or UXR, is the discipline of generating evidence that helps a product team
+      choose what to build, how to build it, and how to know whether it worked. The unit of
+      analysis is a person doing a task with a product. The deliverable is usually a short
+      memo, a workshop, or a number on a dashboard. The audience is rarely other researchers;
+      it is product managers, designers, engineers, and executives who have to make a decision
+      this quarter. UXR is real research — sampling, instruments, validity, and ethics all
+      apply — but it is research bent toward a decision, on a cadence measured in weeks.
+    </p>
+
+    <PullQuote attribution="The translation, in one line">
+      Criminology asks why people behave; UXR asks why people clicked. The methods are
+      cousins; the timelines are not.
+    </PullQuote>
 
     <h2>Criminology ↔ UXR: a concept table</h2>
-    <p class="muted">Placeholder — populated in Step 2.</p>
-    <table>
-      <thead>
-        <tr><th>Criminology concept</th><th>UXR equivalent</th><th>What changes</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Ethnography</td><td>Contextual inquiry</td><td>Shorter cycles, product framing</td></tr>
-        <tr><td>Focus group</td><td>Usability session</td><td>Task-centered, not opinion-centered</td></tr>
-        <tr><td>IRB</td><td>Consent + research ethics review</td><td>Lighter touch; participant-led</td></tr>
-        <tr><td>Grounded theory</td><td>Thematic / affinity analysis</td><td>Days, not months</td></tr>
-        <tr><td>Program evaluation</td><td>Impact measurement</td><td>Tied to product KPIs</td></tr>
-      </tbody>
-    </table>
+    <p>
+      Almost every method in a criminologist's toolkit has a UXR analog. The shape of the work
+      is recognizable; the constraints around it are different. The table below is the fastest
+      orientation we can give you. Each row is expanded in the prose that follows, and the
+      full taxonomy of methods lives in <a href="/parts/2-what-criminology-knows">Part 2</a>.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Criminology concept</th>
+            <th>UXR equivalent</th>
+            <th>What changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ethnography</td>
+            <td>Contextual inquiry / field study</td>
+            <td>Days in the field, not months. Photos and quotes, not field notebooks.</td>
+          </tr>
+          <tr>
+            <td>Focus group</td>
+            <td>Usability session or co-design workshop</td>
+            <td>Task-centered, not opinion-centered. Stimuli (mocks, prototypes) in the room.</td>
+          </tr>
+          <tr>
+            <td>Semi-structured interview</td>
+            <td>Generative user interview</td>
+            <td>Five to eight participants, tighter guide, synthesis in a week.</td>
+          </tr>
+          <tr>
+            <td>IRB protocol</td>
+            <td>Consent + privacy + legal review</td>
+            <td>Lighter touch, participant-led; the gate is privacy/legal, not an IRB.</td>
+          </tr>
+          <tr>
+            <td>Grounded theory</td>
+            <td>Affinity diagramming / thematic synthesis</td>
+            <td>Same coding discipline, hours instead of months, often two analysts.</td>
+          </tr>
+          <tr>
+            <td>Program evaluation</td>
+            <td>Impact measurement / product evaluation</td>
+            <td>Outcome metric is a product KPI; effect is reported with caveats, not p-values.</td>
+          </tr>
+          <tr>
+            <td>Survey research</td>
+            <td>Quant UXR / large-N survey</td>
+            <td>Shorter, behavior-focused, often paired with product logs.</td>
+          </tr>
+          <tr>
+            <td>Systematic review</td>
+            <td>Desk research / secondary research</td>
+            <td>Narrower scope, includes industry sources, one-pager output.</td>
+          </tr>
+          <tr>
+            <td>Ride-along / observation</td>
+            <td>Diary study / shadow-and-debrief</td>
+            <td>One or two weeks, structured artifacts (photos, voice memos), debrief at end.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Two patterns are worth naming. First, every UXR method trades depth for speed compared
+      with its academic cousin. Second, almost every UXR method is paired with a product
+      artifact — a prototype to react to, a log to triangulate against, a metric to move.
+      The pairing is what turns research into a decision rather than a paper.
+    </p>
+
+    <p>
+      The IRB row in the table deserves a longer note because it is the one place where the
+      translation surprises people. Industry has no IRB. It does have privacy review, legal
+      review, and a security review for anything that touches sensitive data, and the bar at
+      a serious company is higher than many academics expect. What it does not have is a
+      months-long pre-registration cycle. A practitioner writes a short consent script, a
+      data-handling plan, and a participant-facing summary; runs them past privacy and legal
+      counsel; and is usually ready to recruit within a week. The ethical substance is the
+      same — informed consent, data minimization, the right to withdraw, fair compensation —
+      but the apparatus is sized to the cadence of the work.
+    </p>
 
     <h2>A short glossary</h2>
-    <p class="muted">Placeholder — generative, evaluative, strategic; discovery; usability; foundational; tactical; ResearchOps; participant panel.</p>
+    <p>
+      Eight terms you will hear in the first week of any UXR job. None of them are technical
+      in the way criminology can be technical, but each one is doing real work in conversation.
+    </p>
+    <ul>
+      <li>
+        <strong>Generative research:</strong> studies that explore a space before there is a
+        product to test — interviews, field visits, diary studies. The cousin of inductive,
+        exploratory criminology.
+      </li>
+      <li>
+        <strong>Evaluative research:</strong> studies that test a specific design against a
+        task — usability tests, concept evaluations, A/B-test instrumentation. Closer to
+        outcome evaluation in program-evaluation terms.
+      </li>
+      <li>
+        <strong>Strategic (or foundational) research:</strong> longer studies that reframe
+        the problem space rather than ship a feature — market segmentation, opportunity
+        landscaping. The closest analog is a policy-analysis brief.
+      </li>
+      <li>
+        <strong>Discovery:</strong> the phase of work before a team has committed to a
+        solution. Generative research is the dominant mode here.
+      </li>
+      <li>
+        <strong>Usability:</strong> the narrow question of whether a person can complete a
+        task with a product. Often measured with task-success rates and time-on-task.
+      </li>
+      <li>
+        <strong>ResearchOps:</strong> the infrastructure that makes research repeatable —
+        participant panels, recruitment vendors, repositories, templates, consent libraries.
+        The closest academic analog is grant administration plus a methods center, fused.
+      </li>
+      <li>
+        <strong>Repository:</strong> a searchable archive of past studies, clips, and
+        insights. Tools like Dovetail, Notably, or Confluence pages with tags.
+      </li>
+      <li>
+        <strong>Insight:</strong> a claim, anchored in evidence, that should change a
+        decision. Not a finding, not a quote — a claim with a decision attached.
+      </li>
+    </ul>
 
     <h2>Three week-in-the-life vignettes</h2>
-    <h3>Startup UXR</h3>
-    <p class="muted">Placeholder vignette.</p>
-    <h3>FAANG UXR</h3>
-    <p class="muted">Placeholder vignette.</p>
-    <h3>Civic-tech UXR</h3>
-    <p class="muted">Placeholder vignette.</p>
+    <p>
+      The same job title can mean very different days depending on where it sits. Three
+      sketches, drawn from common industry shapes.
+    </p>
 
-    <h2>Generative, evaluative, strategic</h2>
-    <p class="muted">Placeholder — with criminology-flavored examples.</p>
+    <h3>The startup researcher</h3>
+    <p>
+      A team of forty. One researcher, who is also the participant recruiter, the consent
+      author, and the analytics partner. Monday is a kickoff with a PM who wants to know
+      whether a new onboarding flow will work for first-time users. By Wednesday the
+      researcher has run five remote interviews with recruited participants from a panel
+      vendor. Thursday is synthesis with a designer over a shared Miro board. Friday is a
+      twenty-minute readout to engineering, ending with three concrete changes. The cycle
+      repeats. The work is broad, the rigor is real but compressed, and the reward is that
+      almost every study changes something visible in the product the following sprint.
+    </p>
+
+    <h3>The FAANG researcher</h3>
+    <p>
+      A team of forty researchers, embedded across a dozen product surfaces. The week looks
+      less like fieldwork and more like a small academic department. Monday is a research
+      review with peers; Tuesday is a working session with a design partner on an experiment
+      plan; Wednesday is interviews; Thursday is alignment with a quant researcher on a
+      survey instrument; Friday is a strategic readout to a director. Studies are larger
+      (twelve to twenty participants is normal), instruments are more carefully built, and
+      the path from insight to shipped change is longer and more political. Rigor is higher,
+      cadence is slower, leverage per study is enormous.
+    </p>
+
+    <h3>The civic-tech researcher</h3>
+    <p>
+      A team of fifteen at a non-profit or government-adjacent organization building services
+      for the public. Users include people in difficult circumstances — applying for benefits,
+      navigating a court system, contacting a parole officer. The methods are the closest to
+      criminology: ride-alongs, intercept interviews, partnerships with frontline staff. The
+      tradeoffs are different too. Recruitment is harder, consent is heavier, and the
+      decision-makers are often not in the room. The week may include a stakeholder workshop
+      with caseworkers, a usability test with a screen reader user, and a budget conversation
+      about whether to compensate participants in cash or gift cards. The work feels the most
+      like applied social science of the three.
+    </p>
+
+    <h2>Generative, evaluative, strategic — with criminology examples</h2>
+    <p>
+      Most UXR teams sort their work into three modes. The labels are imperfect, but the
+      distinctions matter because each mode rewards different criminology muscles.
+    </p>
+
+    <h3>Generative</h3>
+    <p>
+      You are designing an app for people on probation to check in with their officer. Before
+      anyone sketches a screen, a generative study answers: what does check-in already look
+      like, where does it break down, what does it cost a person to comply? Methods: ten
+      semi-structured interviews, two ride-alongs, a synthesis. A criminologist's interview
+      and field skills transfer almost without translation; what changes is the time budget
+      and the deliverable (a one-page opportunity map, not a journal article).
+    </p>
+
+    <h3>Evaluative</h3>
+    <p>
+      The team has a working prototype of the check-in app. An evaluative study answers:
+      can a person actually use it? Methods: eight moderated usability sessions, a short
+      survey of perceived burden, a benchmark task-success rate. The closest criminology
+      analog is outcome evaluation of a specific intervention — narrow, instrumented, and
+      tightly tied to a yes-no decision.
+    </p>
+
+    <h3>Strategic</h3>
+    <p>
+      Six months in, leadership asks whether the team should also build for parole, for
+      pretrial release, or stay focused. A strategic study answers: what is the shape of the
+      market, who else serves these users, where is the leverage? Methods: a desk-research
+      review, ten expert interviews, a segmentation. This is policy-brief work in a different
+      register, and it is where senior UXR practitioners earn their seniority.
+    </p>
+
+    <PullQuote>
+      The methods are the easy part. The harder part is choosing the smallest study that
+      will move the next decision.
+    </PullQuote>
+
+    <h2>What stays the same: rigor</h2>
+    <p>
+      A common worry from criminology PhDs considering the pivot is that UXR will require
+      them to abandon rigor. The honest answer is that rigor still matters, but it shows up
+      differently. Sample sizes are smaller, but sampling logic is still defended out loud:
+      a five-person study with the wrong five people is a five-person study with the wrong
+      five people, and a good UXR practitioner will say so. Coding is faster, but inter-coder
+      agreement is still negotiated when stakes are high. Effects are smaller and reported
+      with confidence intervals, not asterisks, and a serious team will reject a claim that
+      cannot survive a second look. What is gone is the journal-article apparatus — the lit
+      review, the hedging, the discussion section. What remains is the discipline of taking
+      uncertainty seriously and writing it down in a way the next decision-maker can use.
+    </p>
+
+    <Callout type="tip" title="If you remember three things from Part 1">
+      <ol>
+        <li>UXR is research bent toward a decision, on a cadence measured in weeks.</li>
+        <li>Every method in a criminologist's toolkit has a UXR analog; pace and pairing with a product artifact are what change.</li>
+        <li>Generative, evaluative, and strategic are not just labels — they map to different parts of a product lifecycle and reward different criminology muscles.</li>
+      </ol>
+    </Callout>
 
     <SourcesBox items={[
-      { text: "Nielsen Norman Group — UX Research Cheat Sheet" },
-      { text: "Goodman, Kuniavsky & Moed — Observing the User Experience (2nd ed.)" },
-      { text: "Portigal — Interviewing Users (2nd ed.)" },
-      { text: "Salazar — Design Research Methods, IDF" },
-      { text: "Spradley — The Ethnographic Interview" },
+      { text: "Nielsen Norman Group — UX Research Cheat Sheet", href: "https://www.nngroup.com/articles/ux-research-cheat-sheet/" },
+      { text: "Goodman, Kuniavsky & Moed — Observing the User Experience (2nd ed., Morgan Kaufmann)" },
+      { text: "Portigal — Interviewing Users: How to Uncover Compelling Insights (2nd ed., Rosenfeld)" },
+      { text: "Salazar — Design Research Methods (Interaction Design Foundation)", href: "https://www.interaction-design.org/literature/topics/design-research" },
+      { text: "Krug — Don't Make Me Think, Revisited (New Riders) — for usability heuristics" },
+      { text: "dscout People Nerds — A Researcher's Guide to Generative vs. Evaluative", href: "https://dscout.com/people-nerds/" },
     ]} />
   </article>
 </Base>
+
+<style>
+  .table-wrap {
+    overflow-x: auto;
+    margin: var(--s-5) 0 var(--s-6);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    background: var(--paper);
+  }
+  .table-wrap table { margin: 0; }
+  .table-wrap th { background: var(--paper-2); }
+</style>
