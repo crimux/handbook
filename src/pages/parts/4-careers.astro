@@ -4,8 +4,13 @@ import PartHero from "@components/PartHero.astro";
 import SourcesBox from "@components/SourcesBox.astro";
 import Callout from "@components/Callout.astro";
 import PullQuote from "@components/PullQuote.astro";
+import Button from "@components/Button.astro";
+import Card from "@components/Card.astro";
 ---
-<Base title="Part 4 — UXR as a criminology-adjacent career" description="Salary bands, what translates from a criminology PhD, a 6-month pivot plan, and the candid downsides.">
+<Base
+  title="Part 4 — UXR as a criminology-adjacent career"
+  description="Salary bands, what translates from a criminology PhD, a 6-month pivot plan, and the candid downsides — written for criminologists thinking about UXR."
+>
   <PartHero
     number="4"
     title="UXR as a criminology-adjacent career"
@@ -14,31 +19,252 @@ import PullQuote from "@components/PullQuote.astro";
   />
 
   <article class="container prose">
-    <Callout type="note" title="Draft status">
-      Outline only. Full prose lands in Step 5. Vignettes will be drafted as clearly-labeled placeholders.
-    </Callout>
 
     <h2>The plain-market picture</h2>
-    <p class="muted">Placeholder — salary bands, remote availability, seniority ladders, hiring rhythm.</p>
+    <p>
+      UX research is a mid-sized profession with a long enough history to have stable
+      job titles and a short enough one that the boundaries are still negotiable. In
+      the United States in 2025, the bands break down roughly as follows. A junior
+      researcher (one to three years) earns between roughly $95,000 and $135,000 in
+      total compensation at a tech firm, less at a justice-tech vendor or a
+      research-focused agency. A mid-level researcher (three to seven years) lands
+      between $140,000 and $200,000 total comp at most product companies, with the
+      ceiling pushed up at firms that pay equity. A senior or staff researcher (seven
+      plus years) ranges from $200,000 to $320,000 total comp, with principal-level
+      compensation reaching higher inside FAANG-tier companies. The single biggest
+      compensation lever is whether your employer treats research as a product
+      function (well paid, in the room) or as a service function (less well paid,
+      brought in).
+    </p>
 
-    <h2>What translates, what doesn't</h2>
-    <p class="muted">Placeholder — honest mapping from criminology skills to UXR competencies.</p>
+    <p>
+      Justice-tech UXR pays less than consumer-tech UXR for the same level of work,
+      typically by twenty to thirty percent. The trade is access. Researchers who
+      want to study police footage workflows, parole reminders, or jail tablets will
+      not find that work at a generalist consumer-tech company; they will find it at
+      a justice-tech vendor, a foundation, a public-defender innovation lab, a
+      civic-tech nonprofit, or as an embedded researcher inside a government agency.
+      Remote work is widely available at senior levels and patchy at junior levels.
+      Most teams hire on a quarterly rhythm. Layoffs in 2023 and 2024 thinned junior
+      headcount across the industry and have not fully recovered as of 2026; the
+      bar to entry is meaningfully higher than it was three years ago.
+    </p>
 
-    <h2>A 6-month pivot plan</h2>
-    <p class="muted">Placeholder — month-by-month milestones.</p>
-
-    <PullQuote attribution="Composite placeholder, to be replaced">
-      The PhD got me in the room. What kept me there was learning to write a one-page research plan that a PM could act on.
+    <PullQuote attribution="The translation, in one line">
+      A criminology PhD gets you in the room. A short, decision-useful research plan
+      keeps you there.
     </PullQuote>
 
-    <h2>Vignettes</h2>
-    <p class="muted">Three to five placeholder vignettes from criminology PhDs now in UXR.</p>
+    <h2>What translates from a criminology PhD</h2>
+    <p>
+      A lot more than people assume, but not in the form a hiring panel wants to see
+      on day one. Five competencies translate cleanly.
+    </p>
+    <ul>
+      <li>
+        <strong>Sampling and recruiting.</strong> Knowing how to reach incarcerated,
+        supervised, or justice-involved populations is a rare skill in product
+        research. Tech recruiters rely on user panels that do not include any of
+        those people; a criminologist who can recruit a small, well-defined sample
+        in two weeks is worth real money.
+      </li>
+      <li>
+        <strong>Qualitative rigor.</strong> Semi-structured interviewing, coding,
+        and triangulation are core UXR methods, and most product researchers were
+        trained on six-week courses, not on six-year programs. The craft transfers
+        directly; the deliverable does not (more on that below).
+      </li>
+      <li>
+        <strong>Quantitative literacy.</strong> Survey design, regression,
+        psychometric thinking. A researcher who can read a vendor's evaluation
+        study and tell a PM what is and is not warranted is the kind of hire teams
+        keep.
+      </li>
+      <li>
+        <strong>Ethics and access.</strong> IRB experience, informed consent under
+        constrained conditions, working with sensitive data — these are
+        differentiators in any domain that touches health, finance, or justice.
+      </li>
+      <li>
+        <strong>Domain knowledge.</strong> Knowing how a court actually moves a
+        case, what a parole officer does in a day, how a jail intake works — this
+        is the moat. It is also the hardest skill for a consumer-tech researcher to
+        build, and the easiest one for a criminologist to teach.
+      </li>
+    </ul>
+
+    <h2>What does not translate</h2>
+    <ul>
+      <li>
+        <strong>The thirty-page report.</strong> UXR runs on one-page memos,
+        three-slide read-outs, and tagged clips. Long, qualified prose reads as
+        risk-averse and slow.
+      </li>
+      <li>
+        <strong>The literature review as a deliverable.</strong> Citing prior work
+        is fine, but a UXR deliverable is a recommendation with evidence, not a
+        synthesis with implications.
+      </li>
+      <li>
+        <strong>The conference cadence.</strong> Product cycles are measured in
+        weeks, not annual meetings. Researchers who can ship something useful in a
+        sprint are the researchers who get staffed on the next project.
+      </li>
+      <li>
+        <strong>The single-author identity.</strong> Almost all UXR is co-authored
+        with PMs, designers, and engineers. The deliverable is the team's; your
+        name is on the back.
+      </li>
+    </ul>
+
+    <h2>A six-month pivot plan</h2>
+    <p>
+      This plan assumes a criminology PhD or late-stage doctoral candidate with no
+      prior product experience. It is a floor, not a ceiling.
+    </p>
+    <ol>
+      <li>
+        <strong>Month 1 — Learn the form.</strong> Read three UXR primers cover to
+        cover. Subscribe to two practitioner newsletters. Pull six anonymized
+        research memos from <a href="https://dscout.com/people-nerds">dscout People
+        Nerds</a> and <a href="https://www.nngroup.com/articles/">NN/g</a> and
+        practice rewriting them in your own voice. The goal is fluency in the
+        deliverable, not credentials.
+      </li>
+      <li>
+        <strong>Month 2 — Translate your existing work.</strong> Pick one chapter
+        of your dissertation or one published paper and rewrite it as a one-page
+        research memo for a product audience. The findings stay; the framing
+        changes. Run the draft past one working UXR for a candid critique.
+      </li>
+      <li>
+        <strong>Month 3 — Do a real study, small.</strong> Recruit five
+        justice-involved users (or court staff, or victim advocates) for one
+        question you actually want answered. Run the interviews, code them, write
+        the memo, and post it openly. This is your portfolio centerpiece.
+      </li>
+      <li>
+        <strong>Month 4 — Build the network on purpose.</strong> Twenty short
+        coffees with working UXRs in justice-tech, civic-tech, and adjacent
+        product areas. Ask each one the same three questions: what does your week
+        look like, what did your last good hire look like, who else should I be
+        talking to.
+      </li>
+      <li>
+        <strong>Month 5 — Apply narrow, not wide.</strong> Twelve well-fit
+        applications beat a hundred shotgunned ones. Target embedded researcher
+        roles at justice-tech vendors, public-defender innovation labs, civic-tech
+        nonprofits, and the small group of consumer-tech firms with real
+        justice-adjacent surfaces (mapping, identity, payments).
+      </li>
+      <li>
+        <strong>Month 6 — Negotiate from the offer, not the application.</strong>
+        Levels matter more than titles; total compensation matters more than base.
+        A first-year researcher should expect to be measured on speed and clarity,
+        not depth. Your depth is the long game.
+      </li>
+    </ol>
+
+    <h2>Three vignettes</h2>
+    <Callout type="note" title="Placeholder vignettes">
+      The three vignettes below are clearly-labeled placeholder composites, not real
+      people. They are written to give a flavor of plausible pivot stories;
+      v1.1 will replace them with vetted interviews of named criminologists in UXR.
+    </Callout>
+
+    <div class="cards">
+      <Card eyebrow="Vignette · composite placeholder" title="From corrections research to a justice-tech vendor">
+        <p>
+          A criminologist with five years of work on prison telecommunications joined
+          a tablet vendor as their first in-house researcher. The first ninety days
+          were spent rewriting onboarding screens that the vendor's product team had
+          assumed were fine. The second quarter was an evaluation study with families
+          paying for tablet calls. By the end of year one, the researcher had a team
+          of two and a seat on the product council.
+        </p>
+      </Card>
+
+      <Card eyebrow="Vignette · composite placeholder" title="From policing scholarship to a mapping company">
+        <p>
+          A policing scholar with publications on predictive tools joined a consumer
+          mapping firm working on first-responder routing. The translation was the
+          hard part: a peer-reviewed evaluation became a one-pager with three
+          screenshots and a recommended cut. Two years in, the same researcher leads
+          the public-safety vertical and writes about half as much as before, with
+          twice the audience.
+        </p>
+      </Card>
+
+      <Card eyebrow="Vignette · composite placeholder" title="From courts research to a public-defender lab">
+        <p>
+          A late-stage doctoral candidate working on self-represented litigants
+          joined a public-defender innovation lab as a research lead. The work
+          looks the most like academia — long interviews, careful coding — and the
+          compensation looks the least like consumer tech. The trade is mission
+          fit, agency, and a publication record that still counts on a CV.
+        </p>
+      </Card>
+    </div>
 
     <h2>Candid downsides</h2>
-    <p class="muted">Placeholder — stakeholder politics, research theater, layoffs.</p>
+    <ul>
+      <li>
+        <strong>Research theater.</strong> Some product teams want research to
+        confirm a decision that has already been made. A researcher who refuses
+        this work loses influence quickly; one who agrees loses self-respect.
+        Most UXRs negotiate a line they will not cross and accept that they will
+        be tested on it.
+      </li>
+      <li>
+        <strong>Layoffs.</strong> The 2023 to 2024 cuts hit junior researchers
+        hardest. Job security at a justice-tech vendor is generally better than at
+        a consumer-tech firm, but salaries are lower and benefits are thinner.
+        Build a network before you need it.
+      </li>
+      <li>
+        <strong>Stakeholder politics.</strong> Researchers sit between PMs,
+        designers, and engineers, each of whom has a different theory of what your
+        job is. The skill is reading the room without losing the brief.
+      </li>
+      <li>
+        <strong>Slow access in justice settings.</strong> Recruiting incarcerated,
+        supervised, or court-staff participants takes weeks to months. UXR
+        timelines do not always allow for that. Researchers in this space learn to
+        run smaller, faster studies and to be honest about the limits.
+      </li>
+      <li>
+        <strong>Career math.</strong> A criminology PhD costs more years than a
+        master's-trained UXR spent earning. Some of those years pay back in
+        domain knowledge and access; some do not. We are not telling anyone this
+        pivot is easy, only that it is real.
+      </li>
+    </ul>
+
+    <Callout type="tip" title="Where to go next">
+      Browse the <a href="/bibliography">annotated bibliography</a> for the
+      research base, work through the <a href="/translator">skills
+      translator</a> to map your CV into UXR vocabulary, and take the
+      <a href="/quiz">"Is UXR right for you?" quiz</a> for a candid self-check.
+    </Callout>
+
+    <Button href="/cite" variant="primary">Cite this handbook →</Button>
 
     <SourcesBox items={[
-      { text: "Placeholder until Step 5" },
+      { text: "dscout People Nerds — the UX research community magazine", href: "https://dscout.com/people-nerds" },
+      { text: "Nielsen Norman Group — UX research articles", href: "https://www.nngroup.com/articles/" },
+      { text: "User Interviews — Research Industry Report 2024", href: "https://www.userinterviews.com/ux-research-industry-report" },
+      { text: "Levels.fyi — UXR compensation data", href: "https://www.levels.fyi/" },
+      { text: "ResearchOps Community — practitioner network", href: "https://researchops.community/" },
+      { text: "Pew Research — Internet & Tech research methods", href: "https://www.pewresearch.org/internet/" },
     ]} />
   </article>
+
+  <style>
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--s-4);
+      margin: var(--s-6) 0;
+    }
+  </style>
 </Base>

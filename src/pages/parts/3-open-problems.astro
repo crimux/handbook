@@ -2,40 +2,272 @@
 import Base from "@layouts/Base.astro";
 import PartHero from "@components/PartHero.astro";
 import SourcesBox from "@components/SourcesBox.astro";
+import PullQuote from "@components/PullQuote.astro";
 import Callout from "@components/Callout.astro";
+import Button from "@components/Button.astro";
 ---
-<Base title="Part 3 — Open problems" description="Prioritized list of understudied UXR questions in criminology and justice-tech.">
+<Base
+  title="Part 3 — What should be studied: open problems"
+  description="Eighteen understudied UXR questions in criminology and justice-tech — each with users, methods, feasibility, and seed citations into the bibliography."
+>
   <PartHero
     number="3"
     title="What should be studied: open problems"
-    dek="Fifteen to twenty-five understudied UXR questions in criminology and justice-tech — each with users, methods, feasibility, and seed citations."
+    dek="Eighteen understudied UXR questions in justice-tech. Each is sized for one researcher in one quarter, with seed citations and a feasibility note."
     wordCount="1,500"
   />
 
   <article class="container prose">
-    <Callout type="note" title="Draft status">
-      Outline only. Full list lands in Step 4. You'll be asked which five to feature at the top.
-    </Callout>
 
-    <h2>How problems were picked</h2>
-    <p class="muted">Placeholder — selection criteria, feasibility scoring, and seed-citation rules.</p>
-
-    <h2>The list (placeholders)</h2>
-    <ol>
-      <li>Problem 1 — short framing.</li>
-      <li>Problem 2 — short framing.</li>
-      <li>Problem 3 — short framing.</li>
-      <li>… up to ~20.</li>
-    </ol>
-
-    <h2>Contribute a problem</h2>
+    <h2>What this part is for</h2>
     <p>
-      A lightweight submission form lives at the bottom of this page in v1.0. For now,
-      open an issue on <a href="https://github.com/crimux/crimux/issues">GitHub</a>.
+      Part 2 mapped what criminology already knows about how people use justice-tech.
+      This part maps the holes. Each entry below is a UXR-shaped question that, in our
+      reading of the literature, has not been answered in a way a designer, a vendor, or
+      a procurement officer can actually use. The bar is the same bar we used for the
+      bibliography: a question only earns a slot if a determined researcher could move
+      it forward in a single quarter, with one user type, one method, and a defined
+      decision on the other side. If we could not write a feasibility note in two
+      sentences, we cut it.
     </p>
 
+    <p>
+      We did not try to be comprehensive. Eighteen is enough to cover the nine subject
+      areas at two questions each without padding. The order inside each cluster
+      reflects our own ranking of "if you only did one of these, do this one" —
+      readers should treat that order as a starting point, not a verdict.
+    </p>
+
+    <PullQuote attribution="The selection rule">
+      One user type, one method, one quarter, one decision. If we cannot describe all
+      four in two sentences, the question is not ready.
+    </PullQuote>
+
+    <h2>How to read an entry</h2>
+    <p>
+      Every problem below carries four labels: the user, a method that fits the
+      question (not the only method that could work), a feasibility score, and a seed
+      citation that points into the <a href="/bibliography">bibliography</a>. The
+      feasibility score is rough: <em>tractable</em> means a single researcher could
+      ship a credible study in a quarter, <em>moderate</em> means two quarters with
+      access negotiation, and <em>hard</em> means the access problem is most of the work.
+    </p>
+
+    <h2>Inmate tablets and in-cell technology</h2>
+
+    <h3>1 · The kiosk-to-tablet handoff for newly admitted people</h3>
+    <p>
+      Most jails introduce tablets and kiosks during the first seventy-two hours, when
+      a person is dealing with intake, withdrawal, and disorientation. The literature
+      shows tablets are used heavily once people are settled
+      (<a href="/bibliography#opencampus2023tablets">Open Campus 2023</a>), but the
+      onboarding moment itself is undocumented. A short field study of intake-period
+      tablet use would tell vendors which screens to redesign first.
+    </p>
+    <p class="meta"><strong>User:</strong> incarcerated · <strong>Method:</strong> observation · <strong>Feasibility:</strong> moderate · <strong>Seed:</strong> <a href="/bibliography#finkel2019tablets">Finkel 2019</a></p>
+
+    <h3>2 · The family payer experience</h3>
+    <p>
+      Tablet economics depend on family members loading funds from the outside, yet
+      the family-payer journey — finding the right kiosk, navigating fees, recovering
+      from failed transactions — has barely been studied as a UX object
+      (<a href="/bibliography#mckay2022carceral">McKay 2022</a>). A diary study with
+      ten paying families would surface friction that no in-facility study can see.
+    </p>
+    <p class="meta"><strong>User:</strong> families · <strong>Method:</strong> diary + interview · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#rabuy2015screening">Rabuy 2015</a></p>
+
+    <h2>Parole and probation check-in apps</h2>
+
+    <h3>3 · False-positive remediation in GPS supervision</h3>
+    <p>
+      GPS check-in apps generate alerts that are mostly noise; officers triage them in
+      seconds (<a href="/bibliography#armstrongfreeman2011gps">Armstrong &amp; Freeman 2011</a>).
+      The supervisee side of a false-positive — being called, accused, or violated for
+      a signal drop — has no published UX account. Interviews with twelve people who
+      have lived through one would yield a redesign brief on the spot.
+    </p>
+    <p class="meta"><strong>User:</strong> supervised · <strong>Method:</strong> interviews · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#grommon2023gps">Grommon 2023</a></p>
+
+    <h3>4 · App-mediated reminders and missed appointments</h3>
+    <p>
+      Reminder apps reduce failures-to-appear in field experiments
+      (<a href="/bibliography#chohlaswoodreminders2025">Chohlas-Wood 2025</a>), but the
+      mechanism — which message, when, on which surface — has not been disentangled.
+      A factorial usability test with parole clients would let an agency choose a
+      message template with evidence rather than instinct.
+    </p>
+    <p class="meta"><strong>User:</strong> supervised · <strong>Method:</strong> experiment · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#tayloraustraliaapp2024">Taylor 2024</a></p>
+
+    <h2>Body-worn cameras: the officer side</h2>
+
+    <h3>5 · The activation decision under load</h3>
+    <p>
+      Activation rates collapse in high-stress encounters
+      (<a href="/bibliography#huff2022activation">Huff 2022</a>;
+      <a href="/bibliography#lawrence2019activation">Lawrence 2019</a>). What no study
+      has done is co-design the activation control itself with officers — bigger
+      button, audible cue, automatic triggers from holster sensors — and test it on a
+      shift. The decision on the other side is a procurement spec.
+    </p>
+    <p class="meta"><strong>User:</strong> officers · <strong>Method:</strong> co-design + usability · <strong>Feasibility:</strong> moderate · <strong>Seed:</strong> <a href="/bibliography#ariel2016discretion">Ariel 2016</a></p>
+
+    <h3>6 · Footage review as a daily workflow</h3>
+    <p>
+      Departments accumulate hundreds of hours of footage per officer per month. How
+      supervisors actually triage it — what they watch, what they skip, what they
+      flag — is the bottleneck in every BWC program, and the literature is mostly
+      silent (<a href="/bibliography#myhillhohl2023officer">Myhill &amp; Hohl 2023</a>).
+      A think-aloud study of review sessions would map the cognitive load directly.
+    </p>
+    <p class="meta"><strong>User:</strong> officers / analysts · <strong>Method:</strong> think-aloud · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#lum2020campbellbwc">Lum 2020</a></p>
+
+    <h2>Predictive policing and risk-assessment tool use</h2>
+
+    <h3>7 · What officers ignore on the screen</h3>
+    <p>
+      Officers selectively use the parts of a predictive tool that match their priors
+      and ignore the rest (<a href="/bibliography#brayne2017surveillance">Brayne 2017</a>;
+      <a href="/bibliography#sandhu2020uberization">Sandhu &amp; Fussey 2020</a>). A
+      structured screen-recording study during ride-alongs would quantify which UI
+      elements get attention and which get bypassed — directly actionable for vendors
+      who keep adding features no one looks at.
+    </p>
+    <p class="meta"><strong>User:</strong> officers · <strong>Method:</strong> observation + log analysis · <strong>Feasibility:</strong> hard · <strong>Seed:</strong> <a href="/bibliography#mohler2015predpol">Mohler 2015</a></p>
+
+    <h3>8 · Risk-score legibility for the person being scored</h3>
+    <p>
+      Risk-assessment outputs are designed for judges and analysts, not for the
+      defendants whose lives they shape. A small usability study with defendants and
+      their attorneys would test whether the score, the factors, and the appeal path
+      are intelligible — a precondition for any due-process argument
+      (<a href="/bibliography#stevenson2018kentucky">Stevenson 2018</a>).
+    </p>
+    <p class="meta"><strong>User:</strong> supervised / attorneys · <strong>Method:</strong> usability · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#lumisaac2016predict">Lum &amp; Isaac 2016</a></p>
+
+    <h2>Court e-filing and self-represented litigants</h2>
+
+    <h3>9 · The mobile e-filing experience</h3>
+    <p>
+      State e-filing portals are still designed for desktop, yet self-represented
+      litigants increasingly file from a phone in a courthouse hallway
+      (<a href="/bibliography#sandefur2019legalneeds">Sandefur 2019</a>). A mobile-first
+      usability sweep across five state portals would generate a comparable redesign
+      brief for every court system in the country.
+    </p>
+    <p class="meta"><strong>User:</strong> general public · <strong>Method:</strong> comparative usability · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#ncsc2023efiling">NCSC 2023</a></p>
+
+    <h3>10 · Clerk-side workarounds</h3>
+    <p>
+      Clerks routinely build spreadsheets, sticky notes, and shadow systems around
+      e-filing platforms (<a href="/bibliography#18f2021cmecf">18F 2021</a>). A
+      contextual-inquiry study of three clerks' offices would surface the official
+      software's most expensive UX failures faster than any vendor audit, because the
+      workarounds are the failures, rendered visible.
+    </p>
+    <p class="meta"><strong>User:</strong> court staff · <strong>Method:</strong> contextual inquiry · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#ajmi2022covid">Ajmi 2022</a></p>
+
+    <h2>Victim notification</h2>
+
+    <h3>11 · Notification timing and trauma</h3>
+    <p>
+      VINE and equivalents notify victims of offender movements, but the timing — late
+      at night, during work, alongside other alerts — is rarely studied as a UX
+      variable (<a href="/bibliography#campbellsak2018notify">Campbell 2018</a>). A
+      diary study with twenty victims would yield a timing-and-channel policy rooted
+      in lived experience rather than vendor defaults.
+    </p>
+    <p class="meta"><strong>User:</strong> victims · <strong>Method:</strong> diary · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#irazola2015victims">Irazola 2015</a></p>
+
+    <h3>12 · Notification accuracy from the operator side</h3>
+    <p>
+      The operator UI that staff use to set up, edit, and cancel notifications is the
+      least-documented surface in the entire VINE ecosystem
+      (<a href="/bibliography#mcewinsavin2002">McEwin 2002</a>). A heuristic
+      walk-through with operators in two jurisdictions would surface error-prone
+      flows that show up downstream as missed or wrong notifications.
+    </p>
+    <p class="meta"><strong>User:</strong> court staff · <strong>Method:</strong> heuristic eval · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#campbellsak2023protocols">Campbell 2023</a></p>
+
+    <h2>Tip lines and anonymous reporting</h2>
+
+    <h3>13 · The composition step on a school tip line</h3>
+    <p>
+      School-safety tip lines accept hundreds of thousands of tips a year, but the UI
+      that prompts a student to write the first sentence has never been A/B tested in
+      the open literature (<a href="/bibliography#espelage2021tiplines">Espelage 2021</a>).
+      A field experiment varying prompt wording could move signal-to-noise meaningfully
+      with no new investment.
+    </p>
+    <p class="meta"><strong>User:</strong> general public · <strong>Method:</strong> experiment · <strong>Feasibility:</strong> moderate · <strong>Seed:</strong> <a href="/bibliography#payneeliott2011safe2tell">Payne &amp; Elliott 2011</a></p>
+
+    <h3>14 · Tip-room triage as a craft</h3>
+    <p>
+      Tip-line operators apply tacit rules to escalate or dismiss reports. Those rules
+      are not written down (<a href="/bibliography#hsieh2022saysomething">Hsieh 2022</a>).
+      A short ethnography of one tip room would let a designer build the triage UI
+      around the work that is already happening, instead of against it.
+    </p>
+    <p class="meta"><strong>User:</strong> analysts · <strong>Method:</strong> ethnography · <strong>Feasibility:</strong> hard · <strong>Seed:</strong> <a href="/bibliography#thulin2025reporting">Thulin 2025</a></p>
+
+    <h2>Digital-evidence tools</h2>
+
+    <h3>15 · The disclosure-portal experience for defense</h3>
+    <p>
+      Prosecutor-built disclosure portals are designed around the prosecutor's
+      workflow; the defense side is an afterthought
+      (<a href="/bibliography#miller2022prosecutors">Miller 2022</a>). A usability
+      study with public defenders would surface specific failure points — search,
+      previewing, bulk download — that have measurable effects on case prep time.
+    </p>
+    <p class="meta"><strong>User:</strong> attorneys · <strong>Method:</strong> usability · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#daye2023nij">Daye 2023</a></p>
+
+    <h3>16 · Chain-of-custody friction in cross-org handoffs</h3>
+    <p>
+      Most digital-evidence errors live at the seams: lab to officer, officer to
+      prosecutor, prosecutor to court (<a href="/bibliography#hitchcock2016triage">Hitchcock 2016</a>).
+      A service-blueprint study following ten cases end-to-end would map the points
+      where custody metadata gets re-typed, lost, or silently overwritten.
+    </p>
+    <p class="meta"><strong>User:</strong> analysts / attorneys · <strong>Method:</strong> service blueprint · <strong>Feasibility:</strong> moderate · <strong>Seed:</strong> <a href="/bibliography#humphriesmobile2021">Humphries 2021</a></p>
+
+    <h2>Jail visitation platforms</h2>
+
+    <h3>17 · The call itself, not the call frequency</h3>
+    <p>
+      Video-visitation research is rich on whether and how often visits happen
+      (<a href="/bibliography#vera2024videovisits">Vera 2024</a>), and thin on what
+      happens inside a call: dropped audio, frozen video, lost minutes, awkward
+      handoffs between children and incarcerated parents. A small in-home observation
+      study with families would put numbers on quality where there are only volume
+      counts today.
+    </p>
+    <p class="meta"><strong>User:</strong> families · <strong>Method:</strong> observation · <strong>Feasibility:</strong> tractable · <strong>Seed:</strong> <a href="/bibliography#poehlmann2020videochat">Poehlmann-Tynan 2020</a></p>
+
+    <h3>18 · The remote-visitation choice for staff</h3>
+    <p>
+      Corrections officers gatekeep the room, the schedule, and the device that hosts
+      a visit. Their workflow has not been the subject of a published UX study
+      (<a href="/bibliography#tartaro2017modality">Tartaro 2017</a>). A shift-along
+      observation in one facility would surface staffing-pattern bottlenecks that
+      determine whether the policy promise of "more visits" is real on a Tuesday.
+    </p>
+    <p class="meta"><strong>User:</strong> officers · <strong>Method:</strong> observation · <strong>Feasibility:</strong> moderate · <strong>Seed:</strong> <a href="/bibliography#tasca2025novisit">Tasca 2025</a></p>
+
+    <Callout type="tip" title="Propose a problem">
+      A lightweight submission form lives at the bottom of this page in v1.0. For
+      now, open an issue on <a href="https://github.com/crimux/crimux/issues">GitHub</a>
+      describing the user, method, feasibility, and one seed citation. We will
+      merge problems that earn the same bar the list above earns.
+    </Callout>
+
+    <Button href="/parts/4-careers" variant="primary">Continue to Part 4 — Careers →</Button>
+
     <SourcesBox items={[
-      { text: "Placeholder until Step 4" },
+      { text: "Bibliography — annotated entries linked from each problem above", href: "/bibliography" },
+      { text: "National Institute of Justice — research priorities", href: "https://nij.ojp.gov/" },
+      { text: "Center for Justice Innovation — applied research portfolio", href: "https://www.innovatingjustice.org/" },
+      { text: "Open Research Foundation — UXR field studies", href: "https://www.openresearch.foundation/" },
+      { text: "Sandefur, R. L. (2019). Access to what? Daedalus 148(1)", href: "https://www.amacad.org/publication/access-what" },
     ]} />
   </article>
 </Base>
