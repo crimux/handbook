@@ -20,7 +20,7 @@ A ~6,000-word, four-part handbook that translates user research (UXR) for crimin
 ## Tech
 
 - **Stack:** [Astro 4](https://astro.build) (static-site generator) with [`@astrojs/sitemap`].
-- **Hosting:** Cloudflare Pages, deployed from `main` of [github.com/crimux/crimux](https://github.com/crimux/crimux).
+- **Hosting:** Cloudflare Pages, deployed from `main` of [github.com/crimux/handbook](https://github.com/crimux/handbook).
 - **Domain:** [crimux.com](https://crimux.com) — see `DEPLOY.md` for the click-path.
 - **Fonts:** Inter + Fraunces, self-hosted via `@fontsource/*`. No external font CDN.
 - **Analytics:** Cloudflare Web Analytics only (placeholder in `src/layouts/Base.astro`).
