@@ -113,14 +113,20 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
     display: flex;
     flex-wrap: wrap;
     gap: var(--s-4);
+    align-items: center;
   }
+  .navlist li { display: inline-flex; align-items: center; }
   .navlist a {
     text-decoration: none;
     color: var(--ink-2);
     font-size: 0.95rem;
     font-weight: 500;
-    padding: 0.25rem 0.1rem;
+    line-height: 1.2;
+    padding: 0.3rem 0.1rem;
+    /* Reserve space for the underline so active/inactive baselines match. */
     border-bottom: 2px solid transparent;
+    display: inline-block;
+    white-space: nowrap;
   }
   .navlist a:hover { color: var(--brand); }
   .navlist a[aria-current="page"] {
@@ -128,8 +134,31 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
     border-bottom-color: var(--brand);
   }
   @media (max-width: 720px) {
-    .row { flex-direction: column; align-items: flex-start; gap: var(--s-3); }
-    .navlist { font-size: 0.9rem; gap: var(--s-3); }
-    .consortium-strip .row { padding-block: 0.45rem; }
+    .row { flex-direction: column; align-items: stretch; gap: var(--s-3); }
+    .brand { align-self: flex-start; }
+    /* Single-row, edge-to-edge horizontal scroll on phones so every item
+       sits on one baseline, regardless of active state. */
+    nav[aria-label="Primary"] {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    nav[aria-label="Primary"]::-webkit-scrollbar { display: none; }
+    .navlist {
+      flex-wrap: nowrap;
+      font-size: 0.95rem;
+      gap: var(--s-4);
+      padding-bottom: 2px;
+    }
+    .consortium-strip .row {
+      flex-direction: row;
+      align-items: center;
+      padding-block: 0.45rem;
+      gap: var(--s-3);
+      font-size: 0.78rem;
+    }
+    .consortium-link { flex: 1 1 auto; min-width: 0; }
+    .consortium-cta { flex: 0 0 auto; white-space: nowrap; }
   }
 </style>

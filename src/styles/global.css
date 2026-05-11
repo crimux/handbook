@@ -107,6 +107,10 @@ th {
   margin-inline: auto;
   padding-inline: var(--s-5);
 }
+/* Phones: tighter side padding so text reaches edge-to-edge. */
+@media (max-width: 720px) {
+  .container { padding-inline: var(--s-3); }
+}
 .prose { max-width: var(--measure); }
 .stack > * + * { margin-top: var(--s-5); }
 .cluster { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; }
