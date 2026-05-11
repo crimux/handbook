@@ -1,6 +1,7 @@
 ---
 import Base from "@layouts/Base.astro";
 import Tag from "@components/Tag.astro";
+import Callout from "@components/Callout.astro";
 import bibliography from "@data/bibliography.json";
 
 const methods = Array.from(new Set(bibliography.map((e: any) => e.method))).sort();
@@ -9,6 +10,24 @@ const years = Array.from(new Set(bibliography.map((e: any) => e.year))).sort((a:
 const count = bibliography.length;
 const target = 75;
 const progress = count < target ? `${count} of a planned ${target}` : `${count}`;
+
+// Compute thin subject areas for the limitations callout.
+// Thin = subject areas tied at the minimum entry count.
+const subjectCounts: Record<string, number> = {};
+for (const e of bibliography as any[]) {
+  subjectCounts[e.subject_area] = (subjectCounts[e.subject_area] || 0) + 1;
+}
+const sorted = Object.entries(subjectCounts).sort((a, b) => a[1] - b[1]);
+const minN = sorted.length ? sorted[0][1] : 0;
+const thinAreas = sorted.filter(([, n]) => n === minN).map(([k]) => k.replace(/-/g, " "));
+function joinList(items: string[]): string {
+  if (items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+}
+const thinAreaLabel = joinList(thinAreas);
+const thinAreaCount = minN;
 ---
 <Base title="Bibliography" description={`A filterable, exportable bibliography of ${count} annotated justice-tech UXR studies (growing toward ~${target}).`}>
   <header class="container hero">
@@ -18,6 +37,15 @@ const progress = count < target ? `${count} of a planned ${target}` : `${count}`
   </header>
 
   <section class="container">
+    <Callout type="note" title="About this corpus — and its limits">
+      <p>
+        Every entry here earned its slot. The bar is a non-obvious, eighty-word annotation that tells a UX researcher something they could not learn from the title or one-sentence abstract. We would rather ship fewer studies than pad the count.
+      </p>
+      <p>
+        Coverage is uneven on purpose. The thinnest subject areas right now sit at <strong>{thinAreaCount} entries</strong> each — <strong>{thinAreaLabel}</strong> — not because they are unimportant, but because the rigorous, user-facing literature in those spaces is genuinely sparse. We will keep looking, and we welcome pointers to studies we have missed.
+      </p>
+    </Callout>
+
     <form class="filters" id="bib-filters" aria-label="Bibliography filters">
       <label>
         <span>User type</span>

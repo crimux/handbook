@@ -26,19 +26,6 @@
     "why_uxr": "Establishes the baseline economic model of prison tablets against which any evaluation of inmate-facing UX must be understood: the user is the product, not the customer."
   },
   {
-    "id": "pli2019freetablets",
-    "citation": "Bertram, W., & Wagner, P. (2019). How to spot the hidden costs in a 'no-cost' tablet contract. Prison Policy Initiative.",
-    "doi": "",
-    "oa_url": "https://www.prisonpolicy.org/blog/2018/07/24/free-tablets-hidden-costs/",
-    "year": 2019,
-    "method": "desk-research",
-    "user_type": "families",
-    "difficulty": "foundational",
-    "subject_area": "inmate-tablets",
-    "annotation": "Short briefing explaining how revenue contracts work in prison tablet programs. Demonstrates that tablet providers profit primarily by charging incarcerated people and their families for services (e-messaging, media, phone calls) at above-market rates, while the facility pays nothing upfront. Identifies the key design constraint for UXR: tablet interfaces are built to maximize chargeable interactions, not to meet user needs. Most relevant for researchers trying to explain why 'free' technology consistently produces poor user experiences.",
-    "why_uxr": "Explains the economic logic driving poor inmate-facing UX, giving UXR practitioners an essential framing for why user-centered design is structurally excluded from tablet procurement."
-  },
-  {
     "id": "owens2022emapps",
     "citation": "Owens, K., Alem, A., Roesner, F., & Kohno, T. (2022). Electronic monitoring smartphone apps: An analysis of risks from technical, human-centered, and legal perspectives. 31st USENIX Security Symposium.",
     "doi": "",
@@ -62,7 +49,7 @@
     "difficulty": "foundational",
     "subject_area": "parole-apps",
     "annotation": "NIJ-aligned brief cataloging current smartphone supervision apps (Uptrust, Tracktech, BI SmartLINK, Corrisoft, Shadowtrack) and their functional capabilities: GPS geofencing, biometric check-in, two-way messaging, cognitive-behavioral prompts, resource referrals. Notes that apps can reduce officer travel time and caseload pressure but raises concerns about digital-divide barriers (data plans, device obsolescence, literacy) and the risk that enhanced surveillance leads to more technical violations. Identifies officer workload and supervised-person compliance as dual design priorities.",
-    "why_uxr": "Gives UXR practitioners a landscape overview of current app features and the key tension between surveillance fidelity and rehabilitative function — useful for competitive analysis or requirements scoping."
+    "why_uxr": "Gives UXR practitioners a current vendor-feature inventory for competitive analysis, and frames the design tension every supervision app must resolve: officer surveillance fidelity versus supervised-person rehabilitative function."
   },
   {
     "id": "grommon2023gps",
@@ -153,7 +140,7 @@
     "difficulty": "advanced",
     "subject_area": "predictive-policing",
     "annotation": "Uses the staggered rollout of ShotSpotter across Chicago police districts to estimate the effect on 911 call response times. Finds that ShotSpotter generates approximately 70 additional officer dispatches per day in each district, consuming roughly 75 hours of officer investigation time. Each ShotSpotter investigation takes about 20 minutes, and response times to 911 calls rise significantly in resource-constrained periods — more arrests of perpetrators are missed as a result. First rigorous causal study of ShotSpotter's effect on officer time allocation.",
-    "why_uxr": "Quantifies the time-cost of automated alert systems on officer workflows — a direct input for UXR studies examining alert design, triage prioritization, and officer cognitive load under competing demands."
+    "why_uxr": "Translates an automated alert system into officer time-budget terms (70 dispatches × 20 min = 23 hrs/day per district), which is the concrete cost a UXR study of alert triage, prioritization, or batching has to be measured against."
   },
   {
     "id": "18f2021cmecf",
@@ -206,19 +193,6 @@
     "subject_area": "victim-notification",
     "annotation": "NIJ issue brief from the national SAVIN evaluation reporting on 1,246 service providers and 1,355 victims. Finds that 74% of service providers used automated victim notification for registration or referral, but only 23% of victims were registered. Of registered victims, 59% first heard about AVN from a service provider — confirming the critical gatekeeper role. Unregistered victims who were aware of AVN cited privacy or security concerns as the primary barrier. Victims who received manual notification alongside AVN were 14 times more likely to register.",
     "why_uxr": "Quantifies the awareness and registration funnel for victim notification, showing where user drop-off occurs — a classic conversion-funnel analysis applicable directly to AVN interface redesign."
-  },
-  {
-    "id": "irazola2015savin",
-    "citation": "Irazola, S., Williamson, E., Niedzwiecki, E., & Muhlhausen, D. B. (2015). Keeping victims informed: Service providers' and victims' experiences using automated notification systems. Violence and Victims, 30(3), 430–446.",
-    "doi": "",
-    "oa_url": "",
-    "year": 2015,
-    "method": "survey",
-    "user_type": "victims",
-    "difficulty": "foundational",
-    "subject_area": "victim-notification",
-    "annotation": "Survey study of 1,246 victim service providers and 723 crime victims on awareness, registration, and use of automated victim notification systems across 47 U.S. states. Finds that only 23% of victim respondents were registered for AVN services; 75% of non-registered victims were unaware any system existed in their jurisdiction. Service providers and registered victims report high satisfaction but also challenges with accuracy (incorrect or delayed notifications) and difficulty registering. Service providers offering manual notification alongside AVN were twice as likely to use the system effectively.",
-    "why_uxr": "Provides the largest empirical study of victim-user experience with notification systems, including specific registration and usability barriers — the essential benchmarking paper for VINE/SAVIN redesign research."
   },
   {
     "id": "cjtec2024avn",
