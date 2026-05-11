@@ -2,15 +2,15 @@
 import Base from "@layouts/Base.astro";
 import quiz from "@data/quiz.json";
 ---
-<Base title="Quiz — Is UXR right for you?" description="An 18-question self-assessment for criminologists considering UXR. Composite score, sub-dimensions, personalized next steps, and a share-card.">
+<Base title="Quiz — Is UX research right for you?" description="An 18-question self-assessment for criminologists considering UX research. Composite score, sub-dimensions, personalized next steps, and a share-card.">
   <header class="container hero">
     <p class="eyebrow">Self-assessment</p>
-    <h1>Is UXR right for you?</h1>
+    <h1>Is UX research right for you?</h1>
     <p class="lead">{quiz.questions.length} questions across {quiz.dimensions.length} sub-dimensions. About four minutes. Your answers stay in your browser.</p>
   </header>
 
   <section class="container">
-    <form id="quiz-form" aria-label="UXR fit quiz">
+    <form id="quiz-form" aria-label="UX research fit quiz">
       <ol class="qlist">
         {quiz.questions.map((q: any, i: number) => (
           <li class="q" data-dim={q.dim} data-id={q.id}>
@@ -108,7 +108,7 @@ import quiz from "@data/quiz.json";
       `Run the <a href="/translator">Skills Translator</a> on two of your strongest experiences.`,
     ].map((s) => `<li>${s}</li>`).join("");
 
-    const text = `I scored ${composite}/100 on the Criminologist's UXR-fit quiz — band: ${matchedBand.label}. crimux.com/quiz`;
+    const text = `I scored ${composite}/100 on the Criminologist's UX-research fit quiz — band: ${matchedBand.label}. crimux.com/quiz`;
     shareLi.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://crimux.com/quiz")}`;
     copyBtn.onclick = async () => {
       try { await navigator.clipboard.writeText(text); copyBtn.textContent = "Copied"; setTimeout(() => copyBtn.textContent = "Copy result text", 1500); } catch {}
@@ -116,7 +116,7 @@ import quiz from "@data/quiz.json";
 
     card.innerHTML = `
       <div class="sc-inner">
-        <p class="sc-eyebrow">The Criminologist's Guide to UXR</p>
+        <p class="sc-eyebrow">The Criminologist's Guide to UX</p>
         <p class="sc-score">${composite}<span>/100</span></p>
         <p class="sc-band">${matchedBand.label}</p>
         <p class="sc-url">crimux.com/quiz</p>
@@ -135,23 +135,24 @@ import quiz from "@data/quiz.json";
   .prompt { margin: 0 0 var(--s-3); }
   .scale { border: 0; padding: 0; margin: 0; display: flex; gap: var(--s-3); }
   .scale label { display: inline-flex; flex-direction: column; align-items: center; gap: 0.25rem; cursor: pointer; font-size: 0.9rem; color: var(--ink-2); }
-  .scale input { accent-color: var(--indigo); transform: scale(1.2); }
+  .scale input { accent-color: var(--brand); transform: scale(1.2); }
   .scale-labels { display: flex; justify-content: space-between; margin: var(--s-2) 0 0; font-size: 0.8rem; max-width: 320px; }
   .visually-hidden { position: absolute !important; clip: rect(1px,1px,1px,1px); width: 1px; height: 1px; overflow: hidden; }
   .actions { display: flex; gap: var(--s-3); margin-bottom: var(--s-6); }
   .btn-primary, .btn-ghost { font: inherit; padding: 0.75rem 1.2rem; border-radius: var(--radius); border: 1px solid transparent; cursor: pointer; }
-  .btn-primary { background: var(--indigo); color: #fff; }
+  .btn-primary { background: var(--brand); color: var(--ink); }
+  .btn-primary:hover { background: var(--brand-2); color: #fff; }
   .btn-ghost { background: var(--paper); color: var(--ink); border-color: var(--rule); }
   #result { padding: var(--s-6) 0; border-top: 1px solid var(--rule); margin-top: var(--s-6); }
   .dim { background: var(--paper-2); padding: var(--s-4); border-radius: var(--radius); }
   .dim-label { margin: 0; font-weight: 600; }
   .bar { background: var(--paper-3); height: 8px; border-radius: 999px; overflow: hidden; margin: 0.5rem 0; }
-  .bar span { display: block; height: 100%; background: var(--indigo); }
+  .bar span { display: block; height: 100%; background: var(--brand); }
   .dim-pct { margin: 0; font-size: 0.85rem; color: var(--ink-3); }
-  .share-card { margin-top: var(--s-3); display: grid; place-items: center; aspect-ratio: 1200 / 630; background: linear-gradient(135deg, var(--indigo) 0%, #0d1024 100%); color: #fff; border-radius: var(--radius-lg); padding: var(--s-5); }
-  .sc-eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; opacity: 0.8; margin: 0; }
+  .share-card { margin-top: var(--s-3); display: grid; place-items: center; aspect-ratio: 1200 / 630; background: linear-gradient(135deg, var(--brand) 0%, var(--ink) 100%); color: #fff; border-radius: var(--radius-lg); padding: var(--s-5); }
+  .sc-eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; opacity: 0.85; margin: 0; color: #fff; }
   .sc-score { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem); margin: 0.5rem 0 0; line-height: 1; }
-  .sc-score span { font-size: 0.4em; opacity: 0.6; }
-  .sc-band { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); margin: 0.25rem 0 0; color: var(--amber); }
-  .sc-url { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
+  .sc-score span { font-size: 0.4em; opacity: 0.7; }
+  .sc-band { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); margin: 0.25rem 0 0; color: #fff; }
+  .sc-url { margin-top: 1rem; opacity: 0.8; font-size: 0.9rem; }
 </style>

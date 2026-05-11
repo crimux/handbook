@@ -2,6 +2,17 @@
 import { site, nav } from "@data/site";
 const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
+<div class="consortium-strip">
+  <div class="container row">
+    <a class="consortium-link" href={site.consortium.url} rel="noopener">
+      <span class="dot" aria-hidden="true"></span>
+      <span>A service of the <strong>{site.consortium.name}</strong></span>
+    </a>
+    <a class="consortium-cta" href={site.consortium.parentUrl} rel="noopener">
+      Visit {site.consortium.parentName} →
+    </a>
+  </div>
+</div>
 <header class="site-header">
   <div class="container row">
     <a class="brand" href="/" aria-label={`${site.name} home`}>
@@ -24,6 +35,37 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 </header>
 
 <style>
+  .consortium-strip {
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 0.82rem;
+  }
+  .consortium-strip .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    padding-block: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .consortium-link,
+  .consortium-cta {
+    color: var(--paper);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .consortium-link strong { font-weight: 600; }
+  .consortium-link:hover,
+  .consortium-cta:hover { color: var(--brand); }
+  .consortium-link .dot {
+    width: 8px; height: 8px; border-radius: 999px;
+    background: var(--brand);
+    display: inline-block;
+  }
+  .consortium-cta { font-weight: 500; }
+
   .site-header {
     position: sticky;
     top: 0;
@@ -52,8 +94,8 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
     height: 28px;
     display: inline-grid;
     place-items: center;
-    background: var(--indigo);
-    color: #fff;
+    background: var(--brand);
+    color: var(--ink);
     font-family: var(--font-display);
     font-weight: 700;
     border-radius: 8px;
@@ -80,13 +122,14 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
     padding: 0.25rem 0.1rem;
     border-bottom: 2px solid transparent;
   }
-  .navlist a:hover { color: var(--indigo); }
+  .navlist a:hover { color: var(--brand); }
   .navlist a[aria-current="page"] {
     color: var(--ink);
-    border-bottom-color: var(--indigo);
+    border-bottom-color: var(--brand);
   }
   @media (max-width: 720px) {
     .row { flex-direction: column; align-items: flex-start; gap: var(--s-3); }
     .navlist { font-size: 0.9rem; gap: var(--s-3); }
+    .consortium-strip .row { padding-block: 0.45rem; }
   }
 </style>

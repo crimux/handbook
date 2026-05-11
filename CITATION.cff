@@ -1,27 +1,29 @@
 cff-version: 1.2.0
 message: "If you use this handbook, please cite it as below."
 type: book
-title: "The Criminologist's Guide to User Research of Apps and Tech"
+title: "The Criminologist's Guide to User Experience: Making Criminal Justice Apps Work Better for the People Who Use Them"
 abstract: >
-  An open-access handbook that translates user research (UXR) for criminologists,
-  with an annotated bibliography of justice-tech UX studies and interactive tools
-  for self-assessment and skills translation.
+  An open-access handbook, published by the CrimRxiv Consortium, that translates
+  user-experience (UX) research for criminologists, with an annotated bibliography
+  of UX studies in criminal justice technology and interactive tools for
+  self-assessment and skills translation.
 authors:
   - family-names: Abrahams
     given-names: Tara
   - family-names: Jacques
     given-names: Scott
     orcid: "https://orcid.org/0000-0000-0000-0000"
-version: "0.1.0"
+version: "0.2.0"
 date-released: "2026-05-11"
 license: CC-BY-4.0
 url: "https://crimux.com"
 repository-code: "https://github.com/crimux/handbook"
 doi: "10.5281/zenodo.PENDING"
 keywords:
-  - user research
-  - UXR
+  - user experience
+  - UX research
   - criminology
   - criminal justice
   - open access
-  - justice technology
+  - criminal justice technology
+  - CrimRxiv Consortium

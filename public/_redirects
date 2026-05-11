@@ -1,3 +1,6 @@
 # Cloudflare Pages redirects
 # Apex is canonical; www → apex is handled in Cloudflare DNS/Pages custom domain settings.
-# Add SPA-style fallbacks here if needed.
+
+# Title change 2026-05-11: "UXR" abbreviated as "UX" in URLs.
+/parts/1-what-is-uxr        /parts/1-what-is-ux        301
+/parts/1-what-is-uxr/       /parts/1-what-is-ux/       301

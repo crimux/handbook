@@ -36,7 +36,7 @@
     "difficulty": "foundational",
     "subject_area": "parole-apps",
     "annotation": "Analyzes 16 Android electronic-monitoring apps used in parole, probation, and pretrial supervision via static and dynamic technical analysis, qualitative coding of 257 Google Play user reviews, and privacy-policy analysis. Finds 104 of 165 negative reviews documented malfunctions: failed check-ins, facial-recognition errors, location misfires, and alerts at work or church. Twenty-three reviews explicitly cited risk of parole revocation from app failure. Twelve apps contacted ad-tracking third parties. Three apps had no privacy policy.",
-    "why_uxr": "Provides direct user-reported experience data (app malfunction to arrest risk) and technical evidence of surveillance overreach — exactly what a UXR practitioner needs to justify a trauma-informed design audit."
+    "why_uxr": "Provides direct user-reported experience data (app malfunction to arrest risk) and technical evidence of surveillance overreach — exactly what a UX researcher needs to justify a trauma-informed design audit."
   },
   {
     "id": "cjtec2023supervisionapps",
@@ -49,7 +49,7 @@
     "difficulty": "foundational",
     "subject_area": "parole-apps",
     "annotation": "NIJ-aligned brief cataloging current smartphone supervision apps (Uptrust, Tracktech, BI SmartLINK, Corrisoft, Shadowtrack) and their functional capabilities: GPS geofencing, biometric check-in, two-way messaging, cognitive-behavioral prompts, resource referrals. Notes that apps can reduce officer travel time and caseload pressure but raises concerns about digital-divide barriers (data plans, device obsolescence, literacy) and the risk that enhanced surveillance leads to more technical violations. Identifies officer workload and supervised-person compliance as dual design priorities.",
-    "why_uxr": "Gives UXR practitioners a current vendor-feature inventory for competitive analysis, and frames the design tension every supervision app must resolve: officer surveillance fidelity versus supervised-person rehabilitative function."
+    "why_uxr": "Gives UX researchers a current vendor-feature inventory for competitive analysis, and frames the design tension every supervision app must resolve: officer surveillance fidelity versus supervised-person rehabilitative function."
   },
   {
     "id": "grommon2023gps",
@@ -88,7 +88,7 @@
     "difficulty": "foundational",
     "subject_area": "bwc",
     "annotation": "Pre/post survey design across three western U.S. police departments (n ≈ 250 officers total) between 2013 and 2015. Finds that officer perceptions of BWCs vary substantially by department context and activation policy. Officers who had worn cameras were more likely to report BWCs as helpful in their most recent encounter. Phoenix officers showed higher resistance and more concern about reduced discretion than Tempe officers. Post-deployment, officers maintained generally positive views but surfaced new concerns about peer surveillance and reduced initiative.",
-    "why_uxr": "Provides longitudinal evidence on how officer perceptions shift after actual camera use — critical for UXR practitioners designing post-deployment evaluation instruments."
+    "why_uxr": "Provides longitudinal evidence on how officer perceptions shift after actual camera use — critical for UX researchers designing post-deployment evaluation instruments."
   },
   {
     "id": "lum2020campbellbwc",
@@ -101,7 +101,7 @@
     "difficulty": "foundational",
     "subject_area": "bwc",
     "annotation": "Campbell Collaboration systematic review of 30 experimental and quasi-experimental evaluations of BWC effects on officer and citizen behavior. Finds a statistically significant 16.6% reduction in citizen complaints (95% CI -30.0 to -0.7) but no consistent effect on use of force. Moderator analyses show agencies that highly restrict officer discretion in activating cameras may see greater force reductions. Addresses officer self-initiated activity, dispatched calls, and assaults on officers — all null or inconsistent.",
-    "why_uxr": "Provides the most rigorous evidence base on behavioral effects and the role of activation-policy design — directly useful for any UXR study examining BWC policy compliance and officer discretion."
+    "why_uxr": "Provides the most rigorous evidence base on behavioral effects and the role of activation-policy design — directly useful for any UX research study examining BWC policy compliance and officer discretion."
   },
   {
     "id": "stevenson2018kentucky",
@@ -114,7 +114,7 @@
     "difficulty": "advanced",
     "subject_area": "predictive-policing",
     "annotation": "Analyzes over one million Kentucky criminal cases to evaluate how judges actually used a mandatory pretrial risk assessment after 2011 reform. Finds that if judges had followed tool recommendations, low/moderate risk release rates would have risen by 37 percentage points; in reality, they rose only 4 points. The gap between algorithmic recommendation and judicial behavior reveals systematic override patterns. The median judge released only 37% of low-risk defendants without monetary bail — well below the tool's presumptive recommendation. Documents tool-use divergence at scale.",
-    "why_uxr": "Documents empirically the gap between what a risk-assessment tool recommends and what decision-makers actually do — the foundational human-override finding any RAT UXR study must account for."
+    "why_uxr": "Documents empirically the gap between what a risk-assessment tool recommends and what decision-makers actually do — the foundational human-override finding any RAT UX research study must account for."
   },
   {
     "id": "myhillhohl2023officer",
@@ -127,7 +127,7 @@
     "difficulty": "advanced",
     "subject_area": "predictive-policing",
     "annotation": "Quantitative analysis of 3,079 DASH (Domestic Abuse, Stalking and Harassment) risk-assessment records completed by officers in one English police force, plus qualitative field observations and interviews. Finds that 17% of variance in DASH scores is explained by officer-level characteristics rather than victim characteristics — an 'officer effect' larger than typically found in survey-interviewer research. Officers modify questions, skip items, and override victim responses. Field observations document officers deciding not to administer the DASH contrary to policy.",
-    "why_uxr": "Demonstrates that who administers a risk tool shapes its outputs as much as who is being assessed — a critical finding for UXR studies examining tool fidelity, training design, and interface guidance."
+    "why_uxr": "Demonstrates that who administers a risk tool shapes its outputs as much as who is being assessed — a critical finding for UX research studies examining tool fidelity, training design, and interface guidance."
   },
   {
     "id": "topper2024shotspotter",
@@ -140,7 +140,7 @@
     "difficulty": "advanced",
     "subject_area": "predictive-policing",
     "annotation": "Uses the staggered rollout of ShotSpotter across Chicago police districts to estimate the effect on 911 call response times. Finds that ShotSpotter generates approximately 70 additional officer dispatches per day in each district, consuming roughly 75 hours of officer investigation time. Each ShotSpotter investigation takes about 20 minutes, and response times to 911 calls rise significantly in resource-constrained periods — more arrests of perpetrators are missed as a result. First rigorous causal study of ShotSpotter's effect on officer time allocation.",
-    "why_uxr": "Translates an automated alert system into officer time-budget terms (70 dispatches × 20 min = 23 hrs/day per district), which is the concrete cost a UXR study of alert triage, prioritization, or batching has to be measured against."
+    "why_uxr": "Translates an automated alert system into officer time-budget terms (70 dispatches × 20 min = 23 hrs/day per district), which is the concrete cost a UX research study of alert triage, prioritization, or batching has to be measured against."
   },
   {
     "id": "18f2021cmecf",
@@ -153,7 +153,7 @@
     "difficulty": "foundational",
     "subject_area": "e-filing",
     "annotation": "Eleven-week UX discovery research engagement by the U.S. General Services Administration's 18F team, covering 100+ participants across 77+ sessions with judges, clerks, chambers staff, attorneys, and IT staff in all three federal court types. Documents application crashes, sluggish response times, repetitive-clicking workflows, inaccessible tasks, and an out-of-date visual appearance that erodes user trust. The docketing workflow, judicial calendaring, and report generation are identified as the highest-priority pain points.",
-    "why_uxr": "The only comprehensive, human-centered design evaluation of CM/ECF by an independent government team — provides a directly usable pain-point taxonomy and research methods for federal court UXR."
+    "why_uxr": "The only comprehensive, human-centered design evaluation of CM/ECF by an independent government team — provides a directly usable pain-point taxonomy and research methods for federal court UX research."
   },
   {
     "id": "ncsc2023efiling",
@@ -166,7 +166,7 @@
     "difficulty": "foundational",
     "subject_area": "e-filing",
     "annotation": "Surveys e-filing access across all 50 U.S. state court systems. Finds that self-represented litigants are prohibited from e-filing in eight states. Many courts cannot waive fees online, making filing inaccessible for low-income users. E-filing systems lack translation support for non-English speakers. Screen-reader compatibility is missing in most states. Self-help legal resources within e-filing platforms improve usability but are not widely available. Recommends fee-waiver mechanisms, guided question-and-answer workflows, and language access as minimum accessibility standards.",
-    "why_uxr": "Provides a systematic national audit of SRL access barriers to e-filing, giving UXR practitioners a ready-made usability-deficiency checklist for state-court portal evaluations."
+    "why_uxr": "Provides a systematic national audit of SRL access barriers to e-filing, giving UX researchers a ready-made usability-deficiency checklist for state-court portal evaluations."
   },
   {
     "id": "hagan2016legalux",
@@ -205,7 +205,7 @@
     "difficulty": "foundational",
     "subject_area": "victim-notification",
     "annotation": "Twelve-page NIJ brief reviewing the current landscape of automated victim-notification systems including VINE/VINELink, SAVIN, court-integrated systems, and emerging multi-channel platforms. Documents that victim advocates consistently report systems fail to meet victim needs — incorrect updates, inability to register, and siloed data across law enforcement, courts, and corrections. Profiles vendor features (text, email, portal, app) and implementation challenges including data integration, re-registration requirements, and notification latency. Reflects the 2024 state of the field.",
-    "why_uxr": "Provides the most current overview of AVN system landscape and known failure modes — a practical starting point for any UXR audit of victim-facing notification technology."
+    "why_uxr": "Provides the most current overview of AVN system landscape and known failure modes — a practical starting point for any UX research audit of victim-facing notification technology."
   },
   {
     "id": "hsieh2022saysomething",
@@ -231,7 +231,7 @@
     "difficulty": "advanced",
     "subject_area": "tip-lines",
     "annotation": "Qualitative analysis of parent and school personnel perspectives on implementation of anonymous reporting apps (multiple systems studied). Identifies key implementation barriers: staff skepticism about tip quality, lack of training on how to respond to tips, inconsistent follow-through creating response fatigue, and parent confusion about how anonymity actually works. Personnel noted that students misuse apps for bullying or pranks when there is no feedback loop showing tips are acted upon. Trust and transparency in the response process are central to adoption.",
-    "why_uxr": "Documents the human and organizational barriers to tip-line adoption from administrators' and parents' perspectives — essential for UXR practitioners designing training and response workflows for anonymous reporting systems."
+    "why_uxr": "Documents the human and organizational barriers to tip-line adoption from administrators' and parents' perspectives — essential for UX researchers designing training and response workflows for anonymous reporting systems."
   },
   {
     "id": "steinserous2023safevoice",
@@ -244,7 +244,7 @@
     "difficulty": "advanced",
     "subject_area": "tip-lines",
     "annotation": "First detailed longitudinal study of a statewide school tip-line (Nevada SafeVoice), drawing on 27,000+ tips, annual staff surveys, and qualitative interviews with students, parents, and administrators over five years (2017–2022). Interrupted time-series analysis finds a 32% reduction in violence against staff and weapons possession after SafeVoice launch. Identifies tip-volume growth, multi-channel submission (phone, text, web, app), and 24/7 human-operator response as key to effectiveness. Covers staff experience managing the tip workflow and school climate change over time.",
-    "why_uxr": "Provides rich operational and user-experience data on a statewide tip system across five years, including implementation evolution — invaluable for longitudinal UXR planning for tip-line systems."
+    "why_uxr": "Provides rich operational and user-experience data on a statewide tip system across five years, including implementation evolution — invaluable for longitudinal UX research planning for tip-line systems."
   },
   {
     "id": "miller2022prosecutors",
@@ -257,7 +257,7 @@
     "difficulty": "advanced",
     "subject_area": "digital-evidence",
     "annotation": "Survey of 50 U.S. prosecutors and 51 investigators on their use of digital forensic evidence, supplemented by 11 follow-up interviews. Finds that fewer than a third of prosecutors encounter digital evidence 80–100% of the time, yet nearly all see it as essential for certain crime types. Training is critically under-resourced: 80% attended some training but only four obtained certification; cost and time were primary barriers. Prosecutors without a digital-evidence specialist were less likely to introduce digital evidence at trial. Chain-of-custody complexity and rapid technology change are key stressors.",
-    "why_uxr": "Directly maps prosecutors' knowledge gaps and tool-trust issues with digital forensic evidence — a practitioner-facing UXR study that can inform training design and evidence-management interface requirements."
+    "why_uxr": "Directly maps prosecutors' knowledge gaps and tool-trust issues with digital forensic evidence — a practitioner-facing UX research study that can inform training design and evidence-management interface requirements."
   },
   {
     "id": "daye2023nij",
@@ -270,7 +270,7 @@
     "difficulty": "advanced",
     "subject_area": "digital-evidence",
     "annotation": "Formative NIJ study examining digital evidence triage and processing workflows at three publicly funded crime labs and law-enforcement agencies: Houston Forensic Science Center, Raleigh/Wake City-County Bureau of Identification, and Fort Worth PD. Investigates existing protocols, tools, and practices; identifies gaps (backlog drivers, absence of standardized triage procedures, tool-selection inconsistency) and practices associated with successful outcomes. Directly responds to NIJ's earlier finding that best practices for digital-evidence collection and triage were essentially undocumented.",
-    "why_uxr": "Provides the first formative workflow study of digital evidence processing in real crime labs, identifying where backlogs originate and what procedural designs reduce them — directly applicable to UXR of evidence-management systems."
+    "why_uxr": "Provides the first formative workflow study of digital evidence processing in real crime labs, identifying where backlogs originate and what procedural designs reduce them — directly applicable to UX research of evidence-management systems."
   },
   {
     "id": "rabuy2015screening",
@@ -296,7 +296,7 @@
     "difficulty": "foundational",
     "subject_area": "jail-visitation",
     "annotation": "Survey of published news reports documenting video-visitation system outages in jails that had replaced in-person visits. Case examples across multiple states document system failures lasting weeks, missed visits with no makeup provision, screen freezes showing half-images, and audio failures. Notable example: Clark County, Nevada, where more than half of an average 15,000 monthly visits were canceled due to technical issues. Mecklenburg County, NC, reinstated in-person visits after the sheriff acknowledged system failures harmed rehabilitation.",
-    "why_uxr": "Catalogs real-world system failure rates and their human consequences, providing user-harm data that UXR practitioners can use to frame SLA requirements and failure-state design for video-visitation platforms."
+    "why_uxr": "Catalogs real-world system failure rates and their human consequences, providing user-harm data that UX researchers can use to frame SLA requirements and failure-state design for video-visitation platforms."
   },
   {
     "id": "finkel2019tablets",
@@ -335,7 +335,7 @@
     "difficulty": "advanced",
     "subject_area": "inmate-tablets",
     "annotation": "Empirical assessment of digital device provision in Austrian prisons using qualitative interviews with incarcerated people. Documents that tablets reduce boredom and maintain family contact but create new security challenges (unauthorized app sideloading, covert communication). Finds that autonomy-granting features (unrestricted content, internet access) produce better user outcomes but require more complex governance models. Identifies the fundamental tension: tablets designed to maximize security reduce rehabilitative value and generate user frustration with restricted feature-sets.",
-    "why_uxr": "Provides a European counterpart to U.S. PPI research with empirical data on the security-rehabilitation trade-off in prison tablet design—a structural design constraint UXR practitioners must understand for any in-cell technology study."
+    "why_uxr": "Provides a European counterpart to U.S. PPI research with empirical data on the security-rehabilitation trade-off in prison tablet design—a structural design constraint UX researchers must understand for any in-cell technology study."
   },
   {
     "id": "hartict2023prison",
@@ -348,7 +348,7 @@
     "difficulty": "foundational",
     "subject_area": "inmate-tablets",
     "annotation": "Synthesizes evidence on ICT use in prison following COVID-19 acceleration of digital communication adoption. Examines video calls, email-on-tablet, and VoIP phone platforms across multiple jurisdictions. COVID-19 forced rapid expansion that revealed a natural experiment: digital substitution maintained some family contact but produced measurable declines in visit quality and emotional satisfaction versus in-person contact. Identifies that ICT rollouts without adequate user training and infrastructure produce equity gaps that disadvantage low-literacy incarcerated people.",
-    "why_uxr": "Provides a synthesized framework for ICT design trade-offs in prison settings informed by COVID-era natural experiment evidence—useful for UXR practitioners scoping prison communication platform requirements."
+    "why_uxr": "Provides a synthesized framework for ICT design trade-offs in prison settings informed by COVID-era natural experiment evidence—useful for UX researchers scoping prison communication platform requirements."
   },
   {
     "id": "boydokane2017tablet",
@@ -361,7 +361,7 @@
     "difficulty": "niche",
     "subject_area": "inmate-tablets",
     "annotation": "Usability evaluation of the Direct2Inmate tablet/kiosk system with prisoners who have low computer and reading literacies, measuring task completion, error rates, and behavioral indicators (facial expressions, verbal responses). Finds that volatile prison emotions are directly triggered by usability failures—frustration at interface barriers escalates into disruptive behavior that staff must manage. Identifies navigation hierarchies, literacy-dependent labels, and slow response times as primary friction points. First HCI conference paper applying usability metrics specifically to incarcerated users.",
-    "why_uxr": "Only published HCI study using formal usability testing methods (task completion, behavioral coding) with incarcerated users—provides the methodological template and user-persona constraints for UXR studies in carceral technology settings."
+    "why_uxr": "Only published HCI study using formal usability testing methods (task completion, behavioral coding) with incarcerated users—provides the methodological template and user-persona constraints for UX research studies in carceral technology settings."
   },
   {
     "id": "mckay2022carceral",
@@ -374,7 +374,7 @@
     "difficulty": "advanced",
     "subject_area": "inmate-tablets",
     "annotation": "Cross-jurisdictional review of smart-prison technologies across South Korea, Singapore, Netherlands, China, Australia, and England & Wales. Documents specific deployments: Singapore's scannable wrist-tag digital rehabilitation tracking; Netherlands' automated emotion-recognition software monitoring prisoner conversations; Australia's COVID-era 30-minute monitored video visits. Australian COVID jurisprudence records that video visits were \"shorter than earlier physical contact visits and did not provide the same degree of comfort.\" RFID found ineffective as a deterrent to sexual violence in U.S. contexts.",
-    "why_uxr": "Provides a comparative international taxonomy of carceral technology systems and their documented effects on user autonomy—essential background for UXR practitioners designing prison technology under cross-jurisdictional governance constraints."
+    "why_uxr": "Provides a comparative international taxonomy of carceral technology systems and their documented effects on user autonomy—essential background for UX researchers designing prison technology under cross-jurisdictional governance constraints."
   },
   {
     "id": "pewtrusts2016em",
@@ -387,7 +387,7 @@
     "difficulty": "foundational",
     "subject_area": "parole-apps",
     "annotation": "First valid national count of electronic monitoring device usage, from a 2015 survey of agencies across all 50 states. Finds 125,000+ people under EM on a single day—a 140% increase from 53,000 in 2005. GPS units rose 30-fold from 2,900 to 88,000; RF units declined. Establishes the EM population's scale and the technological shift from passive RF anklets to active GPS. Documents agency variation in implementation cost and oversight. Provides contextual population data essential for understanding who uses EM apps.",
-    "why_uxr": "Provides baseline population-size and technology-type data for electronic monitoring, establishing the scale and demographic context for any UXR study of EM app users or GPS monitoring experiences."
+    "why_uxr": "Provides baseline population-size and technology-type data for electronic monitoring, establishing the scale and demographic context for any UX research study of EM app users or GPS monitoring experiences."
   },
   {
     "id": "chohlaswoodreminders2025",
@@ -400,7 +400,7 @@
     "difficulty": "advanced",
     "subject_area": "parole-apps",
     "annotation": "Randomized experiment (n=5,709 public defender clients in Santa Clara County) testing automated text-message court-date reminders. Treatment reduced bench warrant issuance by 2.5 percentage points (12.1%→9.7%) and custodial remand by 3.1 points (20.7%→17.6%) at ~$0.60 per defendant. Simpler message variant outperformed longer variant (12.3% vs 13.4% bench warrants). Spanish and Vietnamese translations provided for 22% of clients. Synthesizes prior literature showing mixed results across 5 prior studies with 1,096–30,870 defendants.",
-    "why_uxr": "Provides causal evidence that automated reminder systems reduce pretrial incarceration and quantifies cost-effectiveness (~60¢/case)—directly applicable to UXR of court-date reminder apps in supervision contexts."
+    "why_uxr": "Provides causal evidence that automated reminder systems reduce pretrial incarceration and quantifies cost-effectiveness (~60¢/case)—directly applicable to UX research of court-date reminder apps in supervision contexts."
   },
   {
     "id": "taxmandigitaltherapeutics2023",
@@ -413,7 +413,7 @@
     "difficulty": "advanced",
     "subject_area": "parole-apps",
     "annotation": "Pilot feasibility study of digital therapeutic apps (CBT-based) within justice systems, examining adoption barriers for probation officers and supervised persons. Finds that officer attitudes toward apps are the primary adoption gatekeeper—not app quality. Among supervised persons, digital literacy gaps and device access are the key barriers. Documents that agencies providing devices and data plans achieve substantially higher app engagement rates. Identifies sustainability challenges: app contracts, funding cycles, and officer champion turnover drive discontinuity.",
-    "why_uxr": "Provides direct evidence on adoption barriers for CBT-based supervision apps from both officer and supervised-person perspectives—essential for UXR practitioners designing onboarding and compliance workflows for parole tech."
+    "why_uxr": "Provides direct evidence on adoption barriers for CBT-based supervision apps from both officer and supervised-person perspectives—essential for UX researchers designing onboarding and compliance workflows for parole tech."
   },
   {
     "id": "armstrongfreeman2011gps",
@@ -478,7 +478,7 @@
     "difficulty": "advanced",
     "subject_area": "bwc",
     "annotation": "Quantitative analysis of BWC activation logs across multiple U.S. agencies, examining variation by officer, policing activity type, and time. Finds that overall activation rates are substantially lower than policy targets; rates vary significantly by call type (higher for violent crimes, lower for foot patrols and self-initiated stops); and individual officers show persistent patterns of over- or under-activation. Time-in-service negatively correlates with activation rates, suggesting senior officers resist the technology more.",
-    "why_uxr": "Quantifies systematic patterns of BWC non-activation by officer type and context—directly relevant to UXR studies designing activation-reminder interfaces, compliance dashboards, or supervisor review tools."
+    "why_uxr": "Quantifies systematic patterns of BWC non-activation by officer type and context—directly relevant to UX research studies designing activation-reminder interfaces, compliance dashboards, or supervisor review tools."
   },
   {
     "id": "ariel2016discretion",
@@ -491,7 +491,7 @@
     "difficulty": "advanced",
     "subject_area": "bwc",
     "annotation": "Subgroup analysis of 10-site RCT showing that when officers fully complied with activation protocol (no discretion), use of force was 37% lower than control. When officers exercised discretion over when to record, use of force was 71% higher. This counter-intuitive reversal—BWCs backfire when officers control the camera—is the most cited finding in activation-policy debates. Demonstrates that camera design and policy rules, not just hardware deployment, determine behavioral outcomes.",
-    "why_uxr": "Provides the causal evidence that activation-policy design—not camera hardware—determines BWC outcomes; directly applicable to UXR studies examining compliance dashboard design and mandated activation interface flows."
+    "why_uxr": "Provides the causal evidence that activation-policy design—not camera hardware—determines BWC outcomes; directly applicable to UX research studies examining compliance dashboard design and mandated activation interface flows."
   },
   {
     "id": "yokum2019bwcdc",
@@ -504,7 +504,7 @@
     "difficulty": "advanced",
     "subject_area": "bwc",
     "annotation": "Large-scale field RCT with 2,224 Metropolitan Police Department officers in Washington, DC, randomly assigned to receive cameras or not, tracked for a minimum of 7 months. Finds cameras had no statistically significant effect on complaints, use of force, arrests, or officer-initiated activity. Effect sizes are small across all outcomes. Contrasts with earlier single-site studies reporting large reductions. Authors conclude BWC effects are likely smaller than widely hoped, possibly due to contextual moderators like existing transparency policies.",
-    "why_uxr": "Provides the null-result large-scale counterpoint to positive BWC studies—essential for any UXR practitioner needing to frame which organizational and policy conditions make camera interfaces actually change behavior."
+    "why_uxr": "Provides the null-result large-scale counterpoint to positive BWC studies—essential for any UX researcher needing to frame which organizational and policy conditions make camera interfaces actually change behavior."
   },
   {
     "id": "henstock2017bwcforce",
@@ -517,7 +517,7 @@
     "difficulty": "advanced",
     "subject_area": "bwc",
     "annotation": "RCT across a large British police force (430 randomly assigned shifts) testing BWC effects during arrests. Finds 50% reduction in odds of force when cameras present vs. control; 35% reduction in weighted force overall. The effect concentrates in open-hand tactics (physical restraints, non-compliant handcuffing). More aggressive force (dogs, tasers, batons, pepper spray) shows no discernible effect. Counter-intuitively, handcuffing of non-combatant suspects increased 40% in treatment—possibly reflecting enhanced reporting of previously concealed force use.",
-    "why_uxr": "Provides the most precisely measured force-category breakdown from any BWC RCT, showing that camera effects are modality-specific—critical for UXR practitioners designing activation-log annotation interfaces that must capture force-type data."
+    "why_uxr": "Provides the most precisely measured force-category breakdown from any BWC RCT, showing that camera effects are modality-specific—critical for UX researchers designing activation-log annotation interfaces that must capture force-type data."
   },
   {
     "id": "headley2017bwcfield",
@@ -543,7 +543,7 @@
     "difficulty": "advanced",
     "subject_area": "bwc",
     "annotation": "Qualitative study using 40 in-depth interviews in Washington, D.C. examining resident beliefs about BWC effects. Finds residents believe cameras should improve officer behavior and increase police legitimacy, but cameras will not increase community trust. Participants reason that cameras only matter if footage is reviewed and officers are held accountable—a process gap they do not trust. Technology adoption without procedural accountability change produces what participants call \"security theater.\"",
-    "why_uxr": "Documents the citizen-side expectation gap between camera presence and accountability outcomes—essential for UXR practitioners designing public-facing BWC footage request portals and transparency dashboards."
+    "why_uxr": "Documents the citizen-side expectation gap between camera presence and accountability outcomes—essential for UX researchers designing public-facing BWC footage request portals and transparency dashboards."
   },
   {
     "id": "stevensonDoleac2018roadblock",
@@ -556,7 +556,7 @@
     "difficulty": "advanced",
     "subject_area": "predictive-policing",
     "annotation": "Policy analysis examining pretrial risk assessment in Kentucky and sentencing risk assessment in Virginia using court records. In Kentucky, judges overwhelmingly failed to follow tool recommendations that low-risk defendants be released without bail; four years after mandatory adoption, release rates had returned to pre-reform levels. In Virginia, the sentencing algorithm widened age-based disparities relative to unaided judicial decisions. Concludes tools are only as good as the humans who implement them.",
-    "why_uxr": "Provides a systematic, jurisdiction-level analysis of how risk tools are (mis)used by decision-makers, offering a natural-experiment framework applicable to UXR studies of any CJ decision-support tool."
+    "why_uxr": "Provides a systematic, jurisdiction-level analysis of how risk tools are (mis)used by decision-makers, offering a natural-experiment framework applicable to UX research studies of any CJ decision-support tool."
   },
   {
     "id": "brayne2017surveillance",
@@ -569,7 +569,7 @@
     "difficulty": "advanced",
     "subject_area": "predictive-policing",
     "annotation": "Two-and-a-half years of fieldwork at the LAPD with 75 interviews and 31 follow-up participants. Identifies five consequences of big-data adoption: expanded surveillance net; interoperability across previously siloed databases; quantified suspicion (Operation LASER point system: 5 pts for gang affiliation, 5 for prior gun arrest); system-contact amplification (AB 109 added ~500 individuals/month); and officer pushback against algorithmic control. PredPol operational in 10 divisions by March 2015; 1,300+ Palantir users.",
-    "why_uxr": "Provides the most detailed ethnographic account of how officers actually interact with predictive policing tools in daily practice—the behavioral observation study UXR practitioners need before designing any officer-facing analytics interface."
+    "why_uxr": "Provides the most detailed ethnographic account of how officers actually interact with predictive policing tools in daily practice—the behavioral observation study UX researchers need before designing any officer-facing analytics interface."
   },
   {
     "id": "lumisaac2016predict",
@@ -582,7 +582,7 @@
     "difficulty": "advanced",
     "subject_area": "predictive-policing",
     "annotation": "Applies PredPol algorithm to Oakland, CA drug-arrest data, combined with NSDUH survey estimates of actual drug use by demographics. Finds drug arrests occur at ~200× higher rates in West Oakland and International Boulevard neighborhoods despite estimated drug-use rates being uniform across the city. Predictive policing would target Black residents at ~2× the rate of white residents. Simulates feedback loops showing the algorithm becomes increasingly confident over time that crime is concentrated where arrests already occur.",
-    "why_uxr": "Provides the canonical quantitative demonstration that predictive policing systems amplify historical enforcement biases—the foundational methodological critique UXR practitioners must cite when auditing any algorithm-presenting police interface."
+    "why_uxr": "Provides the canonical quantitative demonstration that predictive policing systems amplify historical enforcement biases—the foundational methodological critique UX researchers must cite when auditing any algorithm-presenting police interface."
   },
   {
     "id": "saunders2016chicago",
@@ -595,7 +595,7 @@
     "difficulty": "advanced",
     "subject_area": "predictive-policing",
     "annotation": "Quasi-experimental evaluation of Chicago's 2013 Strategic Subjects List (SSL) pilot—426 people scored highest-risk for gun violence. ARIMA models and propensity score matching show SSL placement had no effect on homicide or shooting victimization. The treated group was more likely to be arrested for a shooting, suggesting officers used the list as investigative leads for closing cases rather than for prevention. Interviews and COMPSTAT observations reveal uncertainty about how predictions should be used in the field.",
-    "why_uxr": "Documents the gap between how a predictive policing tool was designed to be used (prevention) and how officers actually used it (post-hoc investigation)—a classic finding for UXR studies examining decision-support tool interpretation in practice."
+    "why_uxr": "Documents the gap between how a predictive policing tool was designed to be used (prevention) and how officers actually used it (post-hoc investigation)—a classic finding for UX research studies examining decision-support tool interpretation in practice."
   },
   {
     "id": "sandhu2020uberization",
@@ -608,7 +608,7 @@
     "difficulty": "advanced",
     "subject_area": "predictive-policing",
     "annotation": "Qualitative study with UK police organizations designing and trialing predictive policing software. Officers demonstrate detailed awareness of input-data limitations and biases, leading many to develop skeptical attitudes toward prediction outputs. Several officers expressed reluctance to use predictive tools. Findings argue that claims about algorithms neutralizing police subjectivity overlook ongoing officer agency—officers mediate and contest algorithmic predictions in practice. Provides the UK counterpart to U.S. fieldwork showing similar behavioral adaptation.",
-    "why_uxr": "Provides qualitative evidence from officers who actually deploy predictive tools that officer discretion in interpreting algorithm outputs is the key interaction-design challenge—directly applicable to UXR studies of police decision-support interface design."
+    "why_uxr": "Provides qualitative evidence from officers who actually deploy predictive tools that officer discretion in interpreting algorithm outputs is the key interaction-design challenge—directly applicable to UX research studies of police decision-support interface design."
   },
   {
     "id": "mohler2015predpol",
@@ -621,7 +621,7 @@
     "difficulty": "advanced",
     "subject_area": "predictive-policing",
     "annotation": "Two RCTs testing ETAS (epidemic-type aftershock sequence) crime forecasting at three LAPD divisions and two Kent Police divisions, using a novel design allowing treatment/control hotspots to change dynamically. Finds that ETAS models predict 1.4–2.2× more crime than a dedicated crime analyst using existing hotspot mapping. Patrols based on ETAS forecasts produced an average 7.4% crime reduction; patrols based solely on analyst predictions showed no significant effect.",
-    "why_uxr": "Provides the only published multi-site RCT directly comparing algorithmic prediction to analyst judgment—the benchmark study any UXR practitioner evaluating predictive policing interface design against human-analyst baselines must engage."
+    "why_uxr": "Provides the only published multi-site RCT directly comparing algorithmic prediction to analyst judgment—the benchmark study any UX researcher evaluating predictive policing interface design against human-analyst baselines must engage."
   },
   {
     "id": "pacersurvey2021",
@@ -673,7 +673,7 @@
     "difficulty": "foundational",
     "subject_area": "e-filing",
     "annotation": "Comprehensive synthesis of legal needs surveys across the U.S., UK, Canada, and Australia. Finds that the majority of civil legal problems go without legal help; income and geography are the primary access barriers, not lack of desire for help. Documents that most people experiencing legal problems do not recognize them as \"legal\" problems. Identifies that self-help tools and simplified filing interfaces can reach populations who would never contact a lawyer. Provides the evidence base for designing court technology for unsophisticated users.",
-    "why_uxr": "Provides the demand-side evidence base for access-to-justice technology—who needs court self-help tools, what barriers prevent access, and why simplification matters—essential background for any e-filing portal UXR study."
+    "why_uxr": "Provides the demand-side evidence base for access-to-justice technology—who needs court self-help tools, what barriers prevent access, and why simplification matters—essential background for any e-filing portal UX research study."
   },
   {
     "id": "ajmi2022covid",
@@ -699,7 +699,7 @@
     "difficulty": "advanced",
     "subject_area": "e-filing",
     "annotation": "Laboratory experiment comparing how laypeople (pro se) and lawyers explained the same justiciable problem in a mock online court portal; retired judges evaluated a blinded subset. Finds that overall lay claiming quality was lower than lawyers'—laypeople were less effective at reporting legally salient details and showed confusion about corporate responsibility. However, both high-quality lay claims and low-quality lawyer claims occurred. Quality variation persisted even among lawyers. Identifies specific interface design features needed to guide lay users toward legally relevant framing.",
-    "why_uxr": "Provides experimental evidence on the specific information-quality gaps between pro se and lawyer filings in online court portals—directly applicable to UXR design of guided filing interfaces and plain-language form logic."
+    "why_uxr": "Provides experimental evidence on the specific information-quality gaps between pro se and lawyer filings in online court portals—directly applicable to UX research design of guided filing interfaces and plain-language form logic."
   },
   {
     "id": "geecourt2021forms",
@@ -738,7 +738,7 @@
     "difficulty": "advanced",
     "subject_area": "victim-notification",
     "annotation": "Evaluates a trauma-informed victim notification protocol for the Detroit SAK backlog case. Finds 84% of notified victims did not have strong negative emotional reactions to notification; 57% decided to reengage with the criminal justice system. Victims of nonstranger sexual assaults were less likely to reengage. Protocol components—survivor-advocate pairing, choice over communication channel, pacing of information—directly shaped re-engagement rates. Demonstrates that notification UX design affects downstream justice outcomes.",
-    "why_uxr": "Provides the strongest empirical test of how notification protocol design affects victim re-engagement with the CJS—directly applicable to UXR of victim-notification platforms, particularly channel choice and trauma-informed messaging flows."
+    "why_uxr": "Provides the strongest empirical test of how notification protocol design affects victim re-engagement with the CJS—directly applicable to UX research of victim-notification platforms, particularly channel choice and trauma-informed messaging flows."
   },
   {
     "id": "campbellsak2023protocols",
@@ -777,7 +777,7 @@
     "difficulty": "foundational",
     "subject_area": "victim-notification",
     "annotation": "Foundational national evaluation of SAVIN (Statewide Automated Victim Information and Notification) during its initial rollout across 11 states. Employs interviews with state administrators, service providers, and victim advocates alongside analysis of system registration and notification data. Documents early registration barriers, inter-agency data-sharing failures, and the difficulty of keeping custody-status data current across jails, courts, and DOC systems. Establishes the multi-agency integration problem that all subsequent AVN systems still face.",
-    "why_uxr": "Establishes the foundational data-sharing and integration problems for victim notification systems—unchanged from 2002 to today—providing historical continuity context for any VINE platform UXR study."
+    "why_uxr": "Establishes the foundational data-sharing and integration problems for victim notification systems—unchanged from 2002 to today—providing historical continuity context for any VINE platform UX research study."
   },
   {
     "id": "parkiniot2019techabuse",
@@ -803,7 +803,7 @@
     "difficulty": "advanced",
     "subject_area": "tip-lines",
     "annotation": "Mixed-methods multi-phase study developing and testing a student-centered safety reporting framework in Oregon and Illinois high schools. Phase 2 assessed acceptability and usability of prototype reporting systems with students, school personnel, and parents. Phase 4 pilot-tested the framework in 4 high schools (RCT) with statistically significant effects on students' perceived personal safety. Usability testing with students in Phase 2 directly shaped app redesign decisions. One of few studies to include formal usability testing of a school safety reporting interface.",
-    "why_uxr": "One of the only school safety studies that explicitly applied usability testing to a tip-line prototype design—provides a research methodology model for UXR on anonymous reporting apps."
+    "why_uxr": "One of the only school safety studies that explicitly applied usability testing to a tip-line prototype design—provides a research methodology model for UX research on anonymous reporting apps."
   },
   {
     "id": "payneeliott2011safe2tell",
@@ -816,7 +816,7 @@
     "difficulty": "foundational",
     "subject_area": "tip-lines",
     "annotation": "First documented evaluation of Colorado's Safe2Tell statewide anonymous school reporting system, covering the program's initial years. Reviews tip volume patterns, multi-channel submission rates (phone, online, text), and the role of trained human analysts in routing tips to school and law enforcement responders. Finds that 24/7 human-operator triage is essential—automated routing without human review produces inappropriate escalation. Identifies key system design decisions: anonymity guarantees, tip-category taxonomies, and escalation thresholds.",
-    "why_uxr": "Provides the first programmatic analysis of how a 24/7 anonymous tip system operates end-to-end, with specific findings on routing logic and operator role—directly applicable to UXR of tip-line triage interfaces."
+    "why_uxr": "Provides the first programmatic analysis of how a 24/7 anonymous tip system operates end-to-end, with specific findings on routing logic and operator role—directly applicable to UX research of tip-line triage interfaces."
   },
   {
     "id": "thulin2025reporting",
@@ -829,7 +829,7 @@
     "difficulty": "advanced",
     "subject_area": "tip-lines",
     "annotation": "Survey study of adolescents' use of technology-facilitated reporting systems (TFRS) to report peers in severe mental distress, including suicidality. Finds that technology-facilitated reporting systems are used in more than 50% of K–12 schools. Key predictors of use: perceived trust in system confidentiality, belief that reporting will actually help, and ease of the submission interface. Students more likely to report when the system was promoted by trusted adults and when previous reporters in their school received visible follow-through.",
-    "why_uxr": "Identifies the trust and usability factors that predict whether students actually use anonymous reporting apps—directly applicable to UXR practitioners designing tip-line submission flows and feedback mechanisms."
+    "why_uxr": "Identifies the trust and usability factors that predict whether students actually use anonymous reporting apps—directly applicable to UX researchers designing tip-line submission flows and feedback mechanisms."
   },
   {
     "id": "steinseroussi2021nevada",
@@ -842,7 +842,7 @@
     "difficulty": "advanced",
     "subject_area": "tip-lines",
     "annotation": "Methods paper for a statewide RCT evaluating Nevada's anonymous school tip line (covering all K–12 schools), implemented by the Nevada Departments of Education and Public Safety with multidisciplinary response teams. Study design collects program data on tip types and response times, annual MDT surveys, interviews and focus groups with local stakeholders, and district-level extant data. Distinguishes between tip volume, response fidelity, and school-level safety outcomes—providing a multi-level evaluation framework.",
-    "why_uxr": "Provides the most methodologically rigorous published evaluation framework for a statewide school tip-line system—directly applicable to UXR practitioners designing multi-stage tip-to-response tracking systems."
+    "why_uxr": "Provides the most methodologically rigorous published evaluation framework for a statewide school tip-line system—directly applicable to UX researchers designing multi-stage tip-to-response tracking systems."
   },
   {
     "id": "ojp2015digitalevidence",
@@ -881,7 +881,7 @@
     "difficulty": "niche",
     "subject_area": "digital-evidence",
     "annotation": "Reports on 14 years of lessons from developing digital forensics software and managing a 30 TB research corpus. Documents that software crashes from unexpected data types are the most common point of analyst workflow interruption; that performance requirements force design choices that conflict with usability; and that skilled users are the intended audience, not novices. Identifies the absence of shared test data as the primary reason forensics tools cannot be benchmarked against each other. Provides specific technical UX constraints for DE tools.",
-    "why_uxr": "Provides practitioner-derived constraints on digital forensics tool design—crash resistance, performance trade-offs, expert-user assumption—that UXR practitioners need before conducting usability studies in forensic lab settings."
+    "why_uxr": "Provides practitioner-derived constraints on digital forensics tool design—crash resistance, performance trade-offs, expert-user assumption—that UX researchers need before conducting usability studies in forensic lab settings."
   },
   {
     "id": "quickchoo2016bigreduction",
@@ -894,7 +894,7 @@
     "difficulty": "advanced",
     "subject_area": "digital-evidence",
     "annotation": "Empirical study applying a selective-imaging approach to digital forensic data, using South Australian Police Electronic Crime Section cases and FBI RCFL data as benchmarks. Demonstrates that selective extraction of high-value file categories (registry, browser history, email, documents) reduces a standard 320 GB forensic image to 0.215% of its original size while retaining investigatively relevant content. Full forensic copy takes ~6 hours; selective subset takes 79 seconds to collect and under 3 minutes to index.",
-    "why_uxr": "Provides the quantitative case for selective triage over full forensic imaging—with specific time-savings data—giving UXR practitioners the efficiency rationale for designing triage-first evidence collection interfaces."
+    "why_uxr": "Provides the quantitative case for selective triage over full forensic imaging—with specific time-savings data—giving UX researchers the efficiency rationale for designing triage-first evidence collection interfaces."
   },
   {
     "id": "humphriesmobile2021",
@@ -920,7 +920,7 @@
     "difficulty": "niche",
     "subject_area": "digital-evidence",
     "annotation": "Proposes and evaluates a tiered triage model for digital field triage by non-specialist officers (not forensic analysts), addressing the bottleneck between field seizure and lab processing. Identifies the key training constraint: field officers require only 1–2 hours of instruction to execute first-tier triage without contaminating evidence, yet current deployment pipelines treat all digital devices as requiring specialist handling from seizure. Documents specific procedure steps that can be safely delegated to non-specialists without chain-of-custody compromise.",
-    "why_uxr": "Provides the operational framework for triage tool design aimed at non-specialist first responders—directly applicable to UXR of field-facing evidence collection interfaces where the user is a patrol officer, not an analyst."
+    "why_uxr": "Provides the operational framework for triage tool design aimed at non-specialist first responders—directly applicable to UX research of field-facing evidence collection interfaces where the user is a patrol officer, not an analyst."
   },
   {
     "id": "vera2024videovisits",
@@ -946,7 +946,7 @@
     "difficulty": "advanced",
     "subject_area": "jail-visitation",
     "annotation": "Feasibility and acceptability study of the Enhanced Visits Model (EVM) providing funded video visits and visit coaching for families of jailed parents. Children interacted creatively during visits—showing toys, playing games, singing, doing homework. Key UX challenges: sound and visual image quality issues, difficulty engaging caregivers to facilitate sessions. Support workers play a critical mediating role. Families and professionals provided positive feedback; shows remote visits supplement (but should not replace) in-person contact.",
-    "why_uxr": "Provides child-user and facilitated-session evidence that UXR practitioners designing family-communication workflows must account for the needs of non-adult users and third-party facilitators."
+    "why_uxr": "Provides child-user and facilitated-session evidence that UX researchers designing family-communication workflows must account for the needs of non-adult users and third-party facilitators."
   },
   {
     "id": "tartaro2017modality",
@@ -959,7 +959,7 @@
     "difficulty": "foundational",
     "subject_area": "jail-visitation",
     "annotation": "Survey study examining visitation modality preferences among adults who visited New Jersey county jails. Compares in-person contact visits, non-contact (glass) visits, lobby-based video kiosks, and remote video visits. Finds a strong preference for in-person contact visits; remote video is least preferred when in-person options are available. However, participants who had used remote video reported it as a practical supplement when distance or facility rules prevented in-person visits. Identifies scheduling convenience and privacy as key factors driving modality choice.",
-    "why_uxr": "Provides directly measured visitor preferences across visitation modalities—the baseline for any UXR study asking whether video visit redesign can close the user-experience gap with in-person contact."
+    "why_uxr": "Provides directly measured visitor preferences across visitation modalities—the baseline for any UX research study asking whether video visit redesign can close the user-experience gap with in-person contact."
   },
   {
     "id": "tasca2025novisit",
@@ -972,7 +972,7 @@
     "difficulty": "advanced",
     "subject_area": "jail-visitation",
     "annotation": "Qualitative study drawing on narrative accounts from 62 caregivers of children with an incarcerated parent. Uses open and axial coding to identify why families choose not to visit. Finds that non-visitation is not primarily explained by disinterest; caregivers describe facility barriers (restrictive hours, long wait times, punitive search procedures, distance), child-wellbeing concerns (children upset after visits), and financial constraints. Documents that video visitation's failure to address emotional quality and physical contact does not resolve these barriers.",
-    "why_uxr": "Provides the caregiver-centered explanation for why families disengage from visitation systems, identifying specific facility and platform design barriers that UXR practitioners must address to increase family-contact technology adoption."
+    "why_uxr": "Provides the caregiver-centered explanation for why families disengage from visitation systems, identifying specific facility and platform design barriers that UX researchers must address to increase family-contact technology adoption."
   },
   {
     "id": "poehlmann2020videochat",

@@ -7,6 +7,12 @@ import { site } from "@data/site";
       <div>
         <p class="title">{site.shortTitle}</p>
         <p class="muted small">An open-access handbook by {site.authors[0].name} & {site.authors[1].name}.</p>
+        <p class="consortium small">
+          A service of the
+          <a href={site.consortium.url} rel="noopener"><strong>{site.consortium.name}</strong></a>.
+          Find free, open-access criminology research at
+          <a href={site.consortium.parentUrl} rel="noopener">{site.consortium.parentName}</a>.
+        </p>
       </div>
       <div>
         <p class="label">Use & cite</p>
@@ -25,7 +31,7 @@ import { site } from "@data/site";
       </div>
     </div>
     <p class="rights muted small">
-      © {new Date().getFullYear()} {site.authors[0].name} & {site.authors[1].name}. Text licensed under {site.license}. Code under MIT.
+      © {new Date().getFullYear()} {site.authors[0].name} & {site.authors[1].name}. Published by the {site.consortium.name}. Text licensed under {site.license}. Code under MIT.
     </p>
   </div>
 </footer>
@@ -44,6 +50,7 @@ import { site } from "@data/site";
   }
   @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
   .title { font-family: var(--font-display); font-weight: 600; margin: 0 0 var(--s-2); }
+  .consortium { margin: var(--s-3) 0 0; max-width: 48ch; color: var(--ink-2); }
   .label {
     text-transform: uppercase;
     letter-spacing: 0.1em;

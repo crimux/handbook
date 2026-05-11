@@ -1,10 +1,10 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "mappings": [
     {
       "match": ["interview", "qualitative interview", "semi-structured interview"],
       "uxr": "Generative user interview",
-      "frame": "Frame the interview around a product question (a job-to-be-done, a moment of friction, or a decision the team has to make). Tighten guide to 5–7 questions, run 6–8 sessions in 1 week."
+      "frame": "Frame the interview around a product question — a moment of friction, a task someone is trying to complete, or a decision the team has to make. Tighten the guide to 5–7 questions, run 6–8 sessions in one week."
     },
     {
       "match": ["ethnography", "fieldwork", "participant observation"],
@@ -19,7 +19,7 @@
     {
       "match": ["irb", "human subjects", "consent"],
       "uxr": "Research ethics + participant consent process",
-      "frame": "Industry doesn't have IRBs but does have privacy, legal, and DEI reviewers. Write a lightweight consent script and data-handling plan; bring it to legal."
+      "frame": "Industry doesn't have IRBs but does have privacy and legal reviewers. Write a lightweight consent script and data-handling plan; bring it to legal."
     },
     {
       "match": ["grounded theory", "thematic analysis", "coding"],
@@ -28,12 +28,12 @@
     },
     {
       "match": ["program evaluation", "outcome evaluation"],
-      "uxr": "Impact measurement / quasi-experimental product evaluation",
-      "frame": "Pair qual signals with product metrics. Define a 'success' metric before launch; instrument it; report effect with confidence and caveats."
+      "uxr": "Impact measurement / product evaluation",
+      "frame": "Pair qualitative signals with product metrics. Define a success metric before launch; instrument it; report the effect with confidence and caveats."
     },
     {
       "match": ["survey"],
-      "uxr": "Quant UXR / large-N survey",
+      "uxr": "Quantitative UX research / large-N survey",
       "frame": "Write tighter items, drop double-barrels, and target a behavior or attitude tied to a feature. Use MaxDiff or Kano if prioritization is the question."
     },
     {
@@ -44,7 +44,7 @@
     {
       "match": ["teaching", "instructor", "pedagogy"],
       "uxr": "Stakeholder education / research democratization",
-      "frame": "Teaching translates to ResearchOps and stakeholder enablement: building self-serve templates, running clinics, and coaching PMs to ask better questions."
+      "frame": "Teaching translates to research operations and stakeholder enablement: building self-serve templates, running clinics, and coaching product managers to ask better questions."
     },
     {
       "match": ["grant", "rfp", "proposal"],
@@ -58,13 +58,13 @@
     },
     {
       "match": ["mixed methods"],
-      "uxr": "Mixed-methods UXR",
+      "uxr": "Mixed-methods UX research",
       "frame": "Highly transferable. Industry rewards practitioners who can pair n=8 interviews with n=800 surveys or product logs and write the through-line."
     },
     {
       "match": ["policy", "policy analysis"],
       "uxr": "Strategic / foundational research",
-      "frame": "Policy thinking maps to strategic UXR: framing the problem space, mapping stakeholders, and informing roadmap-level decisions rather than feature-level ones."
+      "frame": "Policy thinking maps to strategic UX research: framing the problem space, mapping stakeholders, and informing roadmap-level decisions rather than feature-level ones."
     },
     {
       "match": ["ride-along", "field observation", "shadowing"],
@@ -73,8 +73,8 @@
     },
     {
       "match": ["statistical analysis", "regression", "spss", "r ", "stata"],
-      "uxr": "Quant UXR / analytics partnership",
-      "frame": "Lean into this. Many UXR teams are starved for someone who can read a regression and pair it with a qual finding without losing either."
+      "uxr": "Quantitative UX research / analytics partnership",
+      "frame": "Lean into this. Many UX research teams are starved for someone who can read a regression and pair it with a qualitative finding without losing either."
     }
   ],
   "fallback": {

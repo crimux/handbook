@@ -5,17 +5,17 @@ import { site } from "@data/site";
 const year = new Date(site.lastUpdated).getFullYear();
 const bibtex = `@book{abrahams_jacques_${year}_crimux,
   author    = {Abrahams, Tara and Jacques, Scott},
-  title     = {The Criminologist's Guide to User Research of Apps and Tech},
+  title     = {The Criminologist's Guide to User Experience: Making Criminal Justice Apps Work Better for the People Who Use Them},
   year      = {${year}},
   version   = {${site.version}},
-  publisher = {crimux.com},
+  publisher = {CrimRxiv Consortium},
   url       = {https://crimux.com},
   doi       = {${site.doi}}
 }`;
 
-const apa = `Abrahams, T., & Jacques, S. (${year}). The criminologist's guide to user research of apps and tech (v${site.version}) [Open-access handbook]. crimux.com. https://doi.org/${site.doi}`;
+const apa = `Abrahams, T., & Jacques, S. (${year}). The criminologist's guide to user experience: Making criminal justice apps work better for the people who use them (v${site.version}) [Open-access handbook]. CrimRxiv Consortium. https://doi.org/${site.doi}`;
 
-const chicago = `Abrahams, Tara, and Scott Jacques. ${year}. The Criminologist's Guide to User Research of Apps and Tech. v${site.version}. crimux.com. https://doi.org/${site.doi}.`;
+const chicago = `Abrahams, Tara, and Scott Jacques. ${year}. The Criminologist's Guide to User Experience: Making Criminal Justice Apps Work Better for the People Who Use Them. v${site.version}. CrimRxiv Consortium. https://doi.org/${site.doi}.`;
 ---
 <Base title="Cite this handbook" description="DOI, BibTeX, APA, and Chicago entries for the current version.">
   <header class="container hero">

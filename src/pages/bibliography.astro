@@ -32,17 +32,17 @@ function joinList(items: string[]): string {
 }
 const thinnerLabel = joinList(thinnerAreas);
 ---
-<Base title="Bibliography" description={`A filterable, exportable bibliography of ${count} annotated justice-tech UXR studies (growing toward ~${target}).`}>
+<Base title="Bibliography" description={`A filterable, exportable bibliography of ${count} annotated user-experience studies in criminal justice technology (growing toward ~${target}).`}>
   <header class="container hero">
     <p class="eyebrow">Bibliography</p>
-    <h1>{progress} annotated studies on justice-tech UX</h1>
+    <h1>{progress} annotated studies on user experience in criminal justice technology</h1>
     <p class="lead">Filter by user type, method, and year. Export any entry as BibTeX or copy a Zotero-friendly citation.</p>
   </header>
 
   <section class="container">
     <Callout type="note" title="About this corpus — and its limits">
       <p>
-        Every entry here earned its slot. The bar is a non-obvious, eighty-word annotation that tells a UX researcher something they could not learn from the title or one-sentence abstract. We would rather ship fewer studies than pad the count.
+        Every entry here earned its slot. The bar is a non-obvious, eighty-word annotation that tells a user-experience researcher something they could not learn from the title or one-sentence abstract. We would rather ship fewer studies than pad the count.
       </p>
       <p>
         Coverage is uneven on purpose. Subject-area depth ranges from <strong>{minN}</strong> to <strong>{maxN}</strong> entries. The relatively sparser areas right now — <strong>{thinnerLabel}</strong> — are sparser because the rigorous, user-facing literature in those spaces is itself thinner, not because the topics matter less. We treat the gap as a finding worth knowing about. If you see studies we have missed, tell us.
@@ -91,7 +91,7 @@ const thinnerLabel = joinList(thinnerAreas);
             {e.oa_url && <a href={e.oa_url} rel="noopener">OA</a>}
           </div>
           <p class="ann">{e.annotation}</p>
-          <p class="why"><strong>Why a UXR would cite this:</strong> {e.why_uxr}</p>
+          <p class="why"><strong>Why a UX researcher would cite this:</strong> {e.why_uxr}</p>
           <details>
             <summary>Export</summary>
             <pre><code>{`@misc{${e.id},\n  title = {${e.citation}},\n  doi   = {${e.doi}}\n}`}</code></pre>

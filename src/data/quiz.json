@@ -1,36 +1,36 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dimensions": [
     { "id": "craft",     "label": "Research craft",     "description": "Comfort designing studies, recruiting, and analyzing qualitative + mixed data." },
     { "id": "pace",      "label": "Pace & ambiguity",   "description": "Tolerance for 2-week timelines and decisions made on partial evidence." },
     { "id": "product",   "label": "Product sense",      "description": "Ability to connect research to design, engineering, and business decisions." },
     { "id": "comms",     "label": "Communication",      "description": "Writing tight readouts and presenting to non-researchers." },
-    { "id": "stakes",    "label": "Stakeholder fluency","description": "Working with PMs, designers, execs, and saying no without burning bridges." }
+    { "id": "stakes",    "label": "Stakeholder fluency","description": "Working with product managers, designers, and executives, and saying no without burning bridges." }
   ],
   "questions": [
-    { "id": "q01", "dim": "craft",   "prompt": "I can plan a generative interview study (n≈8) and have a synthesis draft within two weeks." },
-    { "id": "q02", "dim": "craft",   "prompt": "I am comfortable running a usability test with think-aloud protocol." },
-    { "id": "q03", "dim": "craft",   "prompt": "I can write a one-page research plan with clear questions, method, and decisions it will inform." },
-    { "id": "q04", "dim": "craft",   "prompt": "I can analyze mixed qual/quant data and resist over-interpreting small samples." },
-    { "id": "q05", "dim": "pace",    "prompt": "I am comfortable shipping insights that are 80% confident if the decision is reversible." },
-    { "id": "q06", "dim": "pace",    "prompt": "I can re-scope a study mid-flight when the product question changes." },
-    { "id": "q07", "dim": "pace",    "prompt": "I would rather deliver a useful answer in two weeks than a perfect one in two months." },
-    { "id": "q08", "dim": "product", "prompt": "I can articulate how a research insight changes a roadmap, a metric, or a screen." },
-    { "id": "q09", "dim": "product", "prompt": "I read product specs, prototypes, or analytics dashboards without getting lost." },
-    { "id": "q10", "dim": "product", "prompt": "I can identify when research is the wrong tool and recommend something cheaper." },
-    { "id": "q11", "dim": "product", "prompt": "I think in terms of users, jobs-to-be-done, and trade-offs — not only populations and effects." },
-    { "id": "q12", "dim": "comms",   "prompt": "I can write a one-page readout that a busy PM will actually read." },
-    { "id": "q13", "dim": "comms",   "prompt": "I am comfortable presenting findings to skeptical engineers or executives." },
-    { "id": "q14", "dim": "comms",   "prompt": "I can replace academic hedging with plain claims while preserving honest uncertainty." },
-    { "id": "q15", "dim": "stakes",  "prompt": "I can disagree with a designer or PM and still get invited to the next kickoff." },
-    { "id": "q16", "dim": "stakes",  "prompt": "I can say no to a research request and offer a useful alternative." },
+    { "id": "q01", "dim": "craft",   "prompt": "I can plan a small interview study (about 8 people) and have a written summary within two weeks." },
+    { "id": "q02", "dim": "craft",   "prompt": "I'm comfortable watching someone use software and asking them to narrate what they're thinking." },
+    { "id": "q03", "dim": "craft",   "prompt": "I can write a one-page research plan with clear questions, methods, and the decisions it will inform." },
+    { "id": "q04", "dim": "craft",   "prompt": "I can analyze a mix of qualitative and quantitative data and resist over-interpreting small samples." },
+    { "id": "q05", "dim": "pace",    "prompt": "I'm comfortable acting on an 80%-confident finding when the decision can be reversed later." },
+    { "id": "q06", "dim": "pace",    "prompt": "I can change my study mid-way when the question I'm trying to answer shifts." },
+    { "id": "q07", "dim": "pace",    "prompt": "I'd rather deliver a useful answer in two weeks than a perfect one in two months." },
+    { "id": "q08", "dim": "product", "prompt": "I can explain how a research finding should change what gets built, measured, or shown on screen." },
+    { "id": "q09", "dim": "product", "prompt": "I can read software documents, design mockups, and usage dashboards without getting lost." },
+    { "id": "q10", "dim": "product", "prompt": "I can recognize when research isn't the right tool and suggest a cheaper way to get the answer." },
+    { "id": "q11", "dim": "product", "prompt": "I think about the specific person trying to get something done — not just populations and average effects." },
+    { "id": "q12", "dim": "comms",   "prompt": "I can write a one-page summary that a busy non-academic colleague will actually read." },
+    { "id": "q13", "dim": "comms",   "prompt": "I'm comfortable presenting findings to skeptical engineers or executives." },
+    { "id": "q14", "dim": "comms",   "prompt": "I can replace academic hedging with plain claims while still being honest about uncertainty." },
+    { "id": "q15", "dim": "stakes",  "prompt": "I can disagree with a designer or product manager and still get invited to the next meeting." },
+    { "id": "q16", "dim": "stakes",  "prompt": "I can turn down a research request and offer a useful alternative." },
     { "id": "q17", "dim": "stakes",  "prompt": "I can read the politics of a room and adjust how I deliver bad news." },
-    { "id": "q18", "dim": "stakes",  "prompt": "I am energized — not drained — by working with non-researchers every day." }
+    { "id": "q18", "dim": "stakes",  "prompt": "I'm energized — not drained — by working with non-researchers every day." }
   ],
   "bands": [
-    { "min": 0,  "max": 39, "label": "Not yet", "blurb": "You have real research instincts, but the pace and politics of UXR will frustrate you today. Use the next 6 months to ship one small applied study." },
-    { "min": 40, "max": 59, "label": "Curious", "blurb": "You'd survive a UXR role with deliberate practice. Focus on speed, product framing, and short readouts." },
-    { "min": 60, "max": 79, "label": "Strong fit", "blurb": "Your craft transfers cleanly. Spend your effort on UXR portfolio artifacts and stakeholder examples." },
-    { "min": 80, "max": 100, "label": "Ready to apply", "blurb": "On paper you're already a UXR. The remaining gap is positioning — your CV, samples, and interview stories." }
+    { "min": 0,  "max": 39, "label": "Not yet", "blurb": "You have real research instincts, but the pace and politics of this work will frustrate you today. Use the next six months to ship one small applied study." },
+    { "min": 40, "max": 59, "label": "Curious", "blurb": "You'd survive a UX research role with deliberate practice. Focus on speed, product framing, and short summaries." },
+    { "min": 60, "max": 79, "label": "Strong fit", "blurb": "Your research craft transfers cleanly. Spend your effort on portfolio examples and stakeholder stories." },
+    { "min": 80, "max": 100, "label": "Ready to apply", "blurb": "On paper you're already a UX researcher. The remaining gap is positioning — your CV, work samples, and interview stories." }
   ]
 }

@@ -1,20 +1,22 @@
 # crimux
 
-**The Criminologist's Guide to User Research of Apps and Tech** — an open-access handbook by Tara Abrahams (first author) and Scott Jacques (second author), hosted at [crimux.com](https://crimux.com).
+**The Criminologist's Guide to User Experience: Making Criminal Justice Apps Work Better for the People Who Use Them** — an open-access handbook by Tara Abrahams (first author) and Scott Jacques (second author), published by the [CrimRxiv Consortium](https://www.crimrxiv.com/consortium) and hosted at [crimux.com](https://crimux.com).
 
 ## What this is
 
-A ~6,000-word, four-part handbook that translates user research (UXR) for criminologists and makes criminology legible to UXR teams working on justice-tech. It ships with:
+A ~6,000-word, four-part handbook that translates user experience (UX) research for criminologists and makes criminology legible to UX teams working on criminal justice technology. It ships with:
 
 - Four short, skimmable parts (~1,500 words each).
-- A curated ~75-entry annotated bibliography of justice-tech UX studies.
-- Two interactive modules: a UXR-fit quiz and a Skills Translator.
+- A curated ~75-entry annotated bibliography of user-experience studies in criminal justice technology.
+- Two interactive modules: a UX-fit quiz and a Skills Translator.
 - A "Cite this" page with DOI, BibTeX, APA, and Chicago entries.
+
+It is a service of the [CrimRxiv Consortium](https://www.crimrxiv.com/consortium), part of our mission to make criminology useful. Free, open-access criminology research lives at [CrimRxiv](https://www.crimrxiv.com).
 
 ## Who it's for
 
-- Criminology PhDs and faculty curious about pivoting toward (or partnering with) UXR.
-- UXR teams at justice-tech, civic-tech, and adjacent companies who want a citation-rich starting point.
+- Criminology PhDs and faculty curious about pivoting toward (or partnering with) user-experience research.
+- UX teams at criminal-justice-tech, civic-tech, and adjacent companies who want a citation-rich starting point.
 - Funders, conference organizers, and journal editors who want a single open-access reference.
 
 ## Tech
@@ -22,7 +24,7 @@ A ~6,000-word, four-part handbook that translates user research (UXR) for crimin
 - **Stack:** [Astro 4](https://astro.build) (static-site generator) with [`@astrojs/sitemap`].
 - **Hosting:** Cloudflare Pages, deployed from `main` of [github.com/crimux/handbook](https://github.com/crimux/handbook).
 - **Domain:** [crimux.com](https://crimux.com) — see `DEPLOY.md` for the click-path.
-- **Fonts:** Inter + Fraunces, self-hosted via `@fontsource/*`. No external font CDN.
+- **Fonts:** Source Serif 4 + Inter + JetBrains Mono, loaded from Google Fonts (matches the CrimRxiv Faculty Explorer aesthetic).
 - **Analytics:** Cloudflare Web Analytics only (placeholder in `src/layouts/Base.astro`).
 - **Accessibility target:** WCAG 2.2 AA.
 - **Performance target:** Lighthouse ≥ 95 across the board.
@@ -62,4 +64,4 @@ See `CONTENT.md` for where to edit each part of the handbook, how to add a bibli
 
 See [`/cite`](https://crimux.com/cite) on the live site or the `CITATION.cff` in this repo.
 
-> Abrahams, T., & Jacques, S. (2026). *The Criminologist's Guide to User Research of Apps and Tech* (v0.1.0) [Open-access handbook]. crimux.com. https://doi.org/10.5281/zenodo.PENDING
+> Abrahams, T., & Jacques, S. (2026). The Criminologist's Guide to User Experience: Making Criminal Justice Apps Work Better for the People Who Use Them (v0.2.0) [Open-access handbook]. CrimRxiv Consortium. https://doi.org/10.5281/zenodo.PENDING

@@ -1,26 +1,35 @@
-/* crimux design tokens — Confident Indigo */
+/* crimux design tokens — CrimRxiv Consortium (orange + black, matching Faculty Explorer) */
 :root {
   /* Color */
-  --ink: #0f1226;
-  --ink-2: #2a2e4f;
-  --ink-3: #4b4f73;
+  --ink: #0e0e0e;
+  --ink-2: #2a2a2a;
+  --ink-3: #555555;
   --paper: #ffffff;
-  --paper-2: #f6f6fb;
-  --paper-3: #eceaf5;
-  --rule: #d9d7e6;
-  --indigo: #2a2a72;
-  --indigo-2: #3a3a9c;
-  --indigo-soft: #e5e5f5;
+  --paper-2: #f7f7f5;
+  --paper-3: #efefea;
+  --rule: #e2e2dc;
+
+  /* Brand (orange) — replaces the old indigo */
+  --brand: #f68212;
+  --brand-2: #d96d0a;
+  --brand-soft: #fff2e3;
+
+  /* Back-compat aliases so any legacy var(--indigo*) references keep working */
+  --indigo: var(--brand);
+  --indigo-2: var(--brand-2);
+  --indigo-soft: var(--brand-soft);
+
   --amber: #f5b700;
   --amber-soft: #fff4cc;
   --teal: #0e7c86;
   --success: #1f7a4c;
   --warn: #9a4a00;
 
-  /* Type */
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  /* Type — matches Faculty Explorer stack */
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-sans);
+  --font-display: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Scale */
   --step--1: clamp(0.83rem, 0.79rem + 0.2vw, 0.92rem);
@@ -46,8 +55,8 @@
   --radius-sm: 6px;
   --radius:    10px;
   --radius-lg: 16px;
-  --shadow-1: 0 1px 2px rgba(15, 18, 38, 0.06), 0 1px 3px rgba(15, 18, 38, 0.05);
-  --shadow-2: 0 6px 20px rgba(15, 18, 38, 0.08);
+  --shadow-1: 0 1px 2px rgba(14, 14, 14, 0.06), 0 1px 3px rgba(14, 14, 14, 0.05);
+  --shadow-2: 0 6px 20px rgba(14, 14, 14, 0.08);
   --motion-fast: 140ms cubic-bezier(0.2, 0.7, 0.2, 1);
   --motion: 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
 
@@ -58,16 +67,21 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ink: #ecebf5;
-    --ink-2: #c8c7da;
-    --ink-3: #9a99b3;
-    --paper: #0d1024;
-    --paper-2: #141731;
-    --paper-3: #1c1f3d;
-    --rule: #2a2e52;
-    --indigo: #8a8aff;
-    --indigo-2: #a5a5ff;
-    --indigo-soft: #20235a;
+    --ink: #f3f1ec;
+    --ink-2: #d6d4cc;
+    --ink-3: #9b9890;
+    --paper: #0e0e0e;
+    --paper-2: #161614;
+    --paper-3: #1f1f1c;
+    --rule: #2d2d28;
+
+    --brand: #ff9a3c;
+    --brand-2: #ffb066;
+    --brand-soft: #3a2410;
+    --indigo: var(--brand);
+    --indigo-2: var(--brand-2);
+    --indigo-soft: var(--brand-soft);
+
     --amber: #ffd24a;
     --amber-soft: #3d3210;
     --teal: #4cc1cb;

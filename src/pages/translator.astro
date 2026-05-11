@@ -2,11 +2,11 @@
 import Base from "@layouts/Base.astro";
 import translator from "@data/translator.json";
 ---
-<Base title="Skills Translator" description="Type a criminology research skill or experience; get back a UXR-flavored translation and a sharable result card.">
+<Base title="Skills Translator" description="Type a criminology research skill or experience; get back a UX-research translation and a sharable result card.">
   <header class="container hero">
     <p class="eyebrow">Skills translator</p>
-    <h1>From criminology to UXR framing</h1>
-    <p class="lead">Type a method, skill, or experience from your CV. You'll get a UXR translation, a one-line frame for a resume, and a sharable card.</p>
+    <h1>From criminology to user-experience framing</h1>
+    <p class="lead">Type a method, skill, or experience from your CV. You'll get a UX research translation, a one-line frame for a resume, and a sharable card.</p>
   </header>
 
   <section class="container">
@@ -62,7 +62,7 @@ import translator from "@data/translator.json";
     frameEl.textContent = out.frame;
     matchEl.textContent = out.matched;
 
-    const text = `Criminology → UXR translation: "${(input.value || "").slice(0, 120)}" → ${out.uxr}. crimux.com/translator`;
+    const text = `Criminology → UX research translation: "${(input.value || "").slice(0, 120)}" → ${out.uxr}. crimux.com/translator`;
     shareBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://crimux.com/translator")}`;
     copyBtn.onclick = async () => {
       try { await navigator.clipboard.writeText(text); copyBtn.textContent = "Copied"; setTimeout(() => copyBtn.textContent = "Copy result", 1500); } catch {}
@@ -96,13 +96,14 @@ import translator from "@data/translator.json";
     resize: vertical;
   }
   .btn, .btn-ghost { font: inherit; padding: 0.7rem 1.2rem; border-radius: var(--radius); border: 1px solid transparent; cursor: pointer; text-decoration: none; }
-  .btn { background: var(--indigo); color: #fff; display: inline-block; }
+  .btn { background: var(--brand); color: var(--ink); display: inline-block; font-weight: 600; }
+  .btn:hover { background: var(--brand-2); color: #fff; }
   .btn-ghost { background: var(--paper); color: var(--ink); border-color: var(--rule); }
   #t-result { padding: var(--s-6) 0; border-top: 1px solid var(--rule); }
   .share-card {
     margin-top: var(--s-3);
     aspect-ratio: 1200 / 630;
-    background: linear-gradient(135deg, var(--indigo), #0d1024);
+    background: linear-gradient(135deg, var(--brand), var(--ink));
     color: #fff;
     border-radius: var(--radius-lg);
     padding: var(--s-6);
@@ -110,9 +111,9 @@ import translator from "@data/translator.json";
     place-content: center;
     text-align: center;
   }
-  .sc-eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; opacity: 0.8; margin: 0 0 var(--s-3); }
-  .sc-source { font-size: 1rem; opacity: 0.85; margin: 0; max-width: 32ch; margin-inline: auto; }
-  .sc-arrow { font-family: var(--font-display); font-size: 2rem; margin: var(--s-3) 0; opacity: 0.6; }
-  .sc-uxr { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.4rem); color: var(--amber); margin: 0; }
+  .sc-eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; opacity: 0.85; margin: 0 0 var(--s-3); color: #fff; }
+  .sc-source { font-size: 1rem; opacity: 0.9; margin: 0; max-width: 32ch; margin-inline: auto; color: #fff; }
+  .sc-arrow { font-family: var(--font-display); font-size: 2rem; margin: var(--s-3) 0; opacity: 0.7; color: #fff; }
+  .sc-uxr { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.4rem); color: #fff; margin: 0; font-weight: 600; }
   .small { font-size: 0.85rem; }
 </style>
