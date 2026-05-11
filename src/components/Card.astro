@@ -1,0 +1,56 @@
+---
+interface Props {
+  title?: string;
+  href?: string;
+  eyebrow?: string;
+  tag?: string;
+}
+const { title, href, eyebrow, tag } = Astro.props;
+const Tag = href ? "a" : "article";
+---
+<Tag class="card" href={href}>
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  {title && <h3 class="title">{title}</h3>}
+  <div class="body"><slot /></div>
+  {tag && <span class="tag">{tag}</span>}
+</Tag>
+
+<style>
+  .card {
+    display: block;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    padding: var(--s-5);
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--motion), box-shadow var(--motion), border-color var(--motion);
+    box-shadow: var(--shadow-1);
+    position: relative;
+    height: 100%;
+  }
+  a.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2);
+    border-color: var(--indigo);
+  }
+  .title {
+    font-family: var(--font-display);
+    font-size: var(--step-1);
+    margin: var(--s-2) 0 var(--s-3);
+  }
+  .body { font-size: 0.96rem; color: var(--ink-2); }
+  .tag {
+    position: absolute;
+    top: var(--s-3);
+    right: var(--s-3);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--amber-soft);
+    color: var(--warn);
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+</style>

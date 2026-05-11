@@ -1,0 +1,84 @@
+{
+  "version": "0.1.0",
+  "mappings": [
+    {
+      "match": ["interview", "qualitative interview", "semi-structured interview"],
+      "uxr": "Generative user interview",
+      "frame": "Frame the interview around a product question (a job-to-be-done, a moment of friction, or a decision the team has to make). Tighten guide to 5–7 questions, run 6–8 sessions in 1 week."
+    },
+    {
+      "match": ["ethnography", "fieldwork", "participant observation"],
+      "uxr": "Contextual inquiry / field study",
+      "frame": "Same observational craft — much shorter cycle. Two days in-field per site, three sites, and a one-page synthesis with photos and quotes within a week."
+    },
+    {
+      "match": ["focus group"],
+      "uxr": "Co-design or concept-testing workshop",
+      "frame": "Replace opinion-polling with task-centered prompts. Bring stimuli (sketches, mocks) and have participants react, sort, and prioritize."
+    },
+    {
+      "match": ["irb", "human subjects", "consent"],
+      "uxr": "Research ethics + participant consent process",
+      "frame": "Industry doesn't have IRBs but does have privacy, legal, and DEI reviewers. Write a lightweight consent script and data-handling plan; bring it to legal."
+    },
+    {
+      "match": ["grounded theory", "thematic analysis", "coding"],
+      "uxr": "Affinity diagramming / thematic synthesis",
+      "frame": "Use the same coding discipline on a much faster cadence. Two analysts, one day, sticky notes (or Dovetail / Miro / Reduct)."
+    },
+    {
+      "match": ["program evaluation", "outcome evaluation"],
+      "uxr": "Impact measurement / quasi-experimental product evaluation",
+      "frame": "Pair qual signals with product metrics. Define a 'success' metric before launch; instrument it; report effect with confidence and caveats."
+    },
+    {
+      "match": ["survey"],
+      "uxr": "Quant UXR / large-N survey",
+      "frame": "Write tighter items, drop double-barrels, and target a behavior or attitude tied to a feature. Use MaxDiff or Kano if prioritization is the question."
+    },
+    {
+      "match": ["systematic review", "literature review", "meta-analysis"],
+      "uxr": "Secondary research / desk research / lit review",
+      "frame": "Same rigor, narrower scope. Build a one-pager that answers a product question with prior evidence — academic and industry — and notes what's missing."
+    },
+    {
+      "match": ["teaching", "instructor", "pedagogy"],
+      "uxr": "Stakeholder education / research democratization",
+      "frame": "Teaching translates to ResearchOps and stakeholder enablement: building self-serve templates, running clinics, and coaching PMs to ask better questions."
+    },
+    {
+      "match": ["grant", "rfp", "proposal"],
+      "uxr": "Research plan / scoping doc",
+      "frame": "A research plan is a 1–2 page mini-proposal: question, why now, method, participants, timeline, decisions it will inform, risks. Same muscle, smaller deliverable."
+    },
+    {
+      "match": ["peer review", "manuscript review"],
+      "uxr": "Critique / research review",
+      "frame": "Critiques in industry are real-time and verbal. Lead with the decision at stake, the strongest claim, and the weakest evidence. Skip the throat-clearing."
+    },
+    {
+      "match": ["mixed methods"],
+      "uxr": "Mixed-methods UXR",
+      "frame": "Highly transferable. Industry rewards practitioners who can pair n=8 interviews with n=800 surveys or product logs and write the through-line."
+    },
+    {
+      "match": ["policy", "policy analysis"],
+      "uxr": "Strategic / foundational research",
+      "frame": "Policy thinking maps to strategic UXR: framing the problem space, mapping stakeholders, and informing roadmap-level decisions rather than feature-level ones."
+    },
+    {
+      "match": ["ride-along", "field observation", "shadowing"],
+      "uxr": "Diary study / shadow-and-debrief",
+      "frame": "Same craft. Shorter window (1–2 weeks), structured artifacts (photos, voice memos), and a debrief interview at the end."
+    },
+    {
+      "match": ["statistical analysis", "regression", "spss", "r ", "stata"],
+      "uxr": "Quant UXR / analytics partnership",
+      "frame": "Lean into this. Many UXR teams are starved for someone who can read a regression and pair it with a qual finding without losing either."
+    }
+  ],
+  "fallback": {
+    "uxr": "Transferable research skill",
+    "frame": "Describe it in product terms: what question it answered, who you talked to, how long it took, and what changed because of it. That structure travels."
+  }
+}

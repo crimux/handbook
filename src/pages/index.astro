@@ -1,0 +1,121 @@
+---
+import Base from "@layouts/Base.astro";
+import Button from "@components/Button.astro";
+import Card from "@components/Card.astro";
+import PullQuote from "@components/PullQuote.astro";
+import { site } from "@data/site";
+---
+<Base title="Home" description={site.tagline}>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Open-access handbook · v{site.version}</p>
+        <h1>{site.title}</h1>
+        <p class="lead">{site.tagline}</p>
+        <div class="cluster" style="margin-top: var(--s-5);">
+          <Button href="/parts/1-what-is-uxr" variant="primary" size="lg">Start reading</Button>
+          <Button href="/quiz" variant="ghost" size="lg">Take the quiz</Button>
+          <Button href="/translator" variant="link" size="lg">Skills translator →</Button>
+        </div>
+      </div>
+      <aside class="meta-card">
+        <p class="label">At a glance</p>
+        <ul>
+          <li><strong>Authors:</strong> {site.authors[0].name} (first), {site.authors[1].name} (second)</li>
+          <li><strong>Length:</strong> ~6,000 words across four parts</li>
+          <li><strong>Bibliography:</strong> ~75 annotated entries</li>
+          <li><strong>License:</strong> <a href={site.licenseUrl}>{site.license}</a></li>
+          <li><strong>Cite:</strong> <a href="/cite">DOI / BibTeX / APA / Chicago</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="container">
+    <p class="eyebrow">The handbook</p>
+    <h2>Four parts, one path from criminology to UXR</h2>
+    <div class="grid grid-2" style="margin-top: var(--s-5);">
+      <Card href="/parts/1-what-is-uxr" eyebrow="Part 1" title="What is user research, actually?">
+        A practitioner translation of UXR for people who already know research — with a side-by-side concept table mapping criminology methods to UXR equivalents.
+      </Card>
+      <Card href="/parts/2-what-criminology-knows" eyebrow="Part 2" title="What criminology already knows">
+        A curated, annotated bibliography of justice-tech UX studies: inmate tablets, parole apps, BWC, predictive policing, e-filing, victim notification, and more.
+      </Card>
+      <Card href="/parts/3-open-problems" eyebrow="Part 3" title="What should be studied">
+        15–25 prioritized, understudied UXR questions in justice-tech, each with users, methods, feasibility, and seed citations.
+      </Card>
+      <Card href="/parts/4-careers" eyebrow="Part 4" title="UXR as a criminology-adjacent career">
+        Plain-market reality: salary bands, what translates from a criminology PhD, a 6-month pivot plan, and the candid downsides.
+      </Card>
+    </div>
+  </section>
+
+  <PullQuote attribution="The handbook, in one line">
+    Criminologists already know how to study people. The job is to translate that craft into the rhythms of product teams without losing the rigor.
+  </PullQuote>
+
+  <section class="container">
+    <p class="eyebrow">Interactive</p>
+    <h2>Two tools to make the pivot tangible</h2>
+    <div class="grid grid-2">
+      <Card href="/quiz" eyebrow="Self-assessment" title="Is UXR right for you?">
+        ~18 questions across five sub-dimensions. Composite score, personalized next steps, and a share-card you can post.
+      </Card>
+      <Card href="/translator" eyebrow="Skills translator" title="From criminology to UXR framing">
+        Type a research skill or experience; get back a UXR-flavored translation and a sharable result card.
+      </Card>
+    </div>
+  </section>
+
+  <section class="container">
+    <p class="eyebrow">Use & reuse</p>
+    <h2>Free to read, fork, and remix</h2>
+    <p class="prose">
+      Everything on this site is licensed {site.license}. The source is on
+      <a href={site.repo}>GitHub</a>, each versioned release is archived on
+      Zenodo, and the citation page gives you the DOI plus BibTeX, APA, and Chicago entries.
+    </p>
+    <div class="cluster">
+      <Button href="/cite" variant="ghost">How to cite</Button>
+      <Button href="/about" variant="link">About the authors →</Button>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding-block: var(--s-8) var(--s-7);
+    background: linear-gradient(180deg, var(--indigo-soft), transparent 70%);
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--s-7);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+  .meta-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    padding: var(--s-5);
+    box-shadow: var(--shadow-1);
+  }
+  .meta-card .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    color: var(--indigo);
+    font-weight: 600;
+    margin: 0 0 var(--s-3);
+  }
+  .meta-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--ink-2);
+  }
+  .meta-card li + li { margin-top: var(--s-2); }
+</style>

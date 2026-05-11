@@ -1,0 +1,59 @@
+---
+import { site } from "@data/site";
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <p class="title">{site.shortTitle}</p>
+        <p class="muted small">An open-access handbook by {site.authors[0].name} & {site.authors[1].name}.</p>
+      </div>
+      <div>
+        <p class="label">Use & cite</p>
+        <ul class="links">
+          <li><a href={site.licenseUrl} rel="license noopener">{site.license}</a></li>
+          <li><a href="/cite">How to cite</a></li>
+          <li><a href={site.repo} rel="noopener">Source on GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label">Version</p>
+        <p class="small muted">
+          v{site.version} · last updated <time datetime={site.lastUpdated}>{site.lastUpdated}</time>
+        </p>
+        <p class="small muted">DOI: <code>{site.doi}</code></p>
+      </div>
+    </div>
+    <p class="rights muted small">
+      © {new Date().getFullYear()} {site.authors[0].name} & {site.authors[1].name}. Text licensed under {site.license}. Code under MIT.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--s-9);
+    padding-block: var(--s-7) var(--s-5);
+    border-top: 1px solid var(--rule);
+    background: var(--paper-2);
+  }
+  .grid {
+    display: grid;
+    gap: var(--s-5);
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+  .title { font-family: var(--font-display); font-weight: 600; margin: 0 0 var(--s-2); }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--ink-3);
+    margin: 0 0 var(--s-2);
+  }
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li + li { margin-top: var(--s-2); }
+  .small { font-size: 0.86rem; }
+  .rights { margin-top: var(--s-6); }
+</style>

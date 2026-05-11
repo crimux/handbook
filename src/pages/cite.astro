@@ -1,0 +1,55 @@
+---
+import Base from "@layouts/Base.astro";
+import { site } from "@data/site";
+
+const year = new Date(site.lastUpdated).getFullYear();
+const bibtex = `@book{abrahams_jacques_${year}_crimux,
+  author    = {Abrahams, Tara and Jacques, Scott},
+  title     = {The Criminologist's Guide to User Research of Apps and Tech},
+  year      = {${year}},
+  version   = {${site.version}},
+  publisher = {crimux.com},
+  url       = {https://crimux.com},
+  doi       = {${site.doi}}
+}`;
+
+const apa = `Abrahams, T., & Jacques, S. (${year}). The criminologist's guide to user research of apps and tech (v${site.version}) [Open-access handbook]. crimux.com. https://doi.org/${site.doi}`;
+
+const chicago = `Abrahams, Tara, and Scott Jacques. ${year}. The Criminologist's Guide to User Research of Apps and Tech. v${site.version}. crimux.com. https://doi.org/${site.doi}.`;
+---
+<Base title="Cite this handbook" description="DOI, BibTeX, APA, and Chicago entries for the current version.">
+  <header class="container hero">
+    <p class="eyebrow">Cite this</p>
+    <h1>How to cite</h1>
+    <p class="lead">Versioned releases are archived on Zenodo. Use the DOI for the version you read; cite the URL only as a fallback.</p>
+  </header>
+
+  <section class="container">
+    <div class="meta">
+      <p><strong>Version:</strong> {site.version}</p>
+      <p><strong>Last updated:</strong> <time datetime={site.lastUpdated}>{site.lastUpdated}</time></p>
+      <p><strong>DOI:</strong> <code>{site.doi}</code></p>
+      <p><strong>License:</strong> <a href={site.licenseUrl}>{site.license}</a></p>
+    </div>
+
+    <h2>BibTeX</h2>
+    <pre><code>{bibtex}</code></pre>
+
+    <h2>APA 7</h2>
+    <pre><code>{apa}</code></pre>
+
+    <h2>Chicago (author-date)</h2>
+    <pre><code>{chicago}</code></pre>
+
+    <h2>CITATION.cff</h2>
+    <p>The repository ships with a <code>CITATION.cff</code> that GitHub will surface on the repo home page.</p>
+  </section>
+</Base>
+
+<style>
+  .hero { padding-block: var(--s-8) var(--s-5); }
+  .meta { background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: var(--s-4); margin-bottom: var(--s-6); }
+  .meta p { margin: 0; }
+  .meta p + p { margin-top: var(--s-2); }
+  pre { background: var(--paper-2); padding: var(--s-4); border-radius: var(--radius); overflow: auto; font-size: 0.88rem; }
+</style>

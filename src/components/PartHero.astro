@@ -1,0 +1,22 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  dek: string;
+  wordCount?: string;
+}
+const { number, title, dek, wordCount } = Astro.props;
+---
+<header class="hero container">
+  <p class="eyebrow">Part {number}</p>
+  <h1>{title}</h1>
+  <p class="lead">{dek}</p>
+  {wordCount && <p class="meta muted">~{wordCount} words · reading time scales with you</p>}
+</header>
+
+<style>
+  .hero {
+    padding-block: var(--s-8) var(--s-6);
+  }
+  .meta { font-size: 0.9rem; margin-top: var(--s-3); }
+</style>

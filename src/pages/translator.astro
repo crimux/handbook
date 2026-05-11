@@ -1,0 +1,118 @@
+---
+import Base from "@layouts/Base.astro";
+import translator from "@data/translator.json";
+---
+<Base title="Skills Translator" description="Type a criminology research skill or experience; get back a UXR-flavored translation and a sharable result card.">
+  <header class="container hero">
+    <p class="eyebrow">Skills translator</p>
+    <h1>From criminology to UXR framing</h1>
+    <p class="lead">Type a method, skill, or experience from your CV. You'll get a UXR translation, a one-line frame for a resume, and a sharable card.</p>
+  </header>
+
+  <section class="container">
+    <form id="t-form" class="t-form">
+      <label for="t-input">Your skill or experience</label>
+      <textarea id="t-input" rows="3" placeholder="e.g., I ran a 14-month ethnography of drug markets with 35 interviews and field observation."></textarea>
+      <button type="submit" class="btn">Translate</button>
+    </form>
+
+    <section id="t-result" hidden>
+      <h2 id="t-uxr">—</h2>
+      <p id="t-frame" class="lead">—</p>
+      <p class="muted small">Matched on: <span id="t-match">—</span></p>
+
+      <div class="cluster">
+        <button id="t-copy" class="btn-ghost" type="button">Copy result</button>
+        <a id="t-share" class="btn" target="_blank" rel="noopener">Share on LinkedIn</a>
+      </div>
+
+      <details>
+        <summary>Card preview</summary>
+        <div id="t-card" class="share-card"></div>
+      </details>
+    </section>
+  </section>
+</Base>
+
+<script define:vars={{ translator }}>
+  const form = document.getElementById("t-form");
+  const input = document.getElementById("t-input");
+  const result = document.getElementById("t-result");
+  const uxrEl = document.getElementById("t-uxr");
+  const frameEl = document.getElementById("t-frame");
+  const matchEl = document.getElementById("t-match");
+  const copyBtn = document.getElementById("t-copy");
+  const shareBtn = document.getElementById("t-share");
+  const card = document.getElementById("t-card");
+
+  function translate(text) {
+    const q = (text || "").toLowerCase();
+    for (const m of translator.mappings) {
+      for (const k of m.match) {
+        if (q.includes(k)) return { ...m, matched: k };
+      }
+    }
+    return { ...translator.fallback, matched: "(no exact match — generic frame)" };
+  }
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const out = translate(input.value);
+    uxrEl.textContent = out.uxr;
+    frameEl.textContent = out.frame;
+    matchEl.textContent = out.matched;
+
+    const text = `Criminology → UXR translation: "${(input.value || "").slice(0, 120)}" → ${out.uxr}. crimux.com/translator`;
+    shareBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://crimux.com/translator")}`;
+    copyBtn.onclick = async () => {
+      try { await navigator.clipboard.writeText(text); copyBtn.textContent = "Copied"; setTimeout(() => copyBtn.textContent = "Copy result", 1500); } catch {}
+    };
+
+    card.innerHTML = `
+      <div class="sc-inner">
+        <p class="sc-eyebrow">Skills Translator · crimux.com</p>
+        <p class="sc-source">${(input.value || "").slice(0, 120)}</p>
+        <p class="sc-arrow">→</p>
+        <p class="sc-uxr">${out.uxr}</p>
+      </div>
+    `;
+
+    result.hidden = false;
+    result.scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+<style>
+  .hero { padding-block: var(--s-8) var(--s-5); }
+  .t-form { display: grid; gap: var(--s-3); max-width: 640px; margin-bottom: var(--s-6); }
+  .t-form label { font-weight: 600; }
+  textarea {
+    font: inherit;
+    padding: var(--s-3);
+    border-radius: var(--radius);
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    resize: vertical;
+  }
+  .btn, .btn-ghost { font: inherit; padding: 0.7rem 1.2rem; border-radius: var(--radius); border: 1px solid transparent; cursor: pointer; text-decoration: none; }
+  .btn { background: var(--indigo); color: #fff; display: inline-block; }
+  .btn-ghost { background: var(--paper); color: var(--ink); border-color: var(--rule); }
+  #t-result { padding: var(--s-6) 0; border-top: 1px solid var(--rule); }
+  .share-card {
+    margin-top: var(--s-3);
+    aspect-ratio: 1200 / 630;
+    background: linear-gradient(135deg, var(--indigo), #0d1024);
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: var(--s-6);
+    display: grid;
+    place-content: center;
+    text-align: center;
+  }
+  .sc-eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; opacity: 0.8; margin: 0 0 var(--s-3); }
+  .sc-source { font-size: 1rem; opacity: 0.85; margin: 0; max-width: 32ch; margin-inline: auto; }
+  .sc-arrow { font-family: var(--font-display); font-size: 2rem; margin: var(--s-3) 0; opacity: 0.6; }
+  .sc-uxr { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.4rem); color: var(--amber); margin: 0; }
+  .small { font-size: 0.85rem; }
+</style>

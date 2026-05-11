@@ -1,0 +1,24 @@
+---
+interface Props { label: string; tone?: "default" | "indigo" | "amber" | "teal"; }
+const { label, tone = "default" } = Astro.props;
+---
+<span class:list={["tag", `tag-${tone}`]}>{label}</span>
+
+<style>
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    background: var(--paper-3);
+    color: var(--ink-2);
+    border: 1px solid var(--rule);
+    text-transform: uppercase;
+  }
+  .tag-indigo { background: var(--indigo-soft); color: var(--indigo); border-color: transparent; }
+  .tag-amber  { background: var(--amber-soft); color: var(--warn); border-color: transparent; }
+  .tag-teal   { background: #d6f0f2; color: var(--teal); border-color: transparent; }
+</style>

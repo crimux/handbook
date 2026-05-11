@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://crimux.com/sitemap-index.xml

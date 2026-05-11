@@ -1,0 +1,41 @@
+---
+import Base from "@layouts/Base.astro";
+import PartHero from "@components/PartHero.astro";
+import SourcesBox from "@components/SourcesBox.astro";
+import Callout from "@components/Callout.astro";
+---
+<Base title="Part 3 — Open problems" description="Prioritized list of understudied UXR questions in criminology and justice-tech.">
+  <PartHero
+    number="3"
+    title="What should be studied: open problems"
+    dek="Fifteen to twenty-five understudied UXR questions in criminology and justice-tech — each with users, methods, feasibility, and seed citations."
+    wordCount="1,500"
+  />
+
+  <article class="container prose">
+    <Callout type="note" title="Draft status">
+      Outline only. Full list lands in Step 4. You'll be asked which five to feature at the top.
+    </Callout>
+
+    <h2>How problems were picked</h2>
+    <p class="muted">Placeholder — selection criteria, feasibility scoring, and seed-citation rules.</p>
+
+    <h2>The list (placeholders)</h2>
+    <ol>
+      <li>Problem 1 — short framing.</li>
+      <li>Problem 2 — short framing.</li>
+      <li>Problem 3 — short framing.</li>
+      <li>… up to ~20.</li>
+    </ol>
+
+    <h2>Contribute a problem</h2>
+    <p>
+      A lightweight submission form lives at the bottom of this page in v1.0. For now,
+      open an issue on <a href="https://github.com/crimux/crimux/issues">GitHub</a>.
+    </p>
+
+    <SourcesBox items={[
+      { text: "Placeholder until Step 4" },
+    ]} />
+  </article>
+</Base>

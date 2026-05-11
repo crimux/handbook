@@ -1,0 +1,60 @@
+---
+import Base from "@layouts/Base.astro";
+import PartHero from "@components/PartHero.astro";
+import SourcesBox from "@components/SourcesBox.astro";
+import Callout from "@components/Callout.astro";
+---
+<Base title="Part 1 — What is user research, actually?" description="A practitioner translation of UXR for criminologists who already know research.">
+  <PartHero
+    number="1"
+    title="What is user research, actually?"
+    dek="A practitioner translation of UXR for an audience that already knows research. Same craft, different rhythm."
+    wordCount="1,500"
+  />
+
+  <article class="container prose">
+    <Callout type="note" title="Draft status">
+      This is the scaffolded outline for Part 1. Full prose lands in Step 2 of the build. Section headings, glossary, and the concept table are wired up; copy will be filled in.
+    </Callout>
+
+    <h2>The job in one paragraph</h2>
+    <p>To come: a tight definition of UXR as the discipline of generating evidence that helps product teams choose what to build, how to build it, and how to know it worked.</p>
+
+    <h2>Criminology ↔ UXR: a concept table</h2>
+    <p class="muted">Placeholder — populated in Step 2.</p>
+    <table>
+      <thead>
+        <tr><th>Criminology concept</th><th>UXR equivalent</th><th>What changes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ethnography</td><td>Contextual inquiry</td><td>Shorter cycles, product framing</td></tr>
+        <tr><td>Focus group</td><td>Usability session</td><td>Task-centered, not opinion-centered</td></tr>
+        <tr><td>IRB</td><td>Consent + research ethics review</td><td>Lighter touch; participant-led</td></tr>
+        <tr><td>Grounded theory</td><td>Thematic / affinity analysis</td><td>Days, not months</td></tr>
+        <tr><td>Program evaluation</td><td>Impact measurement</td><td>Tied to product KPIs</td></tr>
+      </tbody>
+    </table>
+
+    <h2>A short glossary</h2>
+    <p class="muted">Placeholder — generative, evaluative, strategic; discovery; usability; foundational; tactical; ResearchOps; participant panel.</p>
+
+    <h2>Three week-in-the-life vignettes</h2>
+    <h3>Startup UXR</h3>
+    <p class="muted">Placeholder vignette.</p>
+    <h3>FAANG UXR</h3>
+    <p class="muted">Placeholder vignette.</p>
+    <h3>Civic-tech UXR</h3>
+    <p class="muted">Placeholder vignette.</p>
+
+    <h2>Generative, evaluative, strategic</h2>
+    <p class="muted">Placeholder — with criminology-flavored examples.</p>
+
+    <SourcesBox items={[
+      { text: "Nielsen Norman Group — UX Research Cheat Sheet" },
+      { text: "Goodman, Kuniavsky & Moed — Observing the User Experience (2nd ed.)" },
+      { text: "Portigal — Interviewing Users (2nd ed.)" },
+      { text: "Salazar — Design Research Methods, IDF" },
+      { text: "Spradley — The Ethnographic Interview" },
+    ]} />
+  </article>
+</Base>

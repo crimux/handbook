@@ -1,0 +1,157 @@
+---
+import Base from "@layouts/Base.astro";
+import quiz from "@data/quiz.json";
+---
+<Base title="Quiz — Is UXR right for you?" description="An 18-question self-assessment for criminologists considering UXR. Composite score, sub-dimensions, personalized next steps, and a share-card.">
+  <header class="container hero">
+    <p class="eyebrow">Self-assessment</p>
+    <h1>Is UXR right for you?</h1>
+    <p class="lead">{quiz.questions.length} questions across {quiz.dimensions.length} sub-dimensions. About four minutes. Your answers stay in your browser.</p>
+  </header>
+
+  <section class="container">
+    <form id="quiz-form" aria-label="UXR fit quiz">
+      <ol class="qlist">
+        {quiz.questions.map((q: any, i: number) => (
+          <li class="q" data-dim={q.dim} data-id={q.id}>
+            <p class="prompt"><strong>{i + 1}.</strong> {q.prompt}</p>
+            <fieldset class="scale">
+              <legend class="visually-hidden">Rate from 1 (strongly disagree) to 5 (strongly agree)</legend>
+              {[1, 2, 3, 4, 5].map((v) => (
+                <label>
+                  <input type="radio" name={q.id} value={v} required />
+                  <span>{v}</span>
+                </label>
+              ))}
+            </fieldset>
+            <p class="scale-labels muted"><span>Strongly disagree</span><span>Strongly agree</span></p>
+          </li>
+        ))}
+      </ol>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">See my result</button>
+        <button type="reset" class="btn-ghost">Reset</button>
+      </div>
+    </form>
+
+    <section id="result" hidden aria-live="polite">
+      <h2 id="result-band">—</h2>
+      <p id="result-blurb" class="lead">—</p>
+      <div class="grid grid-3" id="result-dims"></div>
+
+      <h3>Next steps</h3>
+      <ul id="result-next"></ul>
+
+      <div class="cluster">
+        <button id="copy-result" class="btn-ghost" type="button">Copy result text</button>
+        <a id="share-li" class="btn-primary" target="_blank" rel="noopener">Share on LinkedIn</a>
+      </div>
+
+      <details class="card-preview">
+        <summary>Share-card preview</summary>
+        <div id="share-card" class="share-card"></div>
+      </details>
+    </section>
+  </section>
+</Base>
+
+<script define:vars={{ quiz }}>
+  const form = document.getElementById("quiz-form");
+  const result = document.getElementById("result");
+  const band = document.getElementById("result-band");
+  const blurb = document.getElementById("result-blurb");
+  const dimsEl = document.getElementById("result-dims");
+  const nextEl = document.getElementById("result-next");
+  const shareLi = document.getElementById("share-li");
+  const copyBtn = document.getElementById("copy-result");
+  const card = document.getElementById("share-card");
+
+  const dimMap = Object.fromEntries(quiz.dimensions.map((d) => [d.id, d]));
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const byDim = {};
+    quiz.questions.forEach((q) => {
+      const v = parseInt(data.get(q.id), 10);
+      if (!byDim[q.dim]) byDim[q.dim] = { sum: 0, n: 0 };
+      byDim[q.dim].sum += v;
+      byDim[q.dim].n += 1;
+    });
+
+    // Each item 1..5 → normalize to 0..100
+    const dimScores = Object.entries(byDim).map(([id, { sum, n }]) => ({
+      id,
+      label: dimMap[id].label,
+      pct: Math.round(((sum - n) / (n * 4)) * 100),
+    }));
+    const composite = Math.round(dimScores.reduce((a, b) => a + b.pct, 0) / dimScores.length);
+    const matchedBand = quiz.bands.find((b) => composite >= b.min && composite <= b.max);
+
+    band.textContent = `${matchedBand.label} · ${composite}/100`;
+    blurb.textContent = matchedBand.blurb;
+
+    dimsEl.innerHTML = dimScores.map((d) => `
+      <div class="dim">
+        <p class="dim-label">${d.label}</p>
+        <div class="bar"><span style="width:${d.pct}%"></span></div>
+        <p class="dim-pct">${d.pct}/100</p>
+      </div>
+    `).join("");
+
+    const weakest = [...dimScores].sort((a, b) => a.pct - b.pct).slice(0, 2);
+    nextEl.innerHTML = [
+      `Focus first on <strong>${weakest[0].label}</strong> — it's your lowest sub-dimension.`,
+      `Then shore up <strong>${weakest[1].label}</strong>.`,
+      `Read <a href="/parts/4-careers">Part 4</a> for a 6-month plan.`,
+      `Run the <a href="/translator">Skills Translator</a> on two of your strongest experiences.`,
+    ].map((s) => `<li>${s}</li>`).join("");
+
+    const text = `I scored ${composite}/100 on the Criminologist's UXR-fit quiz — band: ${matchedBand.label}. crimux.com/quiz`;
+    shareLi.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://crimux.com/quiz")}`;
+    copyBtn.onclick = async () => {
+      try { await navigator.clipboard.writeText(text); copyBtn.textContent = "Copied"; setTimeout(() => copyBtn.textContent = "Copy result text", 1500); } catch {}
+    };
+
+    card.innerHTML = `
+      <div class="sc-inner">
+        <p class="sc-eyebrow">The Criminologist's Guide to UXR</p>
+        <p class="sc-score">${composite}<span>/100</span></p>
+        <p class="sc-band">${matchedBand.label}</p>
+        <p class="sc-url">crimux.com/quiz</p>
+      </div>
+    `;
+
+    result.hidden = false;
+    result.scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+<style>
+  .hero { padding-block: var(--s-8) var(--s-5); }
+  .qlist { list-style: none; padding: 0; margin: 0 0 var(--s-6); display: grid; gap: var(--s-4); }
+  .q { background: var(--paper); border: 1px solid var(--rule); border-radius: var(--radius-lg); padding: var(--s-5); }
+  .prompt { margin: 0 0 var(--s-3); }
+  .scale { border: 0; padding: 0; margin: 0; display: flex; gap: var(--s-3); }
+  .scale label { display: inline-flex; flex-direction: column; align-items: center; gap: 0.25rem; cursor: pointer; font-size: 0.9rem; color: var(--ink-2); }
+  .scale input { accent-color: var(--indigo); transform: scale(1.2); }
+  .scale-labels { display: flex; justify-content: space-between; margin: var(--s-2) 0 0; font-size: 0.8rem; max-width: 320px; }
+  .visually-hidden { position: absolute !important; clip: rect(1px,1px,1px,1px); width: 1px; height: 1px; overflow: hidden; }
+  .actions { display: flex; gap: var(--s-3); margin-bottom: var(--s-6); }
+  .btn-primary, .btn-ghost { font: inherit; padding: 0.75rem 1.2rem; border-radius: var(--radius); border: 1px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--indigo); color: #fff; }
+  .btn-ghost { background: var(--paper); color: var(--ink); border-color: var(--rule); }
+  #result { padding: var(--s-6) 0; border-top: 1px solid var(--rule); margin-top: var(--s-6); }
+  .dim { background: var(--paper-2); padding: var(--s-4); border-radius: var(--radius); }
+  .dim-label { margin: 0; font-weight: 600; }
+  .bar { background: var(--paper-3); height: 8px; border-radius: 999px; overflow: hidden; margin: 0.5rem 0; }
+  .bar span { display: block; height: 100%; background: var(--indigo); }
+  .dim-pct { margin: 0; font-size: 0.85rem; color: var(--ink-3); }
+  .share-card { margin-top: var(--s-3); display: grid; place-items: center; aspect-ratio: 1200 / 630; background: linear-gradient(135deg, var(--indigo) 0%, #0d1024 100%); color: #fff; border-radius: var(--radius-lg); padding: var(--s-5); }
+  .sc-eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; opacity: 0.8; margin: 0; }
+  .sc-score { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem); margin: 0.5rem 0 0; line-height: 1; }
+  .sc-score span { font-size: 0.4em; opacity: 0.6; }
+  .sc-band { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); margin: 0.25rem 0 0; color: var(--amber); }
+  .sc-url { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
+</style>

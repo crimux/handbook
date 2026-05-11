@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects
+# Apex is canonical; www → apex is handled in Cloudflare DNS/Pages custom domain settings.
+# Add SPA-style fallbacks here if needed.

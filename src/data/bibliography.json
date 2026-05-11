@@ -1,0 +1,14 @@
+[
+  {
+    "id": "placeholder-001",
+    "citation": "Author, A. (Year). Title of work. Journal/Venue, Vol(Issue), pp. Publisher.",
+    "doi": "10.0000/placeholder",
+    "oa_url": "",
+    "annotation": "Placeholder annotation — replaced in Step 3 of the build. Each real entry will have an 80-word annotation explaining what the study does, what its method was, and what a UXR practitioner would take from it without having to read the full paper.",
+    "why_uxr": "Placeholder — why a UXR practitioner would cite this study in a research plan or readout.",
+    "method": "interviews",
+    "user_type": "incarcerated",
+    "difficulty": "foundational",
+    "year": 2020
+  }
+]

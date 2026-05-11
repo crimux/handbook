@@ -1,0 +1,137 @@
+---
+import Base from "@layouts/Base.astro";
+import Tag from "@components/Tag.astro";
+import bibliography from "@data/bibliography.json";
+
+const methods = Array.from(new Set(bibliography.map((e: any) => e.method))).sort();
+const userTypes = Array.from(new Set(bibliography.map((e: any) => e.user_type))).sort();
+const years = Array.from(new Set(bibliography.map((e: any) => e.year))).sort((a: number, b: number) => b - a);
+---
+<Base title="Bibliography" description="A filterable, exportable bibliography of ~75 annotated justice-tech UXR studies.">
+  <header class="container hero">
+    <p class="eyebrow">Bibliography</p>
+    <h1>~75 annotated studies on justice-tech UX</h1>
+    <p class="lead">Filter by user type, method, and year. Export any entry as BibTeX or copy a Zotero-friendly citation.</p>
+  </header>
+
+  <section class="container">
+    <form class="filters" id="bib-filters" aria-label="Bibliography filters">
+      <label>
+        <span>User type</span>
+        <select id="f-user">
+          <option value="">All</option>
+          {userTypes.map((u) => <option value={u}>{u}</option>)}
+        </select>
+      </label>
+      <label>
+        <span>Method</span>
+        <select id="f-method">
+          <option value="">All</option>
+          {methods.map((m) => <option value={m}>{m}</option>)}
+        </select>
+      </label>
+      <label>
+        <span>Year</span>
+        <select id="f-year">
+          <option value="">All</option>
+          {years.map((y) => <option value={y}>{y}</option>)}
+        </select>
+      </label>
+      <label class="search">
+        <span>Search</span>
+        <input id="f-q" type="search" placeholder="Title, author, keyword…" />
+      </label>
+    </form>
+
+    <p class="muted" id="bib-count" aria-live="polite"></p>
+
+    <ul class="entries" id="bib-list">
+      {bibliography.map((e: any) => (
+        <li class="entry" data-method={e.method} data-user={e.user_type} data-year={e.year}>
+          <p class="cite">{e.citation}</p>
+          <div class="meta cluster">
+            <Tag label={e.method} tone="indigo" />
+            <Tag label={e.user_type} tone="teal" />
+            <Tag label={e.difficulty} tone="amber" />
+            {e.doi && <a href={`https://doi.org/${e.doi}`} rel="noopener">DOI</a>}
+            {e.oa_url && <a href={e.oa_url} rel="noopener">OA</a>}
+          </div>
+          <p class="ann">{e.annotation}</p>
+          <p class="why"><strong>Why a UXR would cite this:</strong> {e.why_uxr}</p>
+          <details>
+            <summary>Export</summary>
+            <pre><code>{`@misc{${e.id},\n  title = {${e.citation}},\n  doi   = {${e.doi}}\n}`}</code></pre>
+          </details>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<script>
+  const list = document.getElementById("bib-list");
+  const count = document.getElementById("bib-count");
+  const fUser = document.getElementById("f-user") as HTMLSelectElement;
+  const fMethod = document.getElementById("f-method") as HTMLSelectElement;
+  const fYear = document.getElementById("f-year") as HTMLSelectElement;
+  const fQ = document.getElementById("f-q") as HTMLInputElement;
+
+  function apply() {
+    if (!list) return;
+    const u = fUser.value;
+    const m = fMethod.value;
+    const y = fYear.value;
+    const q = (fQ.value || "").toLowerCase().trim();
+    let shown = 0;
+    const items = list.querySelectorAll<HTMLElement>(".entry");
+    items.forEach((el) => {
+      const matches =
+        (!u || el.dataset.user === u) &&
+        (!m || el.dataset.method === m) &&
+        (!y || el.dataset.year === y) &&
+        (!q || el.textContent?.toLowerCase().includes(q));
+      el.style.display = matches ? "" : "none";
+      if (matches) shown++;
+    });
+    if (count) count.textContent = `Showing ${shown} of ${items.length} entries.`;
+  }
+
+  [fUser, fMethod, fYear].forEach((el) => el?.addEventListener("change", apply));
+  fQ?.addEventListener("input", apply);
+  apply();
+</script>
+
+<style>
+  .hero { padding-block: var(--s-8) var(--s-5); }
+  .filters {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--s-4);
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    padding: var(--s-5);
+    margin-bottom: var(--s-5);
+  }
+  @media (max-width: 800px) { .filters { grid-template-columns: 1fr 1fr; } }
+  .filters label { display: flex; flex-direction: column; gap: var(--s-2); font-size: 0.85rem; color: var(--ink-2); }
+  .filters select, .filters input {
+    font: inherit;
+    padding: 0.55rem 0.7rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .entries { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-5); }
+  .entry {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    padding: var(--s-5);
+  }
+  .cite { font-family: var(--font-display); font-size: 1.05rem; color: var(--ink); margin: 0 0 var(--s-3); }
+  .ann, .why { font-size: 0.95rem; color: var(--ink-2); }
+  details { margin-top: var(--s-3); font-size: 0.9rem; }
+  pre { background: var(--paper-2); padding: var(--s-3); border-radius: var(--radius-sm); overflow: auto; }
+</style>

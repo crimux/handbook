@@ -1,0 +1,92 @@
+---
+import { site, nav } from "@data/site";
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+<header class="site-header">
+  <div class="container row">
+    <a class="brand" href="/" aria-label={`${site.name} home`}>
+      <span class="brand-mark" aria-hidden="true">c</span>
+      <span class="brand-text">crimux</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="navlist">
+        {nav.map((item) => {
+          const active = pathname === item.href || pathname.startsWith(item.href + "/");
+          return (
+            <li>
+              <a href={item.href} aria-current={active ? "page" : undefined}>{item.label}</a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-5);
+    padding-block: var(--s-3);
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    display: inline-grid;
+    place-items: center;
+    background: var(--indigo);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    border-radius: 8px;
+    line-height: 1;
+  }
+  .brand-text {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+  }
+  .navlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-4);
+  }
+  .navlist a {
+    text-decoration: none;
+    color: var(--ink-2);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.25rem 0.1rem;
+    border-bottom: 2px solid transparent;
+  }
+  .navlist a:hover { color: var(--indigo); }
+  .navlist a[aria-current="page"] {
+    color: var(--ink);
+    border-bottom-color: var(--indigo);
+  }
+  @media (max-width: 720px) {
+    .row { flex-direction: column; align-items: flex-start; gap: var(--s-3); }
+    .navlist { font-size: 0.9rem; gap: var(--s-3); }
+  }
+</style>

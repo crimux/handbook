@@ -1,0 +1,36 @@
+---
+interface Props {
+  href?: string;
+  variant?: "primary" | "ghost" | "link";
+  size?: "md" | "lg";
+}
+const { href, variant = "primary", size = "md" } = Astro.props;
+const Tag = href ? "a" : "button";
+---
+<Tag class:list={["btn", `btn-${variant}`, `btn-${size}`]} href={href}>
+  <slot />
+</Tag>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-2);
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-family: var(--font-sans);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--motion-fast), color var(--motion-fast), border-color var(--motion-fast), transform var(--motion-fast);
+    border: 1px solid transparent;
+    line-height: 1;
+  }
+  .btn-md { padding: 0.65rem 1.05rem; font-size: 0.95rem; }
+  .btn-lg { padding: 0.85rem 1.4rem; font-size: 1rem; }
+  .btn-primary { background: var(--indigo); color: #fff; }
+  .btn-primary:hover { background: var(--indigo-2); color: #fff; transform: translateY(-1px); }
+  .btn-ghost { background: var(--paper); color: var(--ink); border-color: var(--rule); }
+  .btn-ghost:hover { border-color: var(--indigo); color: var(--indigo); }
+  .btn-link { background: transparent; color: var(--indigo); padding: 0; }
+  .btn-link:hover { color: var(--indigo-2); text-decoration: underline; }
+</style>

@@ -1,0 +1,38 @@
+---
+import Base from "@layouts/Base.astro";
+import PartHero from "@components/PartHero.astro";
+import SourcesBox from "@components/SourcesBox.astro";
+import Callout from "@components/Callout.astro";
+import Button from "@components/Button.astro";
+---
+<Base title="Part 2 — What criminology already knows" description="A curated bibliography of justice-tech UX studies, with annotations and tags.">
+  <PartHero
+    number="2"
+    title="What criminology already knows"
+    dek="A curated body of work on how people actually use justice-tech — inmate tablets, parole apps, BWC, predictive tools, e-filing, and more."
+    wordCount="1,500 + ~75 entries"
+  />
+
+  <article class="container prose">
+    <Callout type="note" title="Draft status">
+      The taxonomy and first 25 bibliography entries land in Step 3. After your review, I'll add the remaining 50.
+    </Callout>
+
+    <h2>How to read this part</h2>
+    <p class="muted">Placeholder — a short orientation to the taxonomy and filters.</p>
+
+    <h2>Taxonomy</h2>
+    <ul>
+      <li>By user type: incarcerated people, supervised people, officers, court staff, victims, attorneys, analysts.</li>
+      <li>By method: interviews, observation, surveys, log analysis, usability, mixed-methods.</li>
+      <li>By difficulty: foundational, advanced, niche.</li>
+    </ul>
+
+    <p>The full filterable, exportable list lives on the <a href="/bibliography">Bibliography page</a>.</p>
+    <Button href="/bibliography" variant="primary">Open the bibliography</Button>
+
+    <SourcesBox items={[
+      { text: "Placeholder until Step 3" },
+    ]} />
+  </article>
+</Base>

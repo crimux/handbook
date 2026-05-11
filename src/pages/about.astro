@@ -1,0 +1,49 @@
+---
+import Base from "@layouts/Base.astro";
+import { site } from "@data/site";
+---
+<Base title="About" description="About the authors and the handbook.">
+  <header class="container hero">
+    <p class="eyebrow">About</p>
+    <h1>About this handbook</h1>
+    <p class="lead">An open-access handbook for criminologists curious about UXR, and for UXR practitioners curious about criminology.</p>
+  </header>
+
+  <section class="container">
+    <h2>Authors</h2>
+    <div class="grid grid-2">
+      {site.authors.map((a) => (
+        <article class="author">
+          <p class="role">{a.role}</p>
+          <h3>{a.name}</h3>
+          <p>{a.bio}</p>
+          {a.url && <p><a href={a.url} rel="noopener">{a.url}</a></p>}
+        </article>
+      ))}
+    </div>
+
+    <h2>Why this exists</h2>
+    <p class="prose">
+      Criminologists already know how to study people; UXR teams already know how to ship.
+      The handbook is the connective tissue — a plain-language, citation-rich bridge between
+      the two crafts, with a bibliography of what's been studied and a list of what hasn't.
+    </p>
+
+    <h2>How to contribute</h2>
+    <p class="prose">
+      Pull requests welcome at <a href={site.repo}>github.com/crimux/crimux</a>. Issues are
+      the easiest way to propose a new open problem or a bibliography entry.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .hero { padding-block: var(--s-8) var(--s-5); }
+  .author {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    padding: var(--s-5);
+  }
+  .role { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.78rem; color: var(--indigo); font-weight: 600; margin: 0 0 var(--s-2); }
+</style>
