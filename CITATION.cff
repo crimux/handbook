@@ -17,7 +17,7 @@ version: "0.2.0"
 date-released: "2026-05-11"
 license: CC-BY-4.0
 url: "https://crimux.com"
-repository-code: "https://github.com/crimwork/handbook"
+repository-code: "https://github.com/crimwork/crimux"
 doi: "10.5281/zenodo.PENDING"
 keywords:
   - user experience
