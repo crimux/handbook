@@ -19,7 +19,7 @@ export const site = {
   license: "CC BY 4.0",
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
   doi: "10.5281/zenodo.PENDING",
-  repo: "https://github.com/crimux/handbook",
+  repo: "https://github.com/crimwork/handbook",
   ogImage: "/og/default.svg",
   authors: [
     {

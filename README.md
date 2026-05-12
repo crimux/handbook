@@ -22,7 +22,7 @@ It is a service of the [CrimRxiv Consortium](https://www.crimrxiv.com/consortium
 ## Tech
 
 - **Stack:** [Astro 4](https://astro.build) (static-site generator) with [`@astrojs/sitemap`].
-- **Hosting:** Cloudflare Pages, deployed from `main` of [github.com/crimux/handbook](https://github.com/crimux/handbook).
+- **Hosting:** Cloudflare Pages, deployed from `main` of [github.com/crimwork/handbook](https://github.com/crimwork/handbook).
 - **Domain:** [crimux.com](https://crimux.com) — see `DEPLOY.md` for the click-path.
 - **Fonts:** Source Serif 4 + Inter + JetBrains Mono, loaded from Google Fonts (matches the CrimRxiv Faculty Explorer aesthetic).
 - **Analytics:** Cloudflare Web Analytics only (placeholder in `src/layouts/Base.astro`).

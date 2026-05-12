@@ -5,13 +5,13 @@ This is the exact path to get the repo live at `https://crimux.com` and `https:/
 ## Prerequisites
 
 - The Cloudflare account that owns `crimux.com` (already done).
-- Admin on the GitHub org `crimux` (already done).
-- The repo pushed to `github.com/crimux/handbook` (use the one-line push command from this `README` after unzipping).
+- Admin on the GitHub org `crimwork` (already done).
+- The repo pushed to `github.com/crimwork/handbook` (use the one-line push command from this `README` after unzipping).
 
 ## 1. Create the Pages project
 
 1. Cloudflare dashboard → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
-2. Authorize Cloudflare's GitHub app for the `crimux` org if not already; pick repository `crimux/handbook`.
+2. Authorize Cloudflare's GitHub app for the `crimwork` org if not already; pick repository `crimwork/handbook`.
 3. Production branch: `main`.
 4. Build settings:
    - **Framework preset:** *Astro*
