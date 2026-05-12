@@ -25,7 +25,7 @@ export const site = {
     {
       name: "Tara Abrahams",
       role: "Forthcoming PhD · Georgia State University",
-      bio: "Finishing her PhD in criminology and criminal justice at Georgia State University and a U.S. Air Force veteran. A qualitative criminologist whose work focuses on offender decision-making, with a parallel craft in photojournalism that informs how she gathers, frames, and presents human evidence.",
+      bio: "Finishing her PhD in criminology and criminal justice at Georgia State University and a U.S. Air Force veteran. A qualitative and mixed-methods criminologist whose work focuses on offender decision-making, with a parallel craft in photojournalism that informs how she gathers, frames, and presents human evidence.",
       url: "https://taraabrahams.pubpub.org",
     },
     {
