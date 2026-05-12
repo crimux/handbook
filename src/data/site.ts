@@ -27,12 +27,14 @@ export const site = {
       role: "Forthcoming PhD · Georgia State University",
       bio: "Finishing her PhD in criminology and criminal justice at Georgia State University and a U.S. Air Force veteran. A qualitative and mixed-methods criminologist whose work focuses on offender decision-making, with a parallel craft in photojournalism that informs how she gathers, frames, and presents human evidence.",
       url: "https://taraabrahams.pubpub.org",
+      linkedin: "https://www.linkedin.com/in/tararoseabrahams",
     },
     {
       name: "Scott Jacques",
       role: "Professor · Georgia State University",
       bio: "Professor of criminology and criminal justice at Georgia State University, executive director of the CrimRxiv Consortium, and founder of CrimRxiv. A utilitarian criminologist working to make open-access research generate real-world return on investment.",
       url: "https://scottjacques.pubpub.org",
+      linkedin: "https://www.linkedin.com/in/scott-jacques-78731999",
     },
   ],
 };

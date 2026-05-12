@@ -55,7 +55,8 @@ const bibtex = doiMinted
           <p class="role">{a.role}</p>
           <h3>{a.name}</h3>
           <p>{a.bio}</p>
-          {a.url && <p><a href={a.url} rel="noopener">{a.url}</a></p>}
+          {a.url && <p><a href={a.url} rel="noopener">{a.url.replace(/^https?:\/\//, "")}</a></p>}
+          {a.linkedin && <p><a href={a.linkedin} rel="noopener">LinkedIn</a></p>}
         </article>
       ))}
     </div>
