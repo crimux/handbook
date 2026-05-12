@@ -8,8 +8,6 @@ const methods = Array.from(new Set(bibliography.map((e: any) => e.method))).sort
 const userTypes = Array.from(new Set(bibliography.map((e: any) => e.user_type))).sort();
 const years = Array.from(new Set(bibliography.map((e: any) => e.year))).sort((a: number, b: number) => b - a);
 const count = bibliography.length;
-const target = 75;
-const progress = count < target ? `${count} of a planned ${target}` : `${count}`;
 
 // Compute coverage stats for the corpus-shape callout.
 const subjectCounts: Record<string, number> = {};
@@ -32,10 +30,10 @@ function joinList(items: string[]): string {
 }
 const thinnerLabel = joinList(thinnerAreas);
 ---
-<Base title="Bibliography" description={`A filterable, exportable bibliography of ${count} annotated user-experience studies in criminal justice technology (growing toward ~${target}).`}>
+<Base title="Bibliography" description={`A filterable, exportable bibliography of ${count} annotated user-experience studies in criminal justice technology.`}>
   <header class="container hero">
     <p class="eyebrow">Bibliography</p>
-    <h1>{progress} annotated studies on user experience in criminal justice technology</h1>
+    <h1>{count} annotated studies on user experience in criminal justice technology</h1>
     <p class="lead">Filter by user type, method, and year. Export any entry as BibTeX or copy a Zotero-friendly citation.</p>
   </header>
 
@@ -163,9 +161,23 @@ const thinnerLabel = joinList(thinnerAreas);
     border: 1px solid var(--rule);
     border-radius: var(--radius-lg);
     padding: var(--s-5);
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
-  .cite { font-family: var(--font-display); font-size: 1.05rem; color: var(--ink); margin: 0 0 var(--s-3); }
-  .ann, .why { font-size: 0.95rem; color: var(--ink-2); }
+  .entry .meta { flex-wrap: wrap; row-gap: var(--s-2); }
+  .cite { font-family: var(--font-display); font-size: 1.05rem; color: var(--ink); margin: 0 0 var(--s-3); overflow-wrap: anywhere; }
+  .ann, .why { font-size: 0.95rem; color: var(--ink-2); overflow-wrap: anywhere; }
   details { margin-top: var(--s-3); font-size: 0.9rem; }
-  pre { background: var(--paper-2); padding: var(--s-3); border-radius: var(--radius-sm); overflow: auto; }
+  /* Normalize the native disclosure marker (iOS Safari renders it as a colored emoji). */
+  details > summary { list-style: none; cursor: pointer; color: var(--brand); display: inline-flex; align-items: center; gap: 0.4rem; }
+  details > summary::-webkit-details-marker { display: none; }
+  details > summary::before {
+    content: "▸";
+    display: inline-block;
+    transition: transform var(--motion-fast);
+    color: var(--brand);
+  }
+  details[open] > summary::before { transform: rotate(90deg); }
+  pre { background: var(--paper-2); padding: var(--s-3); border-radius: var(--radius-sm); overflow: auto; white-space: pre-wrap; word-break: break-word; }
 </style>
